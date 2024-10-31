@@ -1,160 +1,316 @@
 {
-  "vehiculos": [
+  "cars": [
     {
-      "id": "1",
-      "marca": "Ford",
-      "modelo": "Ranger",
-      "estilo": "Pick-Up"
+      "id": 1,
+      "brand": "Ford",
+      "model": "Ranger",
+      "type": "Pick-Up",
+      "price": 35000,
+      "year": 2023,
+      "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": ""
     },
     {
-      "id": "2",
-      "marca": "Ford",
-      "modelo": "Mondeo",
-      "estilo": "Sedan"
+      "id": 2,
+      "brand": "Ford",
+      "model": "Mondeo",
+      "type": "Sedan",
+      "price": 28000,
+      "year": 2023,
+      "description": "Elegante sedán Ford Mondeo con acabados premium",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "/assets/images/Mondeo.jpg"
     },
     {
-      "id": "3",
-      "marca": "Ford",
-      "modelo": "Transit",
-      "estilo": "Utilitario"
+      "id": 3,
+      "brand": "Ford",
+      "model": "Transit",
+      "type": "Utilitario",
+      "price": 32000,
+      "year": 2023,
+      "description": "Versátil utilitario Ford Transit para necesidades comerciales",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/ford-transit.jpg"
     },
     {
-      "id": "4",
-      "marca": "Volkswagen",
-      "modelo": "Amarok",
-      "estilo": "Pick-Up"
+      "id": 4,
+      "brand": "Volkswagen",
+      "model": "Amarok",
+      "type": "Pick-Up",
+      "price": 38000,
+      "year": 2023,
+      "description": "Potente pick-up Volkswagen Amarok con tecnología alemana",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/vw-amarok.jpg"
     },
     {
-      "id": "5",
-      "marca": "Volkswagen",
-      "modelo": "Vento",
-      "estilo": "Sedan"
+      "id": 5,
+      "brand": "Volkswagen",
+      "model": "Vento",
+      "type": "Sedan",
+      "price": 25000,
+      "year": 2023,
+      "description": "Confortable sedán Volkswagen Vento con excelente rendimiento",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/vw-vento.jpg"
     },
     {
-      "id": "6",
-      "marca": "Volkswagen",
-      "modelo": "Tiguan",
-      "estilo": "SUV"
+      "id": 6,
+      "brand": "Volkswagen",
+      "model": "Tiguan",
+      "type": "SUV",
+      "price": 42000,
+      "year": 2023,
+      "description": "SUV Volkswagen Tiguan con diseño moderno y amplio espacio",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/vw-tiguan.jpg"
     },
     {
-      "id": "7",
-      "marca": "Fiat",
-      "modelo": "Toro",
-      "estilo": "Pick-Up"
+      "id": 7,
+      "brand": "Fiat",
+      "model": "Toro",
+      "type": "Pick-Up",
+      "price": 30000,
+      "year": 2023,
+      "description": "Pick-up Fiat Toro con diseño innovador y confort superior",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/fiat-toro.jpg"
     },
     {
-      "id": "8",
-      "marca": "Fiat",
-      "modelo": "Cronos",
-      "estilo": "Sedan"
+      "id": 8,
+      "brand": "Fiat",
+      "model": "Cronos",
+      "type": "Sedan",
+      "price": 22000,
+      "year": 2023,
+      "description": "Sedán Fiat Cronos con estilo italiano y economía",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/fiat-cronos.jpg"
     },
     {
-      "id": "9",
-      "marca": "Peugeot",
-      "modelo": "208",
-      "estilo": "Hatchback"
+      "id": 9,
+      "brand": "Peugeot",
+      "model": "208",
+      "type": "Hatchback",
+      "price": 24000,
+      "year": 2023,
+      "description": "Dinámico Peugeot 208 con diseño juvenil y tecnología avanzada",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/peugeot-208.jpg"
     },
     {
-      "id": "10",
-      "marca": "Peugeot",
-      "modelo": "Partner",
-      "estilo": "Hatchback"
+      "id": 10,
+      "brand": "Peugeot",
+      "model": "Partner",
+      "type": "Hatchback",
+      "price": 26000,
+      "year": 2023,
+      "description": "Práctica Peugeot Partner ideal para uso familiar y comercial",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/peugeot-partner.jpg"
     },
     {
-      "id": "11",
-      "marca": "Chevrolet",
-      "modelo": "S10",
-      "estilo": "Pick-Up"
+      "id": 11,
+      "brand": "Chevrolet",
+      "model": "S10",
+      "type": "Pick-Up",
+      "price": 36000,
+      "year": 2023,
+      "description": "Robusta pick-up Chevrolet S10 con capacidad de carga superior",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/chevrolet-s10.jpg"
     },
     {
-      "id": "12",
-      "marca": "Chevrolet",
-      "modelo": "Cruze",
-      "estilo": "Hatchback"
+      "id": 12,
+      "brand": "Chevrolet",
+      "model": "Cruze",
+      "type": "Hatchback",
+      "price": 27000,
+      "year": 2023,
+      "description": "Deportivo Chevrolet Cruze con excelente rendimiento",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/chevrolet-cruze.jpg"
     },
     {
-      "id": "13",
-      "marca": "Nissan",
-      "modelo": "Frontier",
-      "estilo": "Pick-Up"
+      "id": 13,
+      "brand": "Nissan",
+      "model": "Frontier",
+      "type": "Pick-Up",
+      "price": 37000,
+      "year": 2023,
+      "description": "Resistente pick-up Nissan Frontier para todo terreno",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/nissan-frontier.jpg"
     },
     {
-      "id": "14",
-      "marca": "Nissan",
-      "modelo": "Tiida",
-      "estilo": "Sedan"
+      "id": 14,
+      "brand": "Nissan",
+      "model": "Tiida",
+      "type": "Sedan",
+      "price": 23000,
+      "year": 2023,
+      "description": "Confortable Nissan Tiida con gran espacio interior",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/nissan-tiida.jpg"
     },
     {
-      "id": "15",
-      "marca": "Toyota",
-      "modelo": "Hilux",
-      "estilo": "Pick-Up"
+      "id": 15,
+      "brand": "Toyota",
+      "model": "Hilux",
+      "type": "Pick-Up",
+      "price": 39000,
+      "year": 2023,
+      "description": "Legendaria Toyota Hilux con durabilidad comprobada",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/toyota-hilux.jpg"
     },
     {
-      "id": "16",
-      "marca": "Toyota",
-      "modelo": "Etios",
-      "estilo": "Hatchback"
+      "id": 16,
+      "brand": "Toyota",
+      "model": "Etios",
+      "type": "Hatchback",
+      "price": 21000,
+      "year": 2023,
+      "description": "Económico Toyota Etios ideal para ciudad",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/toyota-etios.jpg"
     },
     {
-      "id": "17",
-      "marca": "Toyota",
-      "modelo": "Corolla",
-      "estilo": "Sedan"
+      "id": 17,
+      "brand": "Toyota",
+      "model": "Corolla",
+      "type": "Sedan",
+      "price": 29000,
+      "year": 2023,
+      "description": "Clásico Toyota Corolla con tecnología híbrida",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/toyota-corolla.jpg"
     },
     {
-      "id": "18",
-      "marca": "Toyota",
-      "modelo": "Corolla-Cross",
-      "estilo": "SUV"
+      "id": 18,
+      "brand": "Toyota",
+      "model": "Corolla-Cross",
+      "type": "SUV",
+      "price": 34000,
+      "year": 2023,
+      "description": "Moderna Toyota Corolla Cross con estilo SUV",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/toyota-corolla-cross.jpg"
     },
     {
-      "id": "19",
-      "marca": "Renault",
-      "modelo": "Sandero",
-      "estilo": "Hatchback"
+      "id": 19,
+      "brand": "Renault",
+      "model": "Sandero",
+      "type": "Hatchback",
+      "price": 20000,
+      "year": 2023,
+      "description": "Versátil Renault Sandero con gran relación calidad-precio",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/renault-sandero.jpg"
     },
     {
-      "id": "20",
-      "marca": "Renault",
-      "modelo": "Duster",
-      "estilo": "SUV"
+      "id": 20,
+      "brand": "Renault",
+      "model": "Duster",
+      "type": "SUV",
+      "price": 28000,
+      "year": 2023,
+      "description": "Aventurero Renault Duster con capacidades off-road",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/renault-duster.jpg"
     },
     {
-      "id": "21",
-      "marca": "Renault",
-      "modelo": "Kangoo",
-      "estilo": "Utilitario"
+      "id": 21,
+      "brand": "Renault",
+      "model": "Kangoo",
+      "type": "Utilitario",
+      "price": 25000,
+      "year": 2023,
+      "description": "Práctica Renault Kangoo para uso comercial",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/renault-kangoo.jpg"
     },
     {
-      "id": "22",
-      "marca": "Fiat",
-      "modelo": "Linea",
-      "estilo": "Sedan"
+      "id": 22,
+      "brand": "Fiat",
+      "model": "Linea",
+      "type": "Sedan",
+      "price": 23000,
+      "year": 2023,
+      "description": "Elegante Fiat Linea con acabados refinados",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/fiat-linea.jpg"
     },
     {
-      "id": "23",
-      "marca": "Jeep",
-      "modelo": "Wrangler",
-      "estilo": "Pick-Up"
+      "id": 23,
+      "brand": "Jeep",
+      "model": "Wrangler",
+      "type": "Pick-Up",
+      "price": 45000,
+      "year": 2023,
+      "description": "Icónico Jeep Wrangler para aventuras extremas",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/jeep-wrangler.jpg"
     },
     {
-      "id": "24",
-      "marca": "Dodge",
-      "modelo": "Caravan",
-      "estilo": "Familiar"
+      "id": 24,
+      "brand": "Dodge",
+      "model": "Caravan",
+      "type": "Familiar",
+      "price": 33000,
+      "year": 2023,
+      "description": "Espaciosa Dodge Caravan para toda la familia",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/dodge-caravan.jpg"
     },
     {
-      "id": "25",
-      "marca": "Jeep",
-      "modelo": "Grand Cheeroke",
-      "estilo": "SUV"
+      "id": 25,
+      "brand": "Jeep",
+      "model": "Grand Cheeroke",
+      "type": "SUV",
+      "price": 48000,
+      "year": 2023,
+      "description": "Lujosa Jeep Grand Cherokee con máximo confort",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/jeep-grand-cherokee.jpg"
     },
     {
-      "id": "26",
-      "marca": "Fiat",
-      "modelo": "Argo",
-      "estilo": "Hatchback"
+      "id": 26,
+      "brand": "Fiat",
+      "model": "Argo",
+      "type": "Hatchback",
+      "price": 21500,
+      "year": 2023,
+      "description": "Moderno Fiat Argo con diseño deportivo",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": "https://example.com/images/fiat-argo.jpg"
     }
   ]
 }
