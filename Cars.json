@@ -1,0 +1,160 @@
+{
+  "vehiculos": [
+    {
+      "id": "1",
+      "marca": "Ford",
+      "modelo": "Ranger",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "2",
+      "marca": "Ford",
+      "modelo": "Mondeo",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "3",
+      "marca": "Ford",
+      "modelo": "Transit",
+      "estilo": "Utilitario"
+    },
+    {
+      "id": "4",
+      "marca": "Volkswagen",
+      "modelo": "Amarok",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "5",
+      "marca": "Volkswagen",
+      "modelo": "Vento",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "6",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "estilo": "SUV"
+    },
+    {
+      "id": "7",
+      "marca": "Fiat",
+      "modelo": "Toro",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "8",
+      "marca": "Fiat",
+      "modelo": "Cronos",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "9",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "estilo": "Hatchback"
+    },
+    {
+      "id": "10",
+      "marca": "Peugeot",
+      "modelo": "Partner",
+      "estilo": "Hatchback"
+    },
+    {
+      "id": "11",
+      "marca": "Chevrolet",
+      "modelo": "S10",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "12",
+      "marca": "Chevrolet",
+      "modelo": "Cruze",
+      "estilo": "Hatchback"
+    },
+    {
+      "id": "13",
+      "marca": "Nissan",
+      "modelo": "Frontier",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "14",
+      "marca": "Nissan",
+      "modelo": "Tiida",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "15",
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "16",
+      "marca": "Toyota",
+      "modelo": "Etios",
+      "estilo": "Hatchback"
+    },
+    {
+      "id": "17",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "18",
+      "marca": "Toyota",
+      "modelo": "Corolla-Cross",
+      "estilo": "SUV"
+    },
+    {
+      "id": "19",
+      "marca": "Renault",
+      "modelo": "Sandero",
+      "estilo": "Hatchback"
+    },
+    {
+      "id": "20",
+      "marca": "Renault",
+      "modelo": "Duster",
+      "estilo": "SUV"
+    },
+    {
+      "id": "21",
+      "marca": "Renault",
+      "modelo": "Kangoo",
+      "estilo": "Utilitario"
+    },
+    {
+      "id": "22",
+      "marca": "Fiat",
+      "modelo": "Linea",
+      "estilo": "Sedan"
+    },
+    {
+      "id": "23",
+      "marca": "Jeep",
+      "modelo": "Wrangler",
+      "estilo": "Pick-Up"
+    },
+    {
+      "id": "24",
+      "marca": "Dodge",
+      "modelo": "Caravan",
+      "estilo": "Familiar"
+    },
+    {
+      "id": "25",
+      "marca": "Jeep",
+      "modelo": "Grand Cheeroke",
+      "estilo": "SUV"
+    },
+    {
+      "id": "26",
+      "marca": "Fiat",
+      "modelo": "Argo",
+      "estilo": "Hatchback"
+    }
+  ]
+}

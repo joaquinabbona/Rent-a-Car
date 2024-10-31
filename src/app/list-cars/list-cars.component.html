@@ -1,0 +1,9 @@
+<p>list-cars works!</p>
+<div>
+    <ul>
+        <li *ngFor="let car of cars">
+            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" style="width: 200px; height: 200px;">
+            <button [routerLink]="['/car-details', car.id]">Ver</button>
+        </li>
+    </ul>   
+</div>
