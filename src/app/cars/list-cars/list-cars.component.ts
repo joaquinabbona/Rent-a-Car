@@ -1,7 +1,6 @@
-// list-cars.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../../services/car.service';
-import { Car } from '../../models/car';
+import { Car } from '../car';
 
 @Component({
   selector: 'app-list-vehicles',
@@ -9,6 +8,7 @@ import { Car } from '../../models/car';
   styleUrl: './list-cars.component.css'
 })
 export class ListCarsComponent implements OnInit {
+  cars: any[] = [];
   
   constructor(public carService: CarService) {}
 
