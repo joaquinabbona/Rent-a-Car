@@ -12,7 +12,7 @@ export class CarService {
   loading: boolean = true;
   error: string | null = null;
 
-  constructor(private http: HttpClient, carService : CarService) {}
+  constructor(private http: HttpClient) {}
 
   getCars(): Observable<Car[]> {
     return this.http.get<Car[]>(this.apiUrl);
