@@ -8,11 +8,15 @@ import { provideHttpClient } from '@angular/common/http';
 import { CarsModule } from './cars/cars.module';
 import { ClientsModule } from './clients/clients/clients.module';
 import { ClientEditComponent } from './clients/clients/components/client-edit/client-edit.component';
+import { HomeComponent } from './home/home/home.component';
+import { HomeModule } from './home/home.module';
+import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClientsManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,8 @@ import { ClientEditComponent } from './clients/clients/components/client-edit/cl
     FormsModule,
     CarsModule,
     RouterModule,
-    ClientsModule
+    ClientsModule,
+    HomeModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

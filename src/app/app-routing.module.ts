@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ListCarsComponent} from './cars/list-cars/list-cars.component';
 import { AddCarsComponent } from './cars/add-cars/add-cars.component';
 import { CarManagerComponent } from './cars/car-manager/car-manager.component';
+import { HomeComponent } from './home/home/home.component';
 
 
 
@@ -15,9 +16,10 @@ const routes: Routes = [
     path: 'clients',
     loadChildren: () => import('./clients/clients/clients.module').then(m => m.ClientsModule)
   },
-  { path: '', redirectTo: '/car-manager', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path:'add-cars' , component: AddCarsComponent},
-  {path: 'car-manager', component: CarManagerComponent}
+  {path: 'car-manager', component: CarManagerComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
