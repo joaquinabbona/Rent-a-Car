@@ -13,15 +13,20 @@
 
         <br><br>
 
-        <label>En qué sucursal va a dejar el auto</label>
-        <select name="sucursales" id="sucursales">
+        <label>En qué sucursal va a dejar el auto</label> <!--Este select lo voy a hacer distinto pq si agregamos sucursales no se va a ver en este select-->
+        <select name="sucursales" id="sucursales" #destination>
             <option value="Mar del Plata">Mar del Plata</option>
             <option value="CABA">CABA</option>
-            <option value="Santa Fe">Santa Fe</option>
-            <option value="Córdoba">Córdoba</option>
+            <option value="Rosario">Rosario</option>
+            <option value="Cordoba Capital">Córdoba Capital</option>
+            <option value="San miguel de Tucuman">San miguel de Tucuman</option>
+            <option value="Salta Salta">Salta Capital</option>
+            <option value="Corrientes Corrientes">Corrientes Capital</option>
+            <option value="Bahía Blannca">Bahía Blanca</option>
         </select>
-        <button>Calcular acarreo</button> <!-- Función para calcular el acarreo -->
-        <p id="totalAcarreo"></p> <!-- Muestra el total del acarreo -->
+        <button (click)="calculateDistanceAndCarryPrice(destination.value)">Calcular acarreo</button> <!-- Función para calcular el acarreo -->
+        <p>{{distance}}</p>
+        <p>{{messagePrice}}</p> <!-- Muestra el total del acarreo -->
     </div>
     
     <div *ngIf="car?.isForSale">

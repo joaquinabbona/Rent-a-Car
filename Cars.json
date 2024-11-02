@@ -20,7 +20,7 @@
       "price": 28000,
       "year": 2023,
       "description": "Elegante sedán Ford Mondeo con acabados premium",
-      "isForSale": true,
+      "isForSale": false,
       "available": true,
       "imageUrl": "/assets/images/Mondeo.jpg"
     },
