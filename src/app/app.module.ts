@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { CarsModule } from './cars/cars.module';
+import { ClientsModule } from './clients/clients/clients.module';
+import { ClientEditComponent } from './clients/clients/components/client-edit/client-edit.component';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { CarsModule } from './cars/cars.module';
     AppRoutingModule,
     FormsModule,
     CarsModule,
-    RouterModule
+    RouterModule,
+    ClientsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

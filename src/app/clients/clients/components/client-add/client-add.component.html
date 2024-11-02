@@ -1,0 +1,112 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>Agregar Nuevo Usuario</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+          <!-- Nombre -->
+          <div class="mb-3">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="firstName" 
+              formControlName="firstName"
+              [ngClass]="{'is-invalid': clientForm.get('firstName')?.invalid && clientForm.get('firstName')?.touched}"
+            >
+            <div class="invalid-feedback" *ngIf="clientForm.get('firstName')?.errors?.['required']">
+              El nombre es requerido
+            </div>
+          </div>
+  
+          <!-- Apellido -->
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="lastName" 
+              formControlName="lastName"
+              [ngClass]="{'is-invalid': clientForm.get('lastName')?.invalid && clientForm.get('lastName')?.touched}"
+            >
+            <div class="invalid-feedback" *ngIf="clientForm.get('lastName')?.errors?.['required']">
+              El apellido es requerido
+            </div>
+          </div>
+  
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              formControlName="email"
+              [ngClass]="{'is-invalid': clientForm.get('email')?.invalid && clientForm.get('email')?.touched}"
+            >
+            <div class="invalid-feedback" *ngIf="clientForm.get('email')?.errors?.['required']">
+              El email es requerido
+            </div>
+            <div class="invalid-feedback" *ngIf="clientForm.get('email')?.errors?.['email']">
+              Por favor ingrese un email válido
+            </div>
+          </div>
+  
+          <!-- Teléfono -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Teléfono</label>
+            <input 
+              type="tel" 
+              class="form-control" 
+              id="phone" 
+              formControlName="phone"
+              [ngClass]="{'is-invalid': clientForm.get('phone')?.invalid && clientForm.get('phone')?.touched}"
+            >
+            <div class="invalid-feedback" *ngIf="clientForm.get('phone')?.errors?.['required']">
+              El teléfono es requerido
+            </div>
+          </div>
+  
+          <!-- Dirección -->
+          <div class="mb-3">
+            <label for="address" class="form-label">Dirección</label>
+            <textarea 
+              class="form-control" 
+              id="address" 
+              formControlName="address"
+              [ngClass]="{'is-invalid': clientForm.get('address')?.invalid && clientForm.get('address')?.touched}"
+            ></textarea>
+            <div class="invalid-feedback" *ngIf="clientForm.get('address')?.errors?.['required']">
+              La dirección es requerida
+            </div>
+          </div>
+  
+          <!-- Fecha de Nacimiento -->
+          <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Fecha de Nacimiento</label>
+            <input 
+              type="date" 
+              class="form-control" 
+              id="dateOfBirth" 
+              formControlName="dateOfBirth"
+              [ngClass]="{'is-invalid': clientForm.get('dateOfBirth')?.invalid && clientForm.get('dateOfBirth')?.touched}"
+            >
+            <div class="invalid-feedback" *ngIf="clientForm.get('dateOfBirth')?.errors?.['required']">
+              La fecha de nacimiento es requerida
+            </div>
+          </div>
+  
+          <!-- Botones -->
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">
+              Guardar Cliente
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
