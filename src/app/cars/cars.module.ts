@@ -5,19 +5,21 @@ import { RouterModule } from '@angular/router';
 import { AddCarsComponent } from './add-cars/add-cars.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { ListCarsComponent } from './list-cars/list-cars.component';
+import { CarManagerComponent } from './car-manager/car-manager.component';
 
 @NgModule({
   declarations: [
     AddCarsComponent,
     ListCarsComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    CarManagerComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,    // Para ngModel
-    RouterModule    // Para routerLink
+    FormsModule,    
+    RouterModule    
   ],
-  exports: [        // Exporta los componentes si necesitas usarlos fuera de este módulo
+  exports: [        
     AddCarsComponent,
     ListCarsComponent,
     CarDetailsComponent
