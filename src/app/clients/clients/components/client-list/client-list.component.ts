@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../../services/client.service';
+import { Client } from '../../../interfaces/client.interface';
 
 @Component({
-  selector: 'app-client-list',
+  selector: 'app-list-clients',
   templateUrl: './client-list.component.html',
-  styleUrl: './client-list.component.css'
+  styleUrls: ['./client-list.component.css']
 })
-export class ClientListComponent {
+export class ClientListComponent implements OnInit {
+  clients: Client[] = [];
 
+  constructor(private clientService: ClientService) {}
+
+  ngOnInit(): void {
+    this.clientService.getClients().subscribe({
+      next: (data) => {
+        this.clients = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener clientes:', error);
+      }
+    });
+  }
 }

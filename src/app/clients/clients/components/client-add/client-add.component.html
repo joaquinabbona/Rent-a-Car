@@ -5,6 +5,61 @@
       </div>
       <div class="card-body">
         <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+
+                  <!-- Email (Usuario) -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email (Usuario)</label>
+          <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            formControlName="email"
+            [ngClass]="{'is-invalid': clientForm.get('email')?.invalid && clientForm.get('email')?.touched}"
+          >
+          <div class="invalid-feedback">
+            <div *ngIf="clientForm.get('email')?.errors?.['required']">
+              El email es requerido
+            </div>
+            <div *ngIf="clientForm.get('email')?.errors?.['email']">
+              Ingrese un email válido
+            </div>
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            formControlName="password"
+            [ngClass]="{'is-invalid': clientForm.get('password')?.invalid && clientForm.get('password')?.touched}"
+          >
+          <div class="invalid-feedback">
+            <div *ngIf="clientForm.get('password')?.errors?.['required']">
+              La contraseña es requerida
+            </div>
+            <div *ngIf="clientForm.get('password')?.errors?.['minlength']">
+              La contraseña debe tener al menos 6 caracteres
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmar Contraseña -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            id="confirmPassword" 
+            formControlName="confirmPassword"
+            [ngClass]="{'is-invalid': clientForm.get('confirmPassword')?.touched && clientForm.errors?.['mismatch']}"
+          >
+          <div class="invalid-feedback" *ngIf="clientForm.errors?.['mismatch']">
+            Las contraseñas no coinciden
+          </div>
+        </div>
           <!-- Nombre -->
           <div class="mb-3">
             <label for="firstName" class="form-label">Nombre</label>
@@ -34,24 +89,7 @@
               El apellido es requerido
             </div>
           </div>
-  
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input 
-              type="email" 
-              class="form-control" 
-              id="email" 
-              formControlName="email"
-              [ngClass]="{'is-invalid': clientForm.get('email')?.invalid && clientForm.get('email')?.touched}"
-            >
-            <div class="invalid-feedback" *ngIf="clientForm.get('email')?.errors?.['required']">
-              El email es requerido
-            </div>
-            <div class="invalid-feedback" *ngIf="clientForm.get('email')?.errors?.['email']">
-              Por favor ingrese un email válido
-            </div>
-          </div>
+
   
           <!-- Teléfono -->
           <div class="mb-3">
@@ -102,7 +140,7 @@
             <button type="button" class="btn btn-secondary" (click)="onCancel()">
               Cancelar
             </button>
-            <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">
+            <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid" >
               Guardar Cliente
             </button>
           </div>

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Client } from '../interfaces/client.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  private apiUrl = '' //ACA VA EL JSON SERVER DE CLIENTES
+  private apiUrl = 'http://localhost:3000/clients';//ACA VA EL JSON SERVER DE CLIENTES
   constructor(private http: HttpClient) { }
 
   getClients(): Observable<Client[]> {
@@ -28,5 +28,10 @@ export class ClientService {
 
   deleteClient(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+  login(email: string, password: string): Observable<Client | null> {
+    return this.http.get<Client[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
+      map((clients: string | any[]) => clients.length ? clients[0] : null)
+    );
   }
 }

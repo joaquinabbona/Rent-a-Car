@@ -17,34 +17,46 @@ export class ClientAddComponent implements OnInit {
     private clientService: ClientService,
     private router: Router
   ) {
-    this.clientForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      dateOfBirth: ['', Validators.required]
-    });
+    this.clientForm = this.fb.group(
+      {
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+        phone: ['', Validators.required],
+        address: ['', Validators.required],
+        dateOfBirth: ['', Validators.required]
+      },
+      { validators: this.passwordMatchValidator }
+    );
+  }
+  
+
+  passwordMatchValidator(g: FormGroup) {
+    return g.get('password')?.value === g.get('confirmPassword')?.value
+      ? null : {'mismatch': true};
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {} 
 
-  onSubmit(): void {
+  onSubmit() {
     if (this.clientForm.valid) {
-      const newClient: Client = this.clientForm.value;
-      this.clientService.addClient(newClient).subscribe({
+      const userData = {...this.clientForm.value};
+      delete userData.confirmPassword; // Removemos confirmPassword antes de enviar
+
+      this.clientService.addClient(userData).subscribe({
         next: () => {
-          alert('Cliente agregado exitosamente');
-          this.router.navigate(['/clients']);
+          alert('Usuario registrado exitosamente');
+          this.router.navigate(['/login']);
         },
         error: (error) => {
-          console.error('Error al agregar cliente:', error);
-          alert('Error al agregar cliente');
+          console.error('Error al registrar usuario:', error);
+          alert('Error al registrar usuario');
         }
       });
     }
   }
-
   onCancel(): void {
     this.router.navigate(['/clients']);
   }
