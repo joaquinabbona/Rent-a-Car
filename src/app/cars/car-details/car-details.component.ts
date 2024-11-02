@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../car';
 import { ActivatedRoute } from '@angular/router';
 import { CarService } from '../services/car.service';
-import { DistanceCalculatorService } from '../distance-calculator.service';
+import { DistanceCalculatorService } from '../services/distance-calculator.service';
 
 @Component({
   selector: 'app-car-details',
