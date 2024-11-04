@@ -2,6 +2,7 @@
     <h1 style="text-align: center;">{{ car?.brand }} {{ car?.model }} {{ car?.year }}</h1>
     <img [src]="car?.imageUrl" alt="Imagen del auto" class="car-image" style="width: 200px; height: 200px;">
     <p><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
+    <button [routerLink]="['/edit-car', this.car?.id]">Editar</button>
     <p>Descripción: {{ car?.description }}</p>
     <p>Sucursal: Mar del Plata</p> <!-- Aquí se puede usar {{ car?.sucursal }} cuando esté disponible -->
     

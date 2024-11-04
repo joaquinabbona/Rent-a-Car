@@ -20,12 +20,14 @@ export class ListCarsComponent implements OnInit {
   uniqueBrands: string[] = [];
   uniqueYears: number[] = [];
   uniqueTypes: string[] = [];
+  router: any;
   
   constructor(public carService: CarService) {}
 
   ngOnInit() {
     this.getCars();
   }
+  
 
   getCars() {
     this.carService.getCars().subscribe((data: Car[]) => {
@@ -54,4 +56,6 @@ export class ListCarsComponent implements OnInit {
     this.filters = { brand: '', year: null, type: '' };
     this.filteredCars = this.cars;
   }
+
+  
 }

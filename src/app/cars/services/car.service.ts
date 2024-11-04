@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Car } from '../car';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,9 @@ export class CarService {
   cars: Car[] = [];
   loading: boolean = true;
   error: string | null = null;
+  router: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private ActivatedRoute: ActivatedRoute) {}
 
   getCars(): Observable<Car[]> {
     return this.http.get<Car[]>(this.apiUrl);
@@ -36,5 +38,12 @@ export class CarService {
   addCar(car: Car): Observable<Car> {
     return this.http.post<Car>(this.apiUrl, car);
   }
+
+  updateCar(car: Car): Observable<Car> {
+    const url = `${this.apiUrl}/${car.id}`;
+    return this.http.put<Car>(url, car);
+  }
+
+ 
   
 }
