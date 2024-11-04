@@ -7,7 +7,7 @@ import { AddCarsComponent } from './cars/add-cars/add-cars.component';
 import { CarManagerComponent } from './cars/car-manager/car-manager.component';
 import { HomeComponent } from './home/home/home.component';
 import { EditCarsComponent } from './cars/edit-cars/edit-cars.component';
-
+import { PaymentComponent } from './cars/payment/payment.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,9 @@ const routes: Routes = [
   { path:'add-cars' , component: AddCarsComponent},
   {path: 'car-manager', component: CarManagerComponent},
   {path: 'home', component: HomeComponent},
-  { path: 'edit-car/:id', component: EditCarsComponent }
+  { path: 'edit-car/:id', component: EditCarsComponent },
+  {path: 'payment',component:PaymentComponent},
+
 ];
 
 @NgModule({

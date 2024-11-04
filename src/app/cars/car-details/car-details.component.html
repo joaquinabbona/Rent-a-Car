@@ -28,10 +28,13 @@
         <button (click)="calculateDistanceAndCarryPrice(destination.value)">Calcular acarreo</button> <!-- Función para calcular el acarreo -->
         <p>{{distance}}</p>
         <p>{{messagePrice}}</p> <!-- Muestra el total del acarreo -->
+        <button [routerLink]="['/payment']">Alquilar</button>
+
     </div>
     
     <div *ngIf="car?.isForSale">
-        <button>Comprar</button> <!-- Función para comprar el auto -->
+        <button>Comprar</button> <!-- Función para comprar el auto -->      <button [routerLink]="['/payment']">Comprar</button>
+        <button [routerLink]="['/payment']">Comprar</button>
     </div>
     
 

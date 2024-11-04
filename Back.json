@@ -1,7 +1,7 @@
 {
   "cars": [
     {
-      "id": 1,
+      "id": "1",
       "brand": "Ford",
       "model": "Ranger",
       "type": "Pick-Up",
@@ -13,7 +13,7 @@
       "imageUrl": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "brand": "Ford",
       "model": "Mondeo",
       "type": "Sedan",
@@ -25,7 +25,7 @@
       "imageUrl": "/assets/images/Mondeo.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "brand": "Ford",
       "model": "Transit",
       "type": "Utilitario",
@@ -37,7 +37,7 @@
       "imageUrl": "https://example.com/images/ford-transit.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "brand": "Volkswagen",
       "model": "Amarok",
       "type": "Pick-Up",
@@ -49,7 +49,7 @@
       "imageUrl": "https://example.com/images/vw-amarok.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "brand": "Volkswagen",
       "model": "Vento",
       "type": "Sedan",
@@ -61,7 +61,7 @@
       "imageUrl": "https://example.com/images/vw-vento.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "brand": "Volkswagen",
       "model": "Tiguan",
       "type": "SUV",
@@ -73,7 +73,7 @@
       "imageUrl": "https://example.com/images/vw-tiguan.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "brand": "Fiat",
       "model": "Toro",
       "type": "Pick-Up",
@@ -85,7 +85,7 @@
       "imageUrl": "https://example.com/images/fiat-toro.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "brand": "Fiat",
       "model": "Cronos",
       "type": "Sedan",
@@ -97,7 +97,7 @@
       "imageUrl": "https://example.com/images/fiat-cronos.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "brand": "Peugeot",
       "model": "208",
       "type": "Hatchback",
@@ -109,7 +109,7 @@
       "imageUrl": "https://example.com/images/peugeot-208.jpg"
     },
     {
-      "id": 10,
+      "id": "10",
       "brand": "Peugeot",
       "model": "Partner",
       "type": "Hatchback",
@@ -121,7 +121,7 @@
       "imageUrl": "https://example.com/images/peugeot-partner.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "brand": "Chevrolet",
       "model": "S10",
       "type": "Pick-Up",
@@ -133,7 +133,7 @@
       "imageUrl": "https://example.com/images/chevrolet-s10.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "brand": "Chevrolet",
       "model": "Cruze",
       "type": "Hatchback",
@@ -145,7 +145,7 @@
       "imageUrl": "https://example.com/images/chevrolet-cruze.jpg"
     },
     {
-      "id": 13,
+      "id": "13",
       "brand": "Nissan",
       "model": "Frontier",
       "type": "Pick-Up",
@@ -157,7 +157,7 @@
       "imageUrl": "https://example.com/images/nissan-frontier.jpg"
     },
     {
-      "id": 14,
+      "id": "14",
       "brand": "Nissan",
       "model": "Tiida",
       "type": "Sedan",
@@ -169,7 +169,7 @@
       "imageUrl": "https://example.com/images/nissan-tiida.jpg"
     },
     {
-      "id": 15,
+      "id": "15",
       "brand": "Toyota",
       "model": "Hilux",
       "type": "Pick-Up",
@@ -181,7 +181,7 @@
       "imageUrl": "https://example.com/images/toyota-hilux.jpg"
     },
     {
-      "id": 16,
+      "id": "16",
       "brand": "Toyota",
       "model": "Etios",
       "type": "Hatchback",
@@ -193,7 +193,7 @@
       "imageUrl": "https://example.com/images/toyota-etios.jpg"
     },
     {
-      "id": 17,
+      "id": "17",
       "brand": "Toyota",
       "model": "Corolla",
       "type": "Sedan",
@@ -205,7 +205,7 @@
       "imageUrl": "https://example.com/images/toyota-corolla.jpg"
     },
     {
-      "id": 18,
+      "id": "18",
       "brand": "Toyota",
       "model": "Corolla-Cross",
       "type": "SUV",
@@ -217,7 +217,7 @@
       "imageUrl": "https://example.com/images/toyota-corolla-cross.jpg"
     },
     {
-      "id": 19,
+      "id": "19",
       "brand": "Renault",
       "model": "Sandero",
       "type": "Hatchback",
@@ -229,7 +229,7 @@
       "imageUrl": "https://example.com/images/renault-sandero.jpg"
     },
     {
-      "id": 20,
+      "id": "20",
       "brand": "Renault",
       "model": "Duster",
       "type": "SUV",
@@ -241,7 +241,7 @@
       "imageUrl": "https://example.com/images/renault-duster.jpg"
     },
     {
-      "id": 21,
+      "id": "21",
       "brand": "Renault",
       "model": "Kangoo",
       "type": "Utilitario",
@@ -253,7 +253,7 @@
       "imageUrl": "https://example.com/images/renault-kangoo.jpg"
     },
     {
-      "id": 22,
+      "id": "22",
       "brand": "Fiat",
       "model": "Linea",
       "type": "Sedan",
@@ -265,7 +265,7 @@
       "imageUrl": "https://example.com/images/fiat-linea.jpg"
     },
     {
-      "id": 23,
+      "id": "23",
       "brand": "Jeep",
       "model": "Wrangler",
       "type": "Pick-Up",
@@ -277,7 +277,7 @@
       "imageUrl": "https://example.com/images/jeep-wrangler.jpg"
     },
     {
-      "id": 24,
+      "id": "24",
       "brand": "Dodge",
       "model": "Caravan",
       "type": "Familiar",
@@ -289,7 +289,7 @@
       "imageUrl": "https://example.com/images/dodge-caravan.jpg"
     },
     {
-      "id": 25,
+      "id": "25",
       "brand": "Jeep",
       "model": "Grand Cheeroke",
       "type": "SUV",
@@ -301,7 +301,7 @@
       "imageUrl": "https://example.com/images/jeep-grand-cherokee.jpg"
     },
     {
-      "id": 26,
+      "id": "26",
       "brand": "Fiat",
       "model": "Argo",
       "type": "Hatchback",
@@ -313,7 +313,7 @@
       "imageUrl": "https://example.com/images/fiat-argo.jpg"
     },
     {
-      "id": 27,
+      "id": "27",
       "brand": "Subaru",
       "model": "Impreza",
       "type": "Hatchback",
@@ -325,7 +325,7 @@
       "imageUrl": "assets/images/Subaru Impreza 2012.jpg"
     },
     {
-      "id": 28,
+      "id": "28",
       "brand": "Honda",
       "model": "Civic",
       "price": 34000,
@@ -337,7 +337,7 @@
       "imageUrl": ""
     },
     {
-      "id": 29,
+      "id": "29",
       "brand": "Fiat",
       "model": "Mobi",
       "type": "Hatchback",
@@ -347,11 +347,23 @@
       "isForSale": true,
       "available": true,
       "imageUrl": ""
+    },
+    {
+      "id": 0,
+      "brand": "AAAAASSSSS",
+      "model": "AAAKSKS",
+      "type": "AAAAA",
+      "price": 5154561,
+      "year": 2024,
+      "description": "dasdasdasda",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": ""
     }
   ],
   "clients": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Juan",
       "lastName": "Pérez",
       "email": "juan.perez@example.com",
@@ -361,7 +373,7 @@
       "dateOfBirth": "1990-05-15"
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Ana",
       "lastName": "Gómez",
       "email": "ana.gomez@example.com",
@@ -378,7 +390,7 @@
       "phone": "+5492236015427",
       "address": "Alvarado 1487",
       "dateOfBirth": "1999-12-28",
-      "id": 3
+      "id": "3"
     }
   ]
 }
