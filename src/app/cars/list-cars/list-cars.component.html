@@ -1,9 +1,34 @@
 <p>list-cars works!</p>
 <div>
+    <!-- Formulario de filtros -->
+    <form (submit)="applyFilters()">
+        <label for="brand">Marca:</label>
+        <select id="brand" [(ngModel)]="filters.brand" name="brand">
+            <option value="">Todos</option>
+            <option *ngFor="let brand of uniqueBrands" [value]="brand">{{ brand }}</option>
+        </select>
+
+        <label for="year">Año:</label>
+        <select id="year" [(ngModel)]="filters.year" name="year">
+            <option value="">Todos</option>
+            <option *ngFor="let year of uniqueYears" [value]="year">{{ year }}</option>
+        </select>
+
+        <label for="type">Tipo:</label>
+        <select id="type" [(ngModel)]="filters.type" name="type">
+            <option value="">Todos</option>
+            <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
+        </select>
+
+        <button type="submit">Filtrar</button>
+        <button type="button" (click)="clearFilters()">Limpiar Filtros</button>
+    </form>
+
+    <!-- Lista de carros -->
     <ul>
-        <li *ngFor="let car of carService.cars">
+        <li *ngFor="let car of filteredCars">
             <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" style="width: 200px; height: 200px;">
             <button [routerLink]="['/car-details', car.id]">Ver</button>
         </li>
-    </ul>   
+    </ul>
 </div>

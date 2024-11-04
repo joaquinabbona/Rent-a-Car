@@ -316,12 +316,37 @@
       "id": 27,
       "brand": "Subaru",
       "model": "Impreza",
+      "type": "Hatchback",
       "price": 20000000,
       "year": 2012,
       "description": "4x4 solo para entendidos",
       "isForSale": true,
       "available": true,
       "imageUrl": "assets/images/Subaru Impreza 2012.jpg"
+    },
+    {
+      "id": 28,
+      "brand": "Honda",
+      "model": "Civic",
+      "price": 34000,
+      "type": "Sedan",
+      "year": 2014,
+      "description": "Gran sedan",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": ""
+    },
+    {
+      "id": 29,
+      "brand": "Fiat",
+      "model": "Mobi",
+      "type": "Hatchback",
+      "price": 2000,
+      "year": 2024,
+      "description": "Como primer auto, ideal!",
+      "isForSale": true,
+      "available": true,
+      "imageUrl": ""
     }
   ],
   "clients": [
