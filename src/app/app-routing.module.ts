@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'edit-car/:id', component: EditCarsComponent },
   {path: 'payment',component:PaymentComponent},
-  {path: 'client-login',component:ClientLoginComponent}
+  {path: 'login',component:ClientLoginComponent}
 
 ];
 
