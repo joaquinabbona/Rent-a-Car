@@ -18,7 +18,10 @@ export class PaymentComponent implements OnInit {
     private fb: FormBuilder,
   ){
     this.paymentForm = this.fb.group({
-      fullName : ['Nombre Completo', Validators.required]
+      fullName : ['Nombre Completo', Validators.required],
+      dni : ['', Validators.required, Validators.minLength(7)],
+      currency : ['',Validators.required],
+      
     })
   }
 
