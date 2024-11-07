@@ -30,7 +30,7 @@
       "model": "Transit",
       "type": "Utilitario",
       "price": 32000,
-      "year": 2023,
+      "year": 2021,
       "description": "Versátil utilitario Ford Transit para necesidades comerciales",
       "isForSale": true,
       "available": true,
@@ -349,7 +349,7 @@
       "imageUrl": ""
     },
     {
-      "id": 0,
+      "id": "30",
       "brand": "AAAAASSSSS",
       "model": "AAAKSKS",
       "type": "AAAAA",
