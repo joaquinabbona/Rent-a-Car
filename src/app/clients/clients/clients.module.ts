@@ -8,13 +8,15 @@ import { ClientListComponent } from './components/client-list/client-list.compon
 import { ClientAddComponent } from './components/client-add/client-add.component';
 import { ClientEditComponent } from './components/client-edit/client-edit.component';
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
+import { ClientLoginComponent } from './components/client-login/client-login.component';
 
 @NgModule({
   declarations: [
     ClientListComponent,
     ClientAddComponent,
     ClientEditComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    ClientLoginComponent
   ],
   imports: [
     CommonModule,
