@@ -8,6 +8,7 @@ import { CarManagerComponent } from './cars/car-manager/car-manager.component';
 import { HomeComponent } from './home/home/home.component';
 import { EditCarsComponent } from './cars/edit-cars/edit-cars.component';
 import { PaymentComponent } from './cars/payment/payment.component';
+import {ClientLoginComponent} from './clients/clients/components/client-login/client-login.component'
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'edit-car/:id', component: EditCarsComponent },
   {path: 'payment',component:PaymentComponent},
+  {path: 'login',component:ClientLoginComponent}
 
 
 ];

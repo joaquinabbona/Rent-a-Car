@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+  <label for="email">Email</label>
+  <input id="email" formControlName="email" type="text" />
+
+  <label for="password">Contraseña</label>
+  <input id="password" formControlName="password" type="password" />
+
+  <button type="submit">Ingresar</button>
+</form>
+
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
