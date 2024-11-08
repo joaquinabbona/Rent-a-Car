@@ -363,14 +363,13 @@
   ],
   "clients": [
     {
-      "id": "1",
-      "firstName": "Juan",
-      "lastName": "Pérez",
+      "firstName": "Juands",
+      "lastName": "Pérez22",
       "email": "juan.perez@example.com",
-      "password": "password123",
-      "tel": "+5491123456789",
+      "phone": "2",
       "address": "Av. Siempre Viva 742",
-      "dateOfBirth": "1990-05-15"
+      "dateOfBirth": "1990-05-15",
+      "id": "1"
     },
     {
       "id": "2",
@@ -383,14 +382,14 @@
       "dateOfBirth": "1985-10-20"
     },
     {
+      "id": "3",
       "firstName": "Juan",
       "lastName": "Unanue",
       "email": "juanunanue@gmail.com",
       "password": "pepito",
       "phone": "+5492236015427",
       "address": "Alvarado 1487",
-      "dateOfBirth": "1999-12-28",
-      "id": "3"
+      "dateOfBirth": "1999-12-28"
     },
     {
       "id": "4",
@@ -401,6 +400,16 @@
       "phone": "123123131",
       "address": "asddasd",
       "dateOfBirth": "2004-03-11"
+    },
+    {
+      "id": 5,
+      "firstName": "GGG",
+      "lastName": "AAA",
+      "email": "gasasg@fgaas.com",
+      "password": "123456",
+      "phone": "dasds",
+      "address": "dasdas",
+      "dateOfBirth": "1995-01-03"
     }
   ]
 }
