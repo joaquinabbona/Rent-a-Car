@@ -10,14 +10,12 @@ import { ClientsModule } from './clients/clients/clients.module';
 import { HomeComponent } from './home/home/home.component';
 import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
-import { AdminInicioComponent } from './admin/admin-inicio/admin-inicio.component';
-
+import { AdminModule } from './admin/module/admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientsManagerComponent,
-    AdminInicioComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +24,8 @@ import { AdminInicioComponent } from './admin/admin-inicio/admin-inicio.componen
     CarsModule,
     RouterModule,
     ClientsModule,
-    HomeModule
+    HomeModule,
+    AdminModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

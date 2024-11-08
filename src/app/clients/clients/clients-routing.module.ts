@@ -4,12 +4,14 @@ import { ClientListComponent } from './components/client-list/client-list.compon
 import { ClientAddComponent } from './components/client-add/client-add.component';
 import { EditClientComponent } from './components/client-edit/client-edit.component';
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
+import { ClientLoginComponent } from './components/client-login/client-login/client-login.component';
 
 const routes: Routes = [
   { path: '', component: ClientListComponent },
   { path: 'add', component: ClientAddComponent },
   { path: 'edit/:id', component: EditClientComponent },
-  { path: 'detail/:id', component: ClientDetailComponent }
+  { path: 'detail/:id', component: ClientDetailComponent },
+  {path: 'login', component: ClientLoginComponent}
 ];
 
 @NgModule({
