@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Inicio de Sesión de Usuario</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" formControlName="email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" formControlName="password" required>
+              </div>
+              <div class="text-danger" *ngIf="error">{{ error }}</div>
+              <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            ¿Eres un administrador? <a routerLink="/admin/login">Inicia sesión aquí</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -10,6 +10,7 @@
           <th>Teléfono</th>
           <th>Dirección</th>
           <th>Fecha de Nacimiento</th>
+          <th>Editar Cliente</th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +22,9 @@
           <td>{{ client.tel }}</td>
           <td>{{ client.address }}</td>
           <td>{{ client.dateOfBirth | date }}</td>
+          <td><a [routerLink]="['/clients/edit', client.id]" class="btn btn-sm btn-primary">
+            Editar
+          </a></td>
         </tr>
       </tbody>
     </table>
