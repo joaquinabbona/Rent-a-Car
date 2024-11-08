@@ -7,16 +7,15 @@ import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { CarsModule } from './cars/cars.module';
 import { ClientsModule } from './clients/clients/clients.module';
-import { ClientEditComponent } from './clients/clients/components/client-edit/client-edit.component';
 import { HomeComponent } from './home/home/home.component';
 import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
-
+import { AdminModule } from './admin/module/admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsManagerComponent
+    ClientsManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +24,8 @@ import { ClientsManagerComponent } from './clients/clients-manager/clients-manag
     CarsModule,
     RouterModule,
     ClientsModule,
-    HomeModule
+    HomeModule,
+    AdminModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

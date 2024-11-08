@@ -11,6 +11,7 @@ import { PaymentComponent } from './cars/payment/payment.component';
 import {ClientLoginComponent} from './clients/clients/components/client-login/client-login.component'
 
 
+
 const routes: Routes = [
   {path: 'car-details/:id', component: CarDetailsComponent },
   {path: 'list-cars',component:ListCarsComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'edit-car/:id', component: EditCarsComponent },
   {path: 'payment',component:PaymentComponent},
   {path: 'login',component:ClientLoginComponent}
+
 
 ];
 
