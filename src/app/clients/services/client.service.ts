@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { Client } from '../interfaces/client.interface';
 
 @Injectable({
@@ -19,7 +19,13 @@ export class ClientService {
   }
 
   addClient(client: Client): Observable<Client> {
-    return this.http.post<Client>(this.apiUrl, client);
+    return this.getClients().pipe(
+      map((clients) => {
+        const nextId = clients.length > 0 ? Math.max(...clients.map(c => c.id)) + 1 : 1;
+        return { ...client, id: nextId }; 
+      }),
+      switchMap(newClient => this.http.post<Client>(this.apiUrl, newClient))
+    );
   }
 
   updateClient(id: number, client: Client): Observable<Client> {

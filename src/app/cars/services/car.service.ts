@@ -44,6 +44,9 @@ export class CarService {
     return this.http.put<Car>(url, car);
   }
 
- 
+  getCarById(id: number): Observable<Car> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Car>(url);
+  }
   
 }
