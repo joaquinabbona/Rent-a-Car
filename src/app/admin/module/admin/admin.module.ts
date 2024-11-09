@@ -5,17 +5,28 @@ import { AdminLoginComponent } from '../../components/admin-inicio/admin-inicio.
 import { AdminAddComponent } from '../../components/admin-add/admin-add.component';
 import { AdminListComponent } from '../../components/admin-list/admin-list.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { ClientsModule } from '../../../clients/clients/clients.module';
+import { AdminGestionClientesComponent } from '../../components/admin-gestion-clientes/admin-gestion-clientes.component';
+
+
+
 
 @NgModule({
   declarations: [
     AdminLoginComponent,
     AdminAddComponent,
-    AdminListComponent
+    AdminListComponent,
+    AdminGestionClientesComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AdminRoutingModule
+    AdminRoutingModule, 
+    ClientsModule
+  ],
+  exports:[
+    AdminAddComponent,
+    AdminListComponent,
   ]
 })
 export class AdminModule { }

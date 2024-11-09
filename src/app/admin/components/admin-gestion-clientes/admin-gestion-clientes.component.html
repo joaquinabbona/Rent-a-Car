@@ -1,0 +1,31 @@
+<div class="client-management">
+    <h2>Gestión de Clientes</h2>
+  
+    <!-- Botones de navegación -->
+    <div class="button-group mb-4">
+      <button 
+        (click)="showComponent('list')"
+        [class.active]="activeComponent === 'list'"
+        class="btn btn-primary me-2">
+        Listar Clientes
+      </button>
+      <button 
+        (click)="showComponent('add')"
+        [class.active]="activeComponent === 'add'"
+        class="btn btn-success">
+        Agregar Cliente
+    </button>
+    </div>
+  
+    <!-- Componentes condicionalmente mostrados -->
+    <div [ngSwitch]="activeComponent">
+      <app-list-clients *ngSwitchCase="'list'"></app-list-clients>
+      <app-client-add *ngSwitchCase="'add'"></app-client-add>
+    </div>
+  </div>
+
+  <button 
+  (click)="goBack()" 
+  class="btn btn-secondary mb-3">
+  ← Volver
+</button>

@@ -382,16 +382,6 @@
       "dateOfBirth": "1999-12-28"
     },
     {
-      "id": "4",
-      "firstName": "Ignacio Valentin",
-      "lastName": "ASD",
-      "email": "nacho2012gomez@gmail.com",
-      "password": "aaa123",
-      "phone": "123123131",
-      "address": "asddasd",
-      "dateOfBirth": "2004-03-11"
-    },
-    {
       "id": "5",
       "firstName": "GGG",
       "lastName": "AAA",
@@ -404,14 +394,7 @@
   ],
   "admin": [
     {
-      "id": 0,
-      "username": "gva",
-      "password": "123456",
-      "email": "ff@gasf.com",
-      "fullName": "Gonzalo Vazq"
-    },
-    {
-      "id": 0,
+      "id": "0",
       "username": "adsasd",
       "password": "123456",
       "email": "dsadas@g.com",

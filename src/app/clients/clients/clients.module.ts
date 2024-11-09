@@ -27,6 +27,15 @@ import { ClientDeleteComponent } from './components/client-delete/client-delete.
     ClientsRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
+  ],
+  exports: [
+    ClientListComponent,
+    ClientAddComponent,
+    EditClientComponent,
+    ClientDetailComponent,
+    ClientLoginComponent,
+    EditClientComponent,
+    ClientDeleteComponent
   ]
 })
 export class ClientsModule { }
