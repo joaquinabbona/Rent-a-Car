@@ -43,7 +43,7 @@ export class ClientAddComponent implements OnInit {
   onSubmit() {
     if (this.clientForm.valid) {
       const userData = {...this.clientForm.value};
-      delete userData.confirmPassword; // Removemos confirmPassword antes de enviar
+      delete userData.confirmPassword;
 
       this.clientService.addClient(userData).subscribe({
         next: () => {

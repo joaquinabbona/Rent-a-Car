@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h3>Lista de Administradores</h3>
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+    
+    <table class="table table-striped" *ngIf="admins.length > 0">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Nombre Completo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let admin of admins">
+          <td>{{ admin.username }}</td>
+          <td>{{ admin.email }}</td>
+          <td>{{ admin.fullName }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteAdmin(admin.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="admins.length === 0 && !error" class="alert alert-info">
+      No hay administradores para mostrar.
+    </div>
+  </div>
+  
