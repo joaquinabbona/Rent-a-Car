@@ -1,1 +1,111 @@
-<p>admin-add works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Agregar Nuevo Administrador</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+  
+              <!-- Nombre de Usuario -->
+              <div class="form-group mb-3">
+                <label for="username">Nombre de usuario</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="username" 
+                  formControlName="username" 
+                  [ngClass]="{'is-invalid': adminForm.get('username')?.invalid && adminForm.get('username')?.touched}"
+                  required
+                >
+                <div class="invalid-feedback" *ngIf="adminForm.get('username')?.errors?.['required']">
+                  El nombre de usuario es requerido.
+                </div>
+              </div>
+  
+              <!-- Contraseña -->
+              <div class="form-group mb-3">
+                <label for="password">Contraseña</label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="password" 
+                  formControlName="password"
+                  [ngClass]="{'is-invalid': adminForm.get('password')?.invalid && adminForm.get('password')?.touched}"
+                  required
+                >
+                <div class="invalid-feedback" *ngIf="adminForm.get('password')?.errors?.['required']">
+                  La contraseña es requerida.
+                </div>
+                <div class="invalid-feedback" *ngIf="adminForm.get('password')?.errors?.['minlength']">
+                  La contraseña debe tener al menos 6 caracteres.
+                </div>
+              </div>
+  
+              <!-- Confirmar Contraseña -->
+              <div class="form-group mb-3">
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="confirmPassword" 
+                  formControlName="confirmPassword"
+                  [ngClass]="{'is-invalid': adminForm.hasError('mismatch') && adminForm.get('confirmPassword')?.touched}"
+                  required
+                >
+                <div class="invalid-feedback" *ngIf="adminForm.hasError('mismatch')">
+                  Las contraseñas no coinciden.
+                </div>
+              </div>
+  
+              <!-- Email -->
+              <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  formControlName="email"
+                  [ngClass]="{'is-invalid': adminForm.get('email')?.invalid && adminForm.get('email')?.touched}"
+                  required
+                >
+                <div class="invalid-feedback" *ngIf="adminForm.get('email')?.errors?.['required']">
+                  El email es requerido.
+                </div>
+                <div class="invalid-feedback" *ngIf="adminForm.get('email')?.errors?.['email']">
+                  Ingresa un email válido.
+                </div>
+              </div>
+  
+              <!-- Nombre Completo -->
+              <div class="form-group mb-3">
+                <label for="fullName">Nombre Completo</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="fullName" 
+                  formControlName="fullName"
+                  [ngClass]="{'is-invalid': adminForm.get('fullName')?.invalid && adminForm.get('fullName')?.touched}"
+                  required
+                >
+                <div class="invalid-feedback" *ngIf="adminForm.get('fullName')?.errors?.['required']">
+                  El nombre completo es requerido.
+                </div>
+              </div>
+  
+              <!-- Mensajes de Éxito/Error -->
+              <div class="text-success" *ngIf="success">{{ success }}</div>
+              <div class="text-danger" *ngIf="error">{{ error }}</div>
+  
+              <!-- Botón de Enviar -->
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="!adminForm.valid">
+                Agregar Administrador
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

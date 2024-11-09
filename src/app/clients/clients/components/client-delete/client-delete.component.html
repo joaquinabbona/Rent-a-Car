@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>Eliminar Cliente</h2>
+      </div>
+      <div class="card-body">
+        <p *ngIf="client">
+          ¿Estás seguro de que deseas eliminar al cliente 
+          <strong>{{ client.firstName }} {{ client.lastName }}</strong>?
+        </p>
+        <p *ngIf="!client">Cargando información del cliente...</p>
+  
+        <div class="d-flex justify-content-end gap-2">
+          <button class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+          <button class="btn btn-danger" (click)="onDelete()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
