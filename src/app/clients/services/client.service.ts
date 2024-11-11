@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, switchMap } from 'rxjs';
+import { map, Observable, switchMap, tap } from 'rxjs';
 import { Client } from '../interfaces/client.interface';
 
 @Injectable({
@@ -8,13 +8,15 @@ import { Client } from '../interfaces/client.interface';
 })
 export class ClientService {
   private apiUrl = 'http://localhost:3000/clients';//ACA VA EL JSON SERVER DE CLIENTES
+  private loggedInClientId: number | null = null;
+
   constructor(private http: HttpClient) { }
 
   getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.apiUrl);
   }
 
-  getClient(id: number): Observable<Client> {
+  getClient(id: number): Observable<Client> { 
     return this.http.get<Client>(`${this.apiUrl}/${id}`);
   }
 
@@ -37,7 +39,16 @@ export class ClientService {
   }
   login(email: string, password: string): Observable<Client | null> {
     return this.http.get<Client[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
-      map((clients: string | any[]) => clients.length ? clients[0] : null)
+      map((clients) => (clients.length ? clients[0] : null)),
+      tap((client) => {
+        if (client) {
+          this.loggedInClientId = client.id; 
+        }
+      })
     );
+  }
+
+  getLoggedInClientId(): number | null {
+    return this.loggedInClientId; 
   }
 }

@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home/home.component';
 import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
 import { AdminModule } from './admin/module/admin/admin.module';
+import { ReactiveFormsModule } from '@angular/forms';  
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { AdminModule } from './admin/module/admin/admin.module';
     RouterModule,
     ClientsModule,
     HomeModule,
-    AdminModule
+    AdminModule,
+    ReactiveFormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

@@ -7,7 +7,8 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import { ListCarsComponent } from './list-cars/list-cars.component';
 import { CarManagerComponent } from './car-manager/car-manager.component';
 import { EditCarsComponent } from './edit-cars/edit-cars.component';
-import { PaymentComponent } from './payment/payment.component';
+import { PaymentComponent } from '../payment/payment/payment.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaymentComponent } from './payment/payment.component';
   imports: [
     CommonModule,
     FormsModule,    
-    RouterModule    
+    RouterModule,
+    ReactiveFormsModule    
   ],
   exports: [        
     AddCarsComponent,
