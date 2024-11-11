@@ -20,15 +20,24 @@
             <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
         </select>
 
+        <!-- Filtrado por precio -->
+        <label for="minPrice" class="form-label">Precio</label>
+        <div style="display: flex; align-items: center;">
+            <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" placeholder="Mínimo" style="width: 100px;">
+            <span style="margin: 0 10px;">-</span>
+            <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" placeholder="Máximo" style="width: 100px;">
+        </div>
+
         <button type="submit">Filtrar</button>
         <button type="button" (click)="clearFilters()">Limpiar Filtros</button>
     </form>
 
     <!-- Lista de carros -->
-    <ul>
-        <li *ngFor="let car of filteredCars">
-            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" style="width: 200px; height: 200px;">
-            <button [routerLink]="['/car-details', car.id]">Ver</button>
-        </li>
-    </ul>
+    <div class="car-list">
+        <div class="car-item" *ngFor="let car of filteredCars">
+            <h3>{{ car.brand }} {{ car.model }}</h3>
+            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="car-image">
+            <button [routerLink]="['/car-details', car.id]" class="view-button">Ver</button>
+        </div>
+    </div>
 </div>

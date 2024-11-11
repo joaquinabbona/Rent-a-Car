@@ -10,7 +10,7 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
+      "imageUrl": "https://motormagazine.com.ar/wp-content/uploads/2021/11/nueva-ford-ranger-1-e1648142779581.jpg"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "description": "Elegante sedán Ford Mondeo con acabados premium",
       "isForSale": false,
       "available": true,
-      "imageUrl": "/assets/images/Mondeo.jpg"
+      "imageUrl": "assets/images/Mondeo.jpg"
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
       "description": "Versátil utilitario Ford Transit para necesidades comerciales",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/ford-transit.jpg"
+      "imageUrl": "C:/Users/torre/OneDrive/Desktop/repo lab 4/Rent-a-Car/src/assets/images/fordTransit.jpg"
     },
     {
       "id": "4",
@@ -46,7 +46,7 @@
       "description": "Potente pick-up Volkswagen Amarok con tecnología alemana",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/vw-amarok.jpg"
+      "imageUrl": "https://drive.google.com/file/d/16lTroUgQnD3TyCFpOwJJVKOVPKi9wrt9/view"
     },
     {
       "id": "5",

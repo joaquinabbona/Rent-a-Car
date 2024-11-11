@@ -14,20 +14,20 @@ export class ListCarsComponent implements OnInit {
   filters = {
     brand: '',
     year: null,
-    type: ''
-  };
+    type: '',
+    minPrice: null,       // Valor inicial de precio mínimo
+    maxPrice: null   // Valor inicial de precio máximo
+};
 
   uniqueBrands: string[] = [];
   uniqueYears: number[] = [];
   uniqueTypes: string[] = [];
-  router: any;
   
   constructor(public carService: CarService) {}
 
   ngOnInit() {
     this.getCars();
   }
-  
 
   getCars() {
     this.carService.getCars().subscribe((data: Car[]) => {
@@ -47,15 +47,23 @@ export class ListCarsComponent implements OnInit {
   applyFilters() {
     this.filteredCars = this.cars.filter(car =>
       (!this.filters.brand || car.brand === this.filters.brand) &&
-      (this.filters.year === null || car.year === this.filters.year) &&
-      (!this.filters.type || car.type === this.filters.type)
+      (this.filters.year === null || car.year === +this.filters.year) &&  // Asegúrate de que filters.year sea número
+      (!this.filters.type || car.type === this.filters.type) &&
+      (this.filters.minPrice === null || car.price >= this.filters.minPrice) &&
+      (this.filters.maxPrice === null || car.price <= this.filters.maxPrice)
     );
   }
-
+  
+  
   clearFilters() {
-    this.filters = { brand: '', year: null, type: '' };
+    this.filters = {
+      brand: '',
+      year: null,
+      type: '',
+      minPrice: null,
+      maxPrice: null
+    };
     this.filteredCars = this.cars;
   }
-
   
 }
