@@ -214,7 +214,7 @@
       "description": "Moderna Toyota Corolla Cross con estilo SUV",
       "isForSale": true,
       "available": true,
-      "imageUrl": "assets/images/corollaCross2023.jpg"
+      "imageUrl": "assets/images/corollaCross.jpg"
     },
     {
       "id": "19",
@@ -317,7 +317,7 @@
       "brand": "Subaru",
       "model": "Impreza",
       "type": "Hatchback",
-      "price": 20000000,
+      "price": 15000,
       "year": 2012,
       "description": "4x4 solo para entendidos",
       "isForSale": true,
@@ -334,7 +334,7 @@
       "description": "Gran sedan",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
+      "imageUrl": "assets/images/civic.jpg"
     },
     {
       "id": "29",
@@ -346,20 +346,9 @@
       "description": "Como primer auto, ideal!",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
-    },
-    {
-      "id": "30",
-      "brand": "AAAAASSSSS",
-      "model": "AAAKSKS",
-      "type": "AAAAA",
-      "price": 5154561,
-      "year": 2024,
-      "description": "dasdasdasda",
-      "isForSale": true,
-      "available": true,
-      "imageUrl": ""
+      "imageUrl": "assets/images/mobi.jpg"
     }
+
   ],
   "clients": [
     {
