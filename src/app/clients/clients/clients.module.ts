@@ -10,6 +10,7 @@ import { EditClientComponent } from './components/client-edit/client-edit.compon
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { ClientDeleteComponent } from './components/client-delete/client-delete.component';
+import { ClientFirstpageComponent } from './components/client-firstpage/client-firstpage.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ClientDeleteComponent } from './components/client-delete/client-delete.
     ClientDetailComponent,
     ClientLoginComponent,
     EditClientComponent,
-    ClientDeleteComponent
+    ClientDeleteComponent,
+    ClientFirstpageComponent
   ],
   imports: [
     CommonModule,

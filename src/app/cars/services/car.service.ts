@@ -58,5 +58,8 @@ export class CarService {
     return this.carId;
   }
 
+  deleteCar(carId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${carId}`);
+  }
 
 }
