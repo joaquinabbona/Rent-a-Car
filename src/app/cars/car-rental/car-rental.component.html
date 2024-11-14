@@ -56,10 +56,15 @@
               Selecciona una sucursal.
             </div>
           </div>
-          <button type="button" (click)="calculateDistanceAndCarryPrice(carForm.get('originBranch')?.value,carForm.get('destinationBranch')?.value)">Calcular acarreo</button>
-        <p>{{ distance }}</p>
-        <p>{{ messagePrice }}</p>
-        <p>{{ totalPrice }}</p>
+          <div><button type="button" 
+            (click)="onCalculatePrice()">
+      Calcular acarreo
+    </button>
+    
+    <p>{{ distance }}</p>  
+    <p>{{ messagePrice }}</p>  
+    <p>{{ daysMessage }}</p> 
+    <p>{{ auxTotalPrice }}</p>  </div>
         
         <button type="submit" class="btn btn-primary">Confirmar</button>
       </form>
