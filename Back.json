@@ -10,7 +10,7 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "available": true,
-      "imageUrl": "assets/images/images.jpg"
+      "imageUrl": ""
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "description": "Elegante sedán Ford Mondeo con acabados premium",
       "isForSale": false,
       "available": true,
-      "imageUrl": "/assets/images/Mondeo.jpg"
+      "imageUrl": "assets/images/Mondeo.jpg"
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
       "description": "Versátil utilitario Ford Transit para necesidades comerciales",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/ford-transit.jpg"
+      "imageUrl": "assets/images/fordTransit.jpg"
     },
     {
       "id": "4",
@@ -46,7 +46,7 @@
       "description": "Potente pick-up Volkswagen Amarok con tecnología alemana",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/vw-amarok.jpg"
+      "imageUrl": "assets/images/Amarok2023.jpg"
     },
     {
       "id": "5",
@@ -58,7 +58,7 @@
       "description": "Confortable sedán Volkswagen Vento con excelente rendimiento",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/vw-vento.jpg"
+      "imageUrl": "assets/images/Vento2023.jpg"
     },
     {
       "id": "6",
@@ -70,7 +70,7 @@
       "description": "SUV Volkswagen Tiguan con diseño moderno y amplio espacio",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/vw-tiguan.jpg"
+      "imageUrl": "assets/images/Tiguan2023.jpg"
     },
     {
       "id": "7",
@@ -82,7 +82,7 @@
       "description": "Pick-up Fiat Toro con diseño innovador y confort superior",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/fiat-toro.jpg"
+      "imageUrl": "assets/images/Toro2023.jpg"
     },
     {
       "id": "8",
@@ -94,7 +94,7 @@
       "description": "Sedán Fiat Cronos con estilo italiano y economía",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/fiat-cronos.jpg"
+      "imageUrl": "assets/images/Cronos2023.jpg"
     },
     {
       "id": "9",
@@ -106,7 +106,7 @@
       "description": "Dinámico Peugeot 208 con diseño juvenil y tecnología avanzada",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/peugeot-208.jpg"
+      "imageUrl": "assets/images/208.2023.jpg"
     },
     {
       "id": "10",
@@ -118,7 +118,7 @@
       "description": "Práctica Peugeot Partner ideal para uso familiar y comercial",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/peugeot-partner.jpg"
+      "imageUrl": "assets/images/Partner2023.jpg"
     },
     {
       "id": "11",
@@ -130,7 +130,7 @@
       "description": "Robusta pick-up Chevrolet S10 con capacidad de carga superior",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/chevrolet-s10.jpg"
+      "imageUrl": "assets/images/S10.2023.jpg"
     },
     {
       "id": "12",
@@ -142,7 +142,7 @@
       "description": "Deportivo Chevrolet Cruze con excelente rendimiento",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/chevrolet-cruze.jpg"
+      "imageUrl": "assets/images/Cruze2023.jpg"
     },
     {
       "id": "13",
@@ -154,7 +154,7 @@
       "description": "Resistente pick-up Nissan Frontier para todo terreno",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/nissan-frontier.jpg"
+      "imageUrl": "assets/images/Frontier2023.jpg"
     },
     {
       "id": "14",
@@ -166,7 +166,7 @@
       "description": "Confortable Nissan Tiida con gran espacio interior",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/nissan-tiida.jpg"
+      "imageUrl": "assets/images/tilda2023.jpg"
     },
     {
       "id": "15",
@@ -178,7 +178,7 @@
       "description": "Legendaria Toyota Hilux con durabilidad comprobada",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/toyota-hilux.jpg"
+      "imageUrl": "assets/images/hilux2023.jpg"
     },
     {
       "id": "16",
@@ -190,7 +190,7 @@
       "description": "Económico Toyota Etios ideal para ciudad",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/toyota-etios.jpg"
+      "imageUrl": "assets/images/etios2023.jpg"
     },
     {
       "id": "17",
@@ -202,7 +202,7 @@
       "description": "Clásico Toyota Corolla con tecnología híbrida",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/toyota-corolla.jpg"
+      "imageUrl": "assets/images/corolla2023.jpg"
     },
     {
       "id": "18",
@@ -214,7 +214,7 @@
       "description": "Moderna Toyota Corolla Cross con estilo SUV",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/toyota-corolla-cross.jpg"
+      "imageUrl": "assets/images/corollaCross.jpg"
     },
     {
       "id": "19",
@@ -226,7 +226,7 @@
       "description": "Versátil Renault Sandero con gran relación calidad-precio",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/renault-sandero.jpg"
+      "imageUrl": "assets/images/sandero.jpg"
     },
     {
       "id": "20",
@@ -238,7 +238,7 @@
       "description": "Aventurero Renault Duster con capacidades off-road",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/renault-duster.jpg"
+      "imageUrl": "assets/images/duster.jpg"
     },
     {
       "id": "21",
@@ -250,7 +250,7 @@
       "description": "Práctica Renault Kangoo para uso comercial",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/renault-kangoo.jpg"
+      "imageUrl": "assets/images/kangoo.jpg"
     },
     {
       "id": "22",
@@ -262,7 +262,7 @@
       "description": "Elegante Fiat Linea con acabados refinados",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/fiat-linea.jpg"
+      "imageUrl": "assets/images/linea.jpg"
     },
     {
       "id": "23",
@@ -274,7 +274,7 @@
       "description": "Icónico Jeep Wrangler para aventuras extremas",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/jeep-wrangler.jpg"
+      "imageUrl": "assets/images/wrangler.jpg"
     },
     {
       "id": "24",
@@ -286,7 +286,7 @@
       "description": "Espaciosa Dodge Caravan para toda la familia",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/dodge-caravan.jpg"
+      "imageUrl": "assets/images/caravan.jpg"
     },
     {
       "id": "25",
@@ -298,7 +298,7 @@
       "description": "Lujosa Jeep Grand Cherokee con máximo confort",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/jeep-grand-cherokee.jpg"
+      "imageUrl": "assets/images/grandCherokee.jpg"
     },
     {
       "id": "26",
@@ -310,14 +310,14 @@
       "description": "Moderno Fiat Argo con diseño deportivo",
       "isForSale": true,
       "available": true,
-      "imageUrl": "https://example.com/images/fiat-argo.jpg"
+      "imageUrl": "assets/images/argo.jpg"
     },
     {
       "id": "27",
       "brand": "Subaru",
       "model": "Impreza",
       "type": "Hatchback",
-      "price": 20000000,
+      "price": 15000,
       "year": 2012,
       "description": "4x4 solo para entendidos",
       "isForSale": true,
@@ -334,7 +334,7 @@
       "description": "Gran sedan",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
+      "imageUrl": "assets/images/civic.jpg"
     },
     {
       "id": "29",
@@ -346,7 +346,7 @@
       "description": "Como primer auto, ideal!",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
+      "imageUrl": "assets/images/mobi.jpg"
     }
   ],
   "clients": [
