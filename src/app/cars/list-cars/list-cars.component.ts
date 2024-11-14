@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../services/car.service';
-import { Car } from '../car';
+import { Car } from '../models/car';
 
 @Component({
   selector: 'app-list-vehicles',
@@ -15,8 +15,8 @@ export class ListCarsComponent implements OnInit {
     brand: '',
     year: null,
     type: '',
-    minPrice: null, // Valor inicial de precio mínimo
-    maxPrice: null  // Valor inicial de precio máximo
+    minPrice: null,
+    maxPrice: null
   };
 
   uniqueBrands: string[] = [];
@@ -44,34 +44,25 @@ export class ListCarsComponent implements OnInit {
   }
 
   adjustPrices(type: 'min' | 'max') {
-    let minPrice = this.filters.minPrice ?? 0; // Usar 0 temporalmente para la comparación si es null
-    let maxPrice = this.filters.maxPrice ?? 0; // Usar 0 temporalmente para la comparación si es null
-  
-    // Asegura que maxPrice sea igual o mayor a minPrice
     if (type === 'min' && this.filters.minPrice !== null && this.filters.maxPrice !== null && this.filters.minPrice > this.filters.maxPrice) {
       this.filters.maxPrice = this.filters.minPrice;
     }
-  
+
     if (type === 'max' && this.filters.minPrice !== null && this.filters.maxPrice !== null && this.filters.maxPrice < this.filters.minPrice) {
       this.filters.minPrice = this.filters.maxPrice;
     }
   }
   
-  
-  
   applyFilters() {
     this.filteredCars = this.cars.filter(car =>
       (!this.filters.brand || car.brand === this.filters.brand) &&
-      (!this.filters.year || this.filters.year === 'Todos' || car.year === +this.filters.year) &&
-      (!this.filters.type || this.filters.type === 'Todos' || car.type === this.filters.type) &&
+      (!this.filters.year || car.year === +this.filters.year) &&
+      (!this.filters.type || car.type === this.filters.type) &&
       (this.filters.minPrice === null || car.price >= this.filters.minPrice) &&
       (this.filters.maxPrice === null || car.price <= this.filters.maxPrice)
     );
   }
-  
-  
-  
-  
+
   clearFilters() {
     this.filters = {
       brand: '',
