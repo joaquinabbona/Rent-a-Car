@@ -1,41 +1,32 @@
 <div class="carDetails">
-    <h1 style="text-align: center;">{{ car?.brand }} {{ car?.model }} {{ car?.year }}</h1>
-    <img [src]="car?.imageUrl" alt="Imagen del auto" class="car-image" style="width: 200px; height: 200px;">
-    <p><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
-    <button [routerLink]="['/edit-car', this.car?.id]">Editar</button>
-    <p>Descripción: {{ car?.description }}</p>
-    <p>Sucursal: Mar del Plata</p> <!-- Aquí se puede usar {{ car?.sucursal }} cuando esté disponible -->
-    
-    <div *ngIf="!car?.isForSale">
-        <label>Fechas de alquiler</label>
-        <input type="date" [(ngModel)]="rentalStartDate">
-        <input type="date" [(ngModel)]="rentalEndDate">
-        <button>Ver disponibilidad</button> <!-- Función para verificar la disponibilidad -->
+  <h1>{{ car?.brand }} {{ car?.model }} {{ car?.year }}</h1>
+  <img [src]="car?.imageUrl" alt="Imagen del auto" class="car-image" style="width: 200px; height: 200px;">
+  <p><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
+  <p>Descripción: {{ car?.description }}</p>
+  <p>Sucursal: Mar del Plata</p>
 
-        <br><br>
+  <div *ngIf="!car?.isForSale">
+    <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit()">
+      <label>Fechas de alquiler</label>
+      <input type="date" formControlName="rentalStartDate">
+      <input type="date" formControlName="rentalEndDate">
 
-        <label>En qué sucursal va a dejar el auto</label> <!--Este select lo voy a hacer distinto pq si agregamos sucursales no se va a ver en este select-->
-        <select name="sucursales" id="sucursales" #destination>
-            <option value="Mar del Plata">Mar del Plata</option>
-            <option value="CABA">CABA</option>
-            <option value="Rosario">Rosario</option>
-            <option value="Cordoba Capital">Córdoba Capital</option>
-            <option value="San miguel de Tucuman">San miguel de Tucuman</option>
-            <option value="Salta Salta">Salta Capital</option>
-            <option value="Corrientes Corrientes">Corrientes Capital</option>
-            <option value="Bahía Blannca">Bahía Blanca</option>
-        </select>
-        <button (click)="calculateDistanceAndCarryPrice(destination.value)">Calcular acarreo</button> <!-- Función para calcular el acarreo -->
-        <p>{{distance}}</p>
-        <p>{{messagePrice}}</p> <!-- Muestra el total del acarreo -->
-        <button [routerLink]="['/payment']">Alquilar</button>
+      <label>En qué sucursal va a dejar el auto</label>
+      <select formControlName="destination">
+        <option value="Mar del Plata">Mar del Plata</option>
+        <option value="CABA">CABA</option>
+        <option value="Rosario">Rosario</option>
+        <option value="Cordoba Capital">Córdoba Capital</option>
+      </select>
+      <button type="button" (click)="calculateDistanceAndCarryPrice(carForm.get('destination')?.value)">Calcular acarreo</button>
+      <p>{{ distance }}</p>
+      <p>{{ messagePrice }}</p>
 
-    </div>
-    
-    <div *ngIf="car?.isForSale">
-        <button [routerLink]="['/payment']">Comprar</button>
-    </div>
-    
+      <button type="submit">Alquilar</button>
+    </form>
+  </div>
 
-
+  <div *ngIf="car?.isForSale">
+    <button (click)="ngOnSubmit()">Comprar</button>
+  </div>
 </div>
