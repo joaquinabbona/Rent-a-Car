@@ -23,7 +23,13 @@ export class CarRentalComponent implements OnInit {
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
-  totalPrice: string='';
+  daysMessage: string='';
+  auxTotalPrice: string='';
+  totalPrice: number=0;
+  car: any;
+  clientService: any;
+  route: any;
+  paymentService: any;
 
   constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService) {
     this.carForm = this.fb.group({
@@ -48,7 +54,21 @@ export class CarRentalComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    if(!this.car?.isForSale){
+      const rental: Rental={
+        clientId: this.clientService.getLoggedInClientId()!,
+        carId: Number(this.route.snapshot.paramMap.get('id')),
+        rentalStartDate : this.carForm.get('rentalStartDate')?.value,
+        rentalEndDate : this.carForm.get('rentalEndDate')?.value,
+        price: this.car ? this.car.price + this.carryPrice : this.carryPrice,
+        originBranch: this.carForm.get('originBranch')?.value,
+        destinationBranch: this.carForm.get('destinationBranch')?.value
+      } 
+      this.paymentService.saveRentalData(rental);
+      console.log(rental);
+
+      }
+      this.route.navigate(['/payment',this.car?.id]);
   }
 
   calculateDistanceAndCarryPrice(origins: string, destination: string): Observable<number> {
@@ -57,7 +77,7 @@ export class CarRentalComponent implements OnInit {
         const dist = response.rows[0].elements[0].distance.text;
         this.distance = `La distancia total es ${dist}`;
   
-        // Calcular el precio del acarreo
+        
         if (origins === destination) {
           this.carryPrice = 0;
         } else {
@@ -66,7 +86,7 @@ export class CarRentalComponent implements OnInit {
   
         this.messagePrice = `El precio del acarreo es de $${this.carryPrice.toLocaleString()}`;
   
-        // Calcular el precio total del alquiler
+        
         const rentalStartDate = this.carForm.get('rentalStartDate')?.value;
         const rentalEndDate = this.carForm.get('rentalEndDate')?.value;
   
@@ -81,12 +101,15 @@ export class CarRentalComponent implements OnInit {
           const numDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
   
           const rentalPrice = this.carryPrice + (numDays * 10000); 
-          this.totalPrice = `El precio total del alquiler es de $${rentalPrice.toLocaleString()}`;
+
+          this.daysMessage = `Dias seleccionados: `+ numDays;
+
+          this.auxTotalPrice = `El precio total del alquiler es de $${rentalPrice.toLocaleString()}`;
   
           observer.next(rentalPrice);  // Emitir el precio total calculado
           observer.complete();
         } else {
-          this.totalPrice = '';
+          this.totalPrice = 0;
           observer.next(0);  // Si no hay fechas, se devuelve 0 como precio
           observer.complete();
         }
@@ -102,7 +125,7 @@ export class CarRentalComponent implements OnInit {
       console.log('Precio total calculado:', totalPrice);
   
       
-      this.totalPrice = `El precio total del alquiler es de $${totalPrice.toLocaleString()}`;
+      this.totalPrice = totalPrice;
     });
   }
   
