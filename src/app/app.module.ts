@@ -11,14 +11,14 @@ import { HomeComponent } from './home/home/home.component';
 import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
 import { AdminModule } from './admin/module/admin/admin.module';
-import { ReactiveFormsModule } from '@angular/forms';  
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientsManagerComponent,
+    AdminFirstpageComponent,
+
   ],
   imports: [
     BrowserModule,

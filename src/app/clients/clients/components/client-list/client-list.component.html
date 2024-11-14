@@ -11,6 +11,7 @@
           <th>Dirección</th>
           <th>Fecha de Nacimiento</th>
           <th>Editar Cliente</th>
+          <th>Eliminar Cliente</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,9 @@
           <td>{{ client.dateOfBirth | date }}</td>
           <td><a [routerLink]="['/clients/edit', client.id]" class="btn btn-sm btn-primary">
             Editar
+          </a></td>
+          <td><a [routerLink]="['/clients/delete', client.id]" class="btn btn-sm btn-primary">
+            Eliminar
           </a></td>
         </tr>
       </tbody>

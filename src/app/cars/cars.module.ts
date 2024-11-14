@@ -28,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [        
     AddCarsComponent,
     ListCarsComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    CarManagerComponent
   ]
 })
 export class CarsModule { 
