@@ -11,7 +11,7 @@ import { ClientDetailComponent } from './components/client-detail/client-detail.
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { ClientDeleteComponent } from './components/client-delete/client-delete.component';
 import { ClientFirstpageComponent } from './components/client-firstpage/client-firstpage.component';
-
+import { CarsModule } from '../../cars/cars.module';
 
 @NgModule({
   declarations: [
@@ -22,13 +22,14 @@ import { ClientFirstpageComponent } from './components/client-firstpage/client-f
     ClientLoginComponent,
     EditClientComponent,
     ClientDeleteComponent,
-    ClientFirstpageComponent
+    ClientFirstpageComponent, 
   ],
   imports: [
     CommonModule,
     ClientsRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarsModule
   ],
   exports: [
     ClientListComponent,

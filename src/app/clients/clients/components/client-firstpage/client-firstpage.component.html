@@ -1,1 +1,25 @@
-<p>client-firstpage works!</p>
+<div class="button-group mb-4">
+    <button 
+      (click)="showComponent('listar-vehiculos')"
+      [class.active]="activeComponent === 'listar-vehiculos'"
+      class="btn btn-primary me-2">
+      Listar Vehiculos
+    </button>
+    <button 
+    (click)="showComponent('editar-usuario')"
+    [class.active]="activeComponent === 'editar-usuario'"
+    class="btn btn-primary me-2">
+    Editar mi Usuario
+  </button>
+    </div>
+    <div [ngSwitch]="activeComponent">
+        <app-list-vehicles *ngSwitchCase="'listar-vehiculos'"></app-list-vehicles>
+        <app-edit-client *ngSwitchCase="'editar-usuario'"></app-edit-client>
+          </div>
+
+  
+    <button 
+    (click)="goBack()" 
+    class="btn btn-secondary mb-3">
+    ← Volver
+  </button>
