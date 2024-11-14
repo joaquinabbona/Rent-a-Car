@@ -44,4 +44,41 @@
   .view-button:hover {
     background-color: #0056b3;
   }
-  
+  /* Contenedor de filtros en una sola línea con espaciado */
+.filters-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px; /* Espacio entre cada elemento */
+}
+
+.filters-form label,
+.filters-form select,
+.filters-form input,
+.filters-form button {
+  margin: 0; /* Eliminar márgenes adicionales */
+  padding: 5px; /* Ajustar padding para que sea uniforme */
+}
+
+.filters-form input[type="number"] {
+  width: 100px; /* Ajusta el ancho de los inputs de precio */
+}
+
+.filters-form button {
+  padding: 5px 10px;
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 60px; /* Aumenta el margen superior para colocarlo más abajo */
+  padding: 10px 20px;
+  border: 2px solid #f5b8d4;
+  border-radius: 10px;
+  background-color: #ffeaf3;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+

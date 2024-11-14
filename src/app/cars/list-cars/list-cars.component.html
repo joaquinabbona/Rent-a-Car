@@ -1,7 +1,7 @@
 <p>list-cars works!</p>
 <div>
     <!-- Formulario de filtros -->
-    <form (submit)="applyFilters()">
+    <form (submit)="applyFilters()" class="filters-form">
         <label for="brand">Marca:</label>
         <select id="brand" [(ngModel)]="filters.brand" name="brand">
             <option value="">Todos</option>
@@ -22,18 +22,21 @@
 
         <!-- Filtrado por precio -->
         <label for="minPrice" class="form-label">Precio</label>
-        <div style="display: flex; align-items: center;">
-            <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" placeholder="Mínimo" style="width: 100px;">
-            <span style="margin: 0 10px;">-</span>
-            <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" placeholder="Máximo" style="width: 100px;">
-        </div>
+        <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" placeholder="Mínimo" min="0" (change)="adjustPrices('min')">
+        <span>-</span>
+        <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" placeholder="Máximo" min="0" (change)="adjustPrices('max')">
 
         <button type="submit">Filtrar</button>
         <button type="button" (click)="clearFilters()">Limpiar Filtros</button>
     </form>
 
+    <!-- Mensaje cuando no hay resultados -->
+    <div *ngIf="filteredCars.length === 0" class="no-results-message">
+        Por el momento no contamos con vehículos de esas características.
+    </div>
+
     <!-- Lista de carros -->
-    <div class="car-list">
+    <div *ngIf="filteredCars.length > 0" class="car-list">
         <div class="car-item" *ngFor="let car of filteredCars">
             <h3>{{ car.brand }} {{ car.model }}</h3>
             <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="car-image">
