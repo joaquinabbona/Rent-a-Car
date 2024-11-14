@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarsModule } from '../cars.module';
 import { CarService } from '../services/car.service';
 import { Car } from '../models/car';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DistanceCalculatorService } from '../services/distance-calculator.service';
 import { ClientService } from '../../clients/services/client.service';
@@ -15,91 +15,47 @@ import { Purchase } from '../models/purchase';
   templateUrl: './car-rental.component.html',
   styleUrl: './car-rental.component.css'
 })
-export class CarRentalComponent {
-
+export class CarRentalComponent implements OnInit {
   carForm: FormGroup;
-  car: Car | null = null;
-  rentalStartDate: Date | null = null;
-  rentalEndDate: Date | null = null
+  branches = ['Mar del Plata', 'Córdoba', 'Bariloche'];
+  minEndDate: string = '';
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
-  loading: any;
-  error: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private carService: CarService,
-    private distanceCalculator: DistanceCalculatorService,
-    private clientService: ClientService,
-    private paymentService: PaymentService,
-    private fb: FormBuilder,
-    private router: Router
-  ) {
+  constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService) {
     this.carForm = this.fb.group({
-      rentalStartDate: [''],
-      rentalEndDate: [''],
-      destination: ['']
-    });
+      rentalStartDate: ['', Validators.required],
+      rentalEndDate: ['', Validators.required],
+      originBranch: ['', Validators.required],
+      destinationBranch: ['', Validators.required]
+    }, { validator: this.endDateAfterStartDateValidator });
   }
 
   ngOnInit(): void {
- 
-    const carId = this.route.snapshot.paramMap.get('id');
-
-    this.carService.saveCarId(Number(carId));
-
-    this.carService.getCars().subscribe({
-      next: (cars) => {
-        this.carService.cars = cars;  // Actualiza la lista en el servicio
-        this.car = this.carService.cars.find(car => car.id.toString() === carId) || null;
-      },
-      error: (error) => {
-        console.error('Error al cargar el coche:', error);
-      }
+    this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
+      this.minEndDate = startDate;
+      this.carForm.get('rentalEndDate')?.updateValueAndValidity();
     });
   }
 
-  ngOnSubmit(){
-    if(!this.car?.isForSale){
-      const rental: Rental={
-        clientId: this.clientService.getLoggedInClientId()!,
-        carId: Number(this.route.snapshot.paramMap.get('id')),
-        rentalStartDate : this.carForm.get('rentalStartDate')?.value,
-        rentalEndDate : this.carForm.get('rentalEndDate')?.value,
-        price: this.car ? this.car.price + this.carryPrice : this.carryPrice,
-        originBranch: 'Mar del Plata', // PONER QUE LEA LA SUCURSAL DEL AUTO
-        destinationBranch: 'Córdoba' // PONER QUE LEA EL SELECt
-      } 
-      this.paymentService.saveRentalData(rental);
-      console.log(rental);
-
-      }
-    if(this.car?.isForSale){
-      const purchase: Purchase={
-        clientId: this.clientService.getLoggedInClientId()!,
-        carId: Number(this.route.snapshot.paramMap.get('id')),
-        price: this.car ? this.car.price + this.carryPrice : this.carryPrice
-      }
-      this.paymentService.savePurchaseData(purchase);
-      console.log(purchase);
-    }
-    this.router.navigate(['/payment',this.car?.id]);
-
-
-
+  endDateAfterStartDateValidator(group: FormGroup) {
+    const startDate = group.get('rentalStartDate')?.value;
+    const endDate = group.get('rentalEndDate')?.value;
+    return startDate && endDate && endDate >= startDate ? null : { endDateInvalid: true };
   }
-  
 
+  onSubmit() {
+    
+  }
 
-  calculateDistanceAndCarryPrice(destination:string):void{
-    const origins='Mar del Plata';                        // Poner que sea car.sucursal cuando tengamos definido como van a ser las sucursales
+  calculateDistanceAndCarryPrice(origins: string, destination:string):void{
     this.distanceCalculator.getDistance(origins,destination).subscribe(response =>{
       const dist= response.rows[0].elements[0].distance.text;
       this.distance= `La distancia total es  ${dist}`;
       this.carryPrice= parseFloat(dist)*30;
-      this.messagePrice=`El precio del acarreo es de ${this.carryPrice}`   // Mejorar esto, para que el monto se pueda actualizar desde admin
+      this.messagePrice=`El precio del acarreo es de ${this.carryPrice}`   
     });
   }
-
+  
 }
