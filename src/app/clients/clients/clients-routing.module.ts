@@ -6,6 +6,8 @@ import { EditClientComponent } from './components/client-edit/client-edit.compon
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { ClientDeleteComponent } from './components/client-delete/client-delete.component';
+import { ClientFirstpageComponent } from './components/client-firstpage/client-firstpage.component';
+
 
 
 const routes: Routes = [
@@ -14,7 +16,8 @@ const routes: Routes = [
   { path: 'edit/:id', component: EditClientComponent },
   { path: 'detail/:id', component: ClientDetailComponent },
   {path: 'login', component: ClientLoginComponent},
-  { path: 'delete/:id', component: ClientDeleteComponent }
+  { path: 'delete/:id', component: ClientDeleteComponent },
+  {path: 'firstpage', component: ClientFirstpageComponent}
 ];
 
 @NgModule({

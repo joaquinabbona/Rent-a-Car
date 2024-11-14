@@ -11,6 +11,8 @@ import { PaymentComponent } from './payment/payment/payment.component';
 import {ClientLoginComponent} from './clients/clients/components/client-login/client-login.component'
 import { CarDetailsToEditComponent } from './cars/car-details-to-edit/car-details-to-edit.component';
 import { ListToEditComponent } from './cars/list-to-edit/list-to-edit.component';
+import { AuthGuard } from './auth/auth.guard';
+
 
 
 const routes: Routes = [

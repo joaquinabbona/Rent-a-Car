@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';  // Importar el AuthService
 
 @Component({
   selector: 'app-admin-inicio',
@@ -13,7 +14,8 @@ export class AdminLoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService  // Inyectar AuthService
   ) {
     this.adminLoginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -25,13 +27,12 @@ export class AdminLoginComponent {
     if (this.adminLoginForm.valid) {
       const { username, password } = this.adminLoginForm.value;
 
-      // ACA LA LOGICA DE LA VALIDACION
-      if (username === 'admin' && password === 'password') {
-        // Redirigir al dashboard de administrador o a la página deseada
-        this.router.navigate(['/admin/dashboard']);
-      } else {
-        this.error = 'Nombre de usuario o contraseña incorrectos';
-      }
+      // Llamar al servicio de autenticación para admin
+      this.authService.loginAdmin(username, password).subscribe(isLoggedIn => {
+        if (!isLoggedIn) {
+          this.error = 'Nombre de usuario o contraseña incorrectos';
+        }
+      });
     } else {
       this.error = 'Por favor, complete todos los campos requeridos.';
     }
