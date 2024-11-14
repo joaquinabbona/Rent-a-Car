@@ -12,16 +12,13 @@ import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
 import { AdminModule } from './admin/module/admin/admin.module';
 import { AdminFirstpageComponent } from './admin/components/admin-firstpage/admin-firstpage.component';
-import { AdminGestionAdminComponent } from './admin/components/admin-gestion-admin/admin-gestion-admin.component';
-import { AdminGestionVehiculosComponent } from './admin/components/admin-gestion-vehiculos/admin-gestion-vehiculos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientsManagerComponent,
     AdminFirstpageComponent,
-    AdminGestionAdminComponent,
-    AdminGestionVehiculosComponent,
+
   ],
   imports: [
     BrowserModule,

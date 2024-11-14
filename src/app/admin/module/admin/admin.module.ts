@@ -6,9 +6,9 @@ import { AdminAddComponent } from '../../components/admin-add/admin-add.componen
 import { AdminListComponent } from '../../components/admin-list/admin-list.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ClientsModule } from '../../../clients/clients/clients.module';
+import { AdminGestionAdminComponent } from '../../components/admin-gestion-admin/admin-gestion-admin.component';
+import { AdminGestionVehiculosComponent } from '../../components/admin-gestion-vehiculos/admin-gestion-vehiculos.component';
 import { AdminGestionClientesComponent } from '../../components/admin-gestion-clientes/admin-gestion-clientes.component';
-
-
 
 
 @NgModule({
@@ -16,7 +16,9 @@ import { AdminGestionClientesComponent } from '../../components/admin-gestion-cl
     AdminLoginComponent,
     AdminAddComponent,
     AdminListComponent,
-    AdminGestionClientesComponent
+    AdminGestionClientesComponent,
+    AdminGestionAdminComponent,
+    AdminGestionVehiculosComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,9 @@ import { AdminGestionClientesComponent } from '../../components/admin-gestion-cl
   exports:[
     AdminAddComponent,
     AdminListComponent,
+    AdminGestionClientesComponent,
+    AdminGestionAdminComponent,
+    AdminGestionVehiculosComponent,
   ]
 })
 export class AdminModule { }

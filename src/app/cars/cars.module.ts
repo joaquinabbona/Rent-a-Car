@@ -26,7 +26,8 @@ import { PaymentComponent } from './payment/payment.component';
   exports: [        
     AddCarsComponent,
     ListCarsComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    CarManagerComponent
   ]
 })
 export class CarsModule { 

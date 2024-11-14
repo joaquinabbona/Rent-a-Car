@@ -19,6 +19,7 @@
     <!-- Componentes condicionalmente mostrados -->
     <div [ngSwitch]="activeComponent">
         <app-admin-add *ngSwitchCase="'add'"></app-admin-add>
+        <app-admin-list *ngSwitchCase="'list'"></app-admin-list>
     </div>
   </div>
 
