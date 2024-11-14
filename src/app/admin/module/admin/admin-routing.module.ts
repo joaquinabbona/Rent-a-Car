@@ -7,16 +7,16 @@ import { AdminFirstpageComponent } from '../../components/admin-firstpage/admin-
 import { AdminGestionClientesComponent } from '../../components/admin-gestion-clientes/admin-gestion-clientes.component';
 import { AdminGestionAdminComponent } from '../../components/admin-gestion-admin/admin-gestion-admin.component';
 import { AdminGestionVehiculosComponent } from '../../components/admin-gestion-vehiculos/admin-gestion-vehiculos.component';
-
+import { AuthGuard } from '../../../auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: AdminLoginComponent },
-  { path: 'add', component: AdminAddComponent },
-  { path: 'list', component: AdminListComponent },
-  {path: '', component: AdminFirstpageComponent},
-  {path: 'gestion-clientes', component: AdminGestionClientesComponent},
-  {path: 'gestion-admin', component:AdminGestionAdminComponent},
-  {path: 'gestion-vehiculos', component: AdminGestionVehiculosComponent}
+  { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'add', component: AdminAddComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'list', component: AdminListComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'admin-firstpage', component: AdminFirstpageComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'gestion-clientes', component: AdminGestionClientesComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'gestion-admin', component: AdminGestionAdminComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'gestion-vehiculos', component: AdminGestionVehiculosComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } }
 ];
 
 @NgModule({

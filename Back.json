@@ -388,6 +388,16 @@
       "phone": "dasds",
       "address": "dasdas",
       "dateOfBirth": "1995-01-03"
+    },
+    {
+      "id": 6,
+      "firstName": "Gonzalo",
+      "lastName": "Acevedo",
+      "email": "gon@gon.com.ar",
+      "password": "123456",
+      "phone": "456",
+      "address": "Piann",
+      "dateOfBirth": "2017-01-31"
     }
   ],
   "admin": [
@@ -404,6 +414,13 @@
       "password": "123456",
       "email": "dsadas@g.com",
       "fullName": "adssda"
+    },
+    {
+      "id": 0,
+      "username": "gonzalo",
+      "password": "123456",
+      "email": "assd@gmo.com",
+      "fullName": "Gonzalo Vazquez"
     }
   ],
   "rentals": [

@@ -6,15 +6,17 @@ import { EditClientComponent } from './components/client-edit/client-edit.compon
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { ClientDeleteComponent } from './components/client-delete/client-delete.component';
-
+import { ClientFirstpageComponent } from './components/client-firstpage/client-firstpage.component';
+import { AuthGuard } from '../../auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: ClientListComponent },
-  { path: 'add', component: ClientAddComponent },
-  { path: 'edit/:id', component: EditClientComponent },
-  { path: 'detail/:id', component: ClientDetailComponent },
-  {path: 'login', component: ClientLoginComponent},
-  { path: 'delete/:id', component: ClientDeleteComponent }
+  { path: '', component: ClientListComponent, canActivate: [AuthGuard], data: { roles: ['client'] } },
+  { path: 'add', component: ClientAddComponent, canActivate: [AuthGuard], data: { roles: ['client'] } },
+  { path: 'edit/:id', component: EditClientComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'detail/:id', component: ClientDetailComponent, },
+  { path: 'login', component: ClientLoginComponent },
+  { path: 'delete/:id', component: ClientDeleteComponent},
+  { path: 'firstpage', component: ClientFirstpageComponent, canActivate: [AuthGuard], data: { roles: ['client'] } }
 ];
 
 @NgModule({
