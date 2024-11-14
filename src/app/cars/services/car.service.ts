@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Car } from '../car';
+import { Car } from '../models/car';
 import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class CarService {
   loading: boolean = true;
   error: string | null = null;
   router: any;
+  carId: number |null=null;
 
   constructor(private http: HttpClient, private ActivatedRoute: ActivatedRoute) {}
 
@@ -48,5 +49,14 @@ export class CarService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Car>(url);
   }
+
+  saveCarId(id:number){
+    this.carId=id;
+  }
   
+  getSavedCarId(){
+    return this.carId;
+  }
+
+
 }
