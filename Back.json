@@ -347,18 +347,6 @@
       "isForSale": true,
       "available": true,
       "imageUrl": ""
-    },
-    {
-      "id": "30",
-      "brand": "AAAAASSSSS",
-      "model": "AAAKSKS",
-      "type": "AAAAA",
-      "price": 5154561,
-      "year": 2024,
-      "description": "dasdasdasda",
-      "isForSale": true,
-      "available": true,
-      "imageUrl": ""
     }
   ],
   "clients": [

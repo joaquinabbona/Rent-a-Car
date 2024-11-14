@@ -13,6 +13,8 @@ import { ClientsManagerComponent } from './clients/clients-manager/clients-manag
 import { AdminModule } from './admin/module/admin/admin.module';
 import { AdminFirstpageComponent } from './admin/components/admin-firstpage/admin-firstpage.component';
 import { CommonModule } from '@angular/common';
+import { PaymentComponent } from './payment/payment/payment.component';
+
 
 @NgModule({
   declarations: [

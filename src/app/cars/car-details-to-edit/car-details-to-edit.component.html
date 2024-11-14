@@ -3,5 +3,6 @@
 <p><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
 <p>Descripción: {{ car?.description }}</p>
 
+<button [routerLink]="['/car-rental',  car?.id]"class="btn btn-primary">Alquilar</button>
 <button (click)="editCar()" class="btn btn-primary">Editar</button>
 <button (click)="deleteCar()" class="btn btn-danger">Eliminar</button>

@@ -11,6 +11,7 @@ import { PaymentComponent } from './payment/payment/payment.component';
 import {ClientLoginComponent} from './clients/clients/components/client-login/client-login.component'
 import { CarDetailsToEditComponent } from './cars/car-details-to-edit/car-details-to-edit.component';
 import { ListToEditComponent } from './cars/list-to-edit/list-to-edit.component';
+import { CarRentalComponent } from './cars/car-rental/car-rental.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'payment/:carId',component:PaymentComponent},
   {path: 'login',component:ClientLoginComponent},
   {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
-  {path: 'list-to-edit', component: ListToEditComponent}
+  {path: 'list-to-edit', component: ListToEditComponent},
+  {path: 'car-rental/:id', component: CarRentalComponent}
 
 
 ];
