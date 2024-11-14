@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { ClientsManagerComponent } from './clients/clients-manager/clients-manager.component';
 import { AdminModule } from './admin/module/admin/admin.module';
 import { AdminFirstpageComponent } from './admin/components/admin-firstpage/admin-firstpage.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { AdminFirstpageComponent } from './admin/components/admin-firstpage/admi
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CarsModule,
+    ReactiveFormsModule,
+    CommonModule,
     RouterModule,
     ClientsModule,
     HomeModule,
-    AdminModule
+    AdminModule,
+    CarsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

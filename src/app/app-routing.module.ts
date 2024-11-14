@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home/home.component';
 import { EditCarsComponent } from './cars/edit-cars/edit-cars.component';
 import { PaymentComponent } from './payment/payment/payment.component';
 import {ClientLoginComponent} from './clients/clients/components/client-login/client-login.component'
-
+import { CarDetailsToEditComponent } from './cars/car-details-to-edit/car-details-to-edit.component';
+import { ListToEditComponent } from './cars/list-to-edit/list-to-edit.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,9 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'edit-car/:id', component: EditCarsComponent },
   {path: 'payment/:carId',component:PaymentComponent},
-  {path: 'login',component:ClientLoginComponent}
+  {path: 'login',component:ClientLoginComponent},
+  {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
+  {path: 'list-to-edit', component: ListToEditComponent}
 
 
 ];
