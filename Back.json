@@ -393,17 +393,17 @@
   "admin": [
     {
       "id": "0",
-      "username": "gva",
-      "password": "123456",
-      "email": "ff@gasf.com",
-      "fullName": "Gonzalo Vazq"
-    },
-    {
-      "id": "0",
       "username": "adsasd",
       "password": "123456",
       "email": "dsadas@g.com",
       "fullName": "adssda"
+    },
+    {
+      "id": 0,
+      "username": "Ignacio",
+      "password": "123456",
+      "email": "aksdasdasdq@gmail.com",
+      "fullName": "Ignacio Gomez"
     }
   ],
   "rentals": [
