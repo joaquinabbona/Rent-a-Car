@@ -11,6 +11,7 @@ import { PaymentComponent } from '../payment/payment/payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarDetailsToEditComponent } from './car-details-to-edit/car-details-to-edit.component';
 import { ListToEditComponent } from './list-to-edit/list-to-edit.component';
+import { CarRentalComponent } from './car-rental/car-rental.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListToEditComponent } from './list-to-edit/list-to-edit.component';
     EditCarsComponent,
     PaymentComponent,
     CarDetailsToEditComponent,
-    ListToEditComponent
+    ListToEditComponent,
+    CarRentalComponent
   ],
   imports: [
     CommonModule,

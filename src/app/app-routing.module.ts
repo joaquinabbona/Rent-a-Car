@@ -11,6 +11,7 @@ import { ClientLoginComponent } from './clients/clients/components/client-login/
 import { CarDetailsToEditComponent } from './cars/car-details-to-edit/car-details-to-edit.component';
 import { ListToEditComponent } from './cars/list-to-edit/list-to-edit.component';
 import { AuthGuard } from './auth/auth.guard';
+import { CarRentalComponent } from './cars/car-rental/car-rental.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,9 +24,22 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ['admin'] }  // Solo administradores
   },
+
   { path: 'admin-edit-car/:id', component: CarDetailsToEditComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'car-manager', component: CarManagerComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'list-to-edit', component: ListToEditComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  { path: 'admin', loadChildren: () => import('./admin/module/admin/admin.module').then(m => m.AdminModule) },
+  { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path:'add-cars' , component: AddCarsComponent},
+  {path: 'car-manager', component: CarManagerComponent},
+  {path: 'home', component: HomeComponent},
+  { path: 'edit-car/:id', component: EditCarsComponent },
+  {path: 'payment/:carId',component:PaymentComponent},
+  {path: 'login',component:ClientLoginComponent},
+  {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
+  {path: 'list-to-edit', component: ListToEditComponent},
+  {path: 'car-rental/:id', component: CarRentalComponent}
 
   // Rutas accesibles para clientes
   { path: 'car-details/:id', component: CarDetailsComponent, canActivate: [AuthGuard], data: { roles: ['client', 'admin'] } },

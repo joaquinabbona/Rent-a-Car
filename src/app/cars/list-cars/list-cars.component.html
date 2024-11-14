@@ -1,7 +1,7 @@
 <p>list-cars works!</p>
 <div>
     <!-- Formulario de filtros -->
-    <form (submit)="applyFilters()">
+    <form (submit)="applyFilters()" class="filters-form">
         <label for="brand">Marca:</label>
         <select id="brand" [(ngModel)]="filters.brand" name="brand">
             <option value="">Todos</option>
@@ -20,15 +20,27 @@
             <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
         </select>
 
+        <!-- Filtrado por precio -->
+        <label for="minPrice" class="form-label">Precio</label>
+        <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" placeholder="Mínimo" min="0" (change)="adjustPrices('min')">
+        <span>-</span>
+        <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" placeholder="Máximo" min="0" (change)="adjustPrices('max')">
+
         <button type="submit">Filtrar</button>
         <button type="button" (click)="clearFilters()">Limpiar Filtros</button>
     </form>
 
+    <!-- Mensaje cuando no hay resultados -->
+    <div *ngIf="filteredCars.length === 0" class="no-results-message">
+        Por el momento no contamos con vehículos de esas características.
+    </div>
+
     <!-- Lista de carros -->
-    <ul>
-        <li *ngFor="let car of filteredCars">
-            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" style="width: 200px; height: 200px;">
-            <button [routerLink]="['/car-details', car.id]">Ver</button>
-        </li>
-    </ul>
+    <div *ngIf="filteredCars.length > 0" class="car-list">
+        <div class="car-item" *ngFor="let car of filteredCars">
+            <h3>{{ car.brand }} {{ car.model }}</h3>
+            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="car-image">
+            <button [routerLink]="['/car-details', car.id]" class="view-button">Ver</button>
+        </div>
+    </div>
 </div>

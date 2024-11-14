@@ -62,7 +62,7 @@ export class EditCarsComponent {
     this.carService.updateCar(this.car).subscribe({
       next: (response) => {
         console.log('Vehículo actualizado exitosamente:', response);
-        this.router.navigate(['/cars']); // Navega de vuelta a la lista de carros
+        this.router.navigate(['/cars']); 
       },
       error: (error) => {
         this.error = 'Error al actualizar el vehículo';

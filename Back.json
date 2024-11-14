@@ -10,7 +10,7 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "available": true,
-      "imageUrl": ""
+      "imageUrl": "assets/images/images.jpg"
     },
     {
       "id": "2",
@@ -347,18 +347,6 @@
       "isForSale": true,
       "available": true,
       "imageUrl": ""
-    },
-    {
-      "id": "30",
-      "brand": "AAAAASSSSS",
-      "model": "AAAKSKS",
-      "type": "AAAAA",
-      "price": 5154561,
-      "year": 2024,
-      "description": "dasdasdasda",
-      "isForSale": true,
-      "available": true,
-      "imageUrl": ""
     }
   ],
   "clients": [
@@ -380,6 +368,16 @@
       "phone": "+5492236015427",
       "address": "Alvarado 1487",
       "dateOfBirth": "1999-12-28"
+    },
+    {
+      "id": "4",
+      "firstName": "Ignacio Valentin",
+      "lastName": "ASD",
+      "email": "nacho2012gomez@gmail.com",
+      "password": "aaa123",
+      "phone": "123123131",
+      "address": "asddasd",
+      "dateOfBirth": "2004-03-11"
     },
     {
       "id": "5",
@@ -405,6 +403,13 @@
   "admin": [
     {
       "id": "0",
+      "username": "gva",
+      "password": "123456",
+      "email": "ff@gasf.com",
+      "fullName": "Gonzalo Vazq"
+    },
+    {
+      "id": "0",
       "username": "adsasd",
       "password": "123456",
       "email": "dsadas@g.com",
@@ -416,6 +421,37 @@
       "password": "123456",
       "email": "assd@gmo.com",
       "fullName": "Gonzalo Vazquez"
+    }
+  ],
+  "rentals": [
+    {
+      "id": "3e1d",
+      "clientId": null,
+      "carId": 2,
+      "rentalStartDate": "2024-11-15",
+      "rentalEndDate": "2024-11-18",
+      "price": 61327,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Córdoba"
+    },
+    {},
+    {
+      "id": "5af8",
+      "clientId": "4",
+      "carId": 2,
+      "rentalStartDate": "2024-12-20",
+      "rentalEndDate": "2024-12-22",
+      "price": 40426,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Córdoba"
+    }
+  ],
+  "purchase": [
+    {
+      "id": "a236",
+      "clientId": null,
+      "carId": 1,
+      "price": 35000
     }
   ]
 }
