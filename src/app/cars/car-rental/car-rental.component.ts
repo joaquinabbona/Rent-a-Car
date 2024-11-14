@@ -22,6 +22,7 @@ export class CarRentalComponent implements OnInit {
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
+  totalPrice: string='';
 
   constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService) {
     this.carForm = this.fb.group({
@@ -49,12 +50,34 @@ export class CarRentalComponent implements OnInit {
     
   }
 
-  calculateDistanceAndCarryPrice(origins: string, destination:string):void{
-    this.distanceCalculator.getDistance(origins,destination).subscribe(response =>{
-      const dist= response.rows[0].elements[0].distance.text;
-      this.distance= `La distancia total es  ${dist}`;
-      this.carryPrice= parseFloat(dist)*30;
-      this.messagePrice=`El precio del acarreo es de ${this.carryPrice}`   
+  calculateDistanceAndCarryPrice(origins: string, destination: string): void {
+    this.distanceCalculator.getDistance(origins, destination).subscribe(response => {
+      const dist = response.rows[0].elements[0].distance.text;
+      this.distance = `La distancia total es ${dist}`;
+  
+      if (origins === destination) {
+        this.carryPrice = 0;
+      } else {
+        this.carryPrice = parseFloat(dist) * 30;
+      }
+  
+      this.messagePrice = `El precio del acarreo es de $${this.carryPrice.toLocaleString()}`;
+  
+      
+      const rentalStartDate = this.carForm.get('rentalStartDate')?.value;
+      const rentalEndDate = this.carForm.get('rentalEndDate')?.value;
+  
+      if (rentalStartDate && rentalEndDate) {
+        const startDate = new Date(rentalStartDate);
+        const endDate = new Date(rentalEndDate);
+        const timeDiff = endDate.getTime() - startDate.getTime();
+        const numDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  
+        const rentalPrice = this.carryPrice + (numDays * 50); 
+        this.totalPrice = `El precio total del alquiler es de $${rentalPrice.toLocaleString()}`;
+      } else {
+        this.totalPrice = '';
+      }
     });
   }
   

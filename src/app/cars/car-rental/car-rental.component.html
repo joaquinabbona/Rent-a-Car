@@ -58,7 +58,8 @@
           </div>
           <button type="button" (click)="calculateDistanceAndCarryPrice(carForm.get('originBranch')?.value,carForm.get('destinationBranch')?.value)">Calcular acarreo</button>
         <p>{{ distance }}</p>
-         <p>{{ messagePrice }}</p>
+        <p>{{ messagePrice }}</p>
+        <p>{{ totalPrice }}</p>
         
         <button type="submit" class="btn btn-primary">Confirmar</button>
       </form>
