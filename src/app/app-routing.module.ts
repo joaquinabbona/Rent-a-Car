@@ -39,7 +39,7 @@ const routes: Routes = [
   {path: 'login',component:ClientLoginComponent},
   {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
   {path: 'list-to-edit', component: ListToEditComponent},
-  {path: 'car-rental/:id', component: CarRentalComponent}
+  {path: 'car-rental/:id', component: CarRentalComponent},
 
   // Rutas accesibles para clientes
   { path: 'car-details/:id', component: CarDetailsComponent, canActivate: [AuthGuard], data: { roles: ['client', 'admin'] } },
