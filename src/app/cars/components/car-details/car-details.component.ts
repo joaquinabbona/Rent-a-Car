@@ -72,6 +72,7 @@ export class CarDetailsComponent implements OnInit {
       }
       this.paymentService.savePurchaseData(purchase);
       console.log(purchase);
+      this.router.navigate(['/payment',this.car?.id]);
     }
 
 
