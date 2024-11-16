@@ -54,8 +54,9 @@ export class CarRentalComponent implements OnInit {
     return startDate && endDate && endDate >= startDate ? null : { endDateInvalid: true };
   }
 
-  ngOnSubmit(){
-    if(!this.car?.isForSale){
+  ngOnSubmit(event: Event){
+    event.preventDefault();
+    if(!this.car?.rental){
       const rental: Rental={
         clientId: 1,
         carId: Number(this.route.snapshot.paramMap.get('id')),
@@ -65,16 +66,16 @@ export class CarRentalComponent implements OnInit {
         originBranch: this.carForm.get('originBranch')?.value,
         destinationBranch: this.carForm.get('destinationBranch')?.value
       } 
-      this.paymentService.saveRentalData(rental);
-      console.log(rental);
-
+    this.paymentService.saveRentalInDB(rental).subscribe({
+      next: (response) => {
+        console.log('Rental saved successfully:', response);
+      },
+      error: (error) => {
+        console.error('Error saving rental:', error);
       }
-      const paramId = this.someFormControlValue;
-      if (paramId) {
-        this.router.navigate(['/payment', this.car?.id]);
-      } else {
-        console.error('El parámetro no está definido');
+    });
       }
+      
     
   }
 

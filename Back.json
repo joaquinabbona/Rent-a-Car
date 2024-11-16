@@ -1,5 +1,4 @@
 {
-  
   "cars": [
     {
       "id": "1",
@@ -349,8 +348,7 @@
       "rental": true,
       "imageUrl": "assets/images/mobi.jpg"
     }
-  ]
-,
+  ],
   "clients": [
     {
       "firstName": "Juands",
@@ -427,25 +425,14 @@
   ],
   "rentals": [
     {
-      "id": "3e1d",
-      "clientId": null,
-      "carId": 2,
-      "rentalStartDate": "2024-11-15",
-      "rentalEndDate": "2024-11-18",
-      "price": 61327,
+      "clientId": 1,
+      "carId": 27,
+      "rentalStartDate": "2024-12-12",
+      "rentalEndDate": "2025-12-12",
+      "price": 3657579.5,
       "originBranch": "Mar del Plata",
-      "destinationBranch": "Córdoba"
-    },
-    {},
-    {
-      "id": "5af8",
-      "clientId": "4",
-      "carId": 2,
-      "rentalStartDate": "2024-12-20",
-      "rentalEndDate": "2024-12-22",
-      "price": 40426,
-      "originBranch": "Mar del Plata",
-      "destinationBranch": "Córdoba"
+      "destinationBranch": "Bariloche",
+      "id": 1
     }
   ],
   "purchase": [

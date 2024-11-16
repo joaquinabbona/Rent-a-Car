@@ -77,13 +77,7 @@ export class PaymentComponent {
       }, error => {
         console.log('Compra todo mal');
       });
-    } else if (!this.car?.isForSale) {
-      this.payment.saveRentalInDB().subscribe(response => {
-        console.log('Alquiler todo ok');
-      }, error => {
-        console.log('Alquiler todo mal');
-      });
-    }
+    } 
 }
 
   selectPaymentMethod(method: 'cash' | 'card') {

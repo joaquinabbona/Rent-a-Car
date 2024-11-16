@@ -2,7 +2,7 @@
     <h2>Alquiler</h2>
   
     <div class="card-body">
-      <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit()">
+      <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit($event)">
         
         <div class="mb-3">
           <label for="rentalStartDate" class="form-label">Fecha inicio:</label>
@@ -66,7 +66,7 @@
     <p>{{ daysMessage }}</p> 
     <p>{{ auxTotalPrice }}</p>  </div>
         
-    <button (click)="ngOnSubmit()">Confirmar</button>
+    <button (click)="ngOnSubmit($event)">Confirmar</button>
       </form>
     </div>
   </div>
