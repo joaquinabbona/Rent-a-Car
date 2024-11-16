@@ -19,7 +19,7 @@ export class AddCarsComponent implements OnInit{
     year: this.currentYear,
     description: '',
     isForSale: true,
-    available: true,
+    rental: true,
     imageUrl: ''
   };
 
@@ -49,7 +49,7 @@ export class AddCarsComponent implements OnInit{
       year: this.currentYear,
       description: '',
       isForSale: true,
-      available: true,
+      rental: true,
       imageUrl: ''
     };
   }

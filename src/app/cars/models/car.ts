@@ -7,6 +7,6 @@ export interface Car {
     year :  number;
     description : string;
     isForSale : boolean;
-    available : boolean;
+    rental : boolean;
     imageUrl : string;
 }

@@ -1,4 +1,5 @@
 {
+  
   "cars": [
     {
       "id": "1",
@@ -9,7 +10,7 @@
       "year": 2023,
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": ""
     },
     {
@@ -21,7 +22,7 @@
       "year": 2023,
       "description": "Elegante sedán Ford Mondeo con acabados premium",
       "isForSale": false,
-      "available": true,
+      "rental": true,
       "imageUrl": "assets/images/Mondeo.jpg"
     },
     {
@@ -32,8 +33,8 @@
       "price": 32000,
       "year": 2021,
       "description": "Versátil utilitario Ford Transit para necesidades comerciales",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/fordTransit.jpg"
     },
     {
@@ -45,7 +46,7 @@
       "year": 2023,
       "description": "Potente pick-up Volkswagen Amarok con tecnología alemana",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/Amarok2023.jpg"
     },
     {
@@ -56,8 +57,8 @@
       "price": 25000,
       "year": 2023,
       "description": "Confortable sedán Volkswagen Vento con excelente rendimiento",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Vento2023.jpg"
     },
     {
@@ -69,7 +70,7 @@
       "year": 2023,
       "description": "SUV Volkswagen Tiguan con diseño moderno y amplio espacio",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/Tiguan2023.jpg"
     },
     {
@@ -80,8 +81,8 @@
       "price": 30000,
       "year": 2023,
       "description": "Pick-up Fiat Toro con diseño innovador y confort superior",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Toro2023.jpg"
     },
     {
@@ -92,8 +93,8 @@
       "price": 22000,
       "year": 2023,
       "description": "Sedán Fiat Cronos con estilo italiano y economía",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Cronos2023.jpg"
     },
     {
@@ -105,7 +106,7 @@
       "year": 2023,
       "description": "Dinámico Peugeot 208 con diseño juvenil y tecnología avanzada",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/208.2023.jpg"
     },
     {
@@ -116,8 +117,8 @@
       "price": 26000,
       "year": 2023,
       "description": "Práctica Peugeot Partner ideal para uso familiar y comercial",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Partner2023.jpg"
     },
     {
@@ -129,7 +130,7 @@
       "year": 2023,
       "description": "Robusta pick-up Chevrolet S10 con capacidad de carga superior",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/S10.2023.jpg"
     },
     {
@@ -140,8 +141,8 @@
       "price": 27000,
       "year": 2023,
       "description": "Deportivo Chevrolet Cruze con excelente rendimiento",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Cruze2023.jpg"
     },
     {
@@ -153,7 +154,7 @@
       "year": 2023,
       "description": "Resistente pick-up Nissan Frontier para todo terreno",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/Frontier2023.jpg"
     },
     {
@@ -164,8 +165,8 @@
       "price": 23000,
       "year": 2023,
       "description": "Confortable Nissan Tiida con gran espacio interior",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/tilda2023.jpg"
     },
     {
@@ -177,7 +178,7 @@
       "year": 2023,
       "description": "Legendaria Toyota Hilux con durabilidad comprobada",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/hilux2023.jpg"
     },
     {
@@ -188,8 +189,8 @@
       "price": 21000,
       "year": 2023,
       "description": "Económico Toyota Etios ideal para ciudad",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/etios2023.jpg"
     },
     {
@@ -201,7 +202,7 @@
       "year": 2023,
       "description": "Clásico Toyota Corolla con tecnología híbrida",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/corolla2023.jpg"
     },
     {
@@ -212,8 +213,8 @@
       "price": 34000,
       "year": 2023,
       "description": "Moderna Toyota Corolla Cross con estilo SUV",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/corollaCross.jpg"
     },
     {
@@ -224,8 +225,8 @@
       "price": 20000,
       "year": 2023,
       "description": "Versátil Renault Sandero con gran relación calidad-precio",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/sandero.jpg"
     },
     {
@@ -237,7 +238,7 @@
       "year": 2023,
       "description": "Aventurero Renault Duster con capacidades off-road",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/duster.jpg"
     },
     {
@@ -248,8 +249,8 @@
       "price": 25000,
       "year": 2023,
       "description": "Práctica Renault Kangoo para uso comercial",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/kangoo.jpg"
     },
     {
@@ -260,8 +261,8 @@
       "price": 23000,
       "year": 2023,
       "description": "Elegante Fiat Linea con acabados refinados",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/linea.jpg"
     },
     {
@@ -273,7 +274,7 @@
       "year": 2023,
       "description": "Icónico Jeep Wrangler para aventuras extremas",
       "isForSale": true,
-      "available": true,
+      "rental": false,
       "imageUrl": "assets/images/wrangler.jpg"
     },
     {
@@ -284,8 +285,8 @@
       "price": 33000,
       "year": 2023,
       "description": "Espaciosa Dodge Caravan para toda la familia",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/caravan.jpg"
     },
     {
@@ -296,8 +297,8 @@
       "price": 48000,
       "year": 2023,
       "description": "Lujosa Jeep Grand Cherokee con máximo confort",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/grandCherokee.jpg"
     },
     {
@@ -308,8 +309,8 @@
       "price": 21500,
       "year": 2023,
       "description": "Moderno Fiat Argo con diseño deportivo",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/argo.jpg"
     },
     {
@@ -320,8 +321,8 @@
       "price": 15000,
       "year": 2012,
       "description": "4x4 solo para entendidos",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/Subaru Impreza 2012.jpg"
     },
     {
@@ -332,8 +333,8 @@
       "type": "Sedan",
       "year": 2014,
       "description": "Gran sedan",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/civic.jpg"
     },
     {
@@ -344,11 +345,12 @@
       "price": 2000,
       "year": 2024,
       "description": "Como primer auto, ideal!",
-      "isForSale": true,
-      "available": true,
+      "isForSale": false,
+      "rental": true,
       "imageUrl": "assets/images/mobi.jpg"
     }
-  ],
+  ]
+,
   "clients": [
     {
       "firstName": "Juands",

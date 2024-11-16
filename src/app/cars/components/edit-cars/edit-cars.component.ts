@@ -21,7 +21,7 @@ export class EditCarsComponent {
     year: 0,
     description: '',
     isForSale: true,
-    available: true,
+    rental: true,
     imageUrl: ''
   };
   loading: boolean = true;

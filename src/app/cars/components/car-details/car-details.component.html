@@ -5,27 +5,13 @@
   <p>Descripción: {{ car?.description }}</p>
   <p>Sucursal: Mar del Plata</p>
 
-  <div *ngIf="!car?.isForSale">
-    <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit()">
-      <label>Fechas de alquiler</label>
-      <input type="date" formControlName="rentalStartDate">
-      <input type="date" formControlName="rentalEndDate">
-
-      <label>En qué sucursal va a dejar el auto</label>
-      <select formControlName="destination">
-        <option value="Mar del Plata">Mar del Plata</option>
-        <option value="CABA">CABA</option>
-        <option value="Rosario">Rosario</option>
-        <option value="Cordoba Capital">Córdoba Capital</option>
-      </select>
-      
-
-      <button type="submit">Alquilar</button>
-    </form>
+  <div *ngIf="car?.rental">
+    <button [routerLink]="['/car-rental',  car?.id]"class="btn btn-primary">Alquilar</button>
   </div>
 
   <div *ngIf="car?.isForSale">
     <button [routerLink]="['/car-rental',  car?.id]"class="btn btn-primary">Alquilar</button>
     <button (click)="ngOnSubmit()">Comprar</button>
   </div>
+
 </div>
