@@ -28,10 +28,9 @@ export class CarRentalComponent implements OnInit {
   totalPrice: number=0;
   car: any;
   clientService: any;
-  route: any;
-  paymentService: any;
+  someFormControlValue: string='';
 
-  constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService) {
+  constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService, private route: ActivatedRoute, private router: Router,private paymentService: PaymentService) {
     this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
       rentalEndDate: ['', Validators.required],
@@ -53,14 +52,14 @@ export class CarRentalComponent implements OnInit {
     return startDate && endDate && endDate >= startDate ? null : { endDateInvalid: true };
   }
 
-  onSubmit() {
+  ngOnSubmit(){
     if(!this.car?.isForSale){
       const rental: Rental={
-        clientId: this.clientService.getLoggedInClientId()!,
+        clientId: 1,
         carId: Number(this.route.snapshot.paramMap.get('id')),
         rentalStartDate : this.carForm.get('rentalStartDate')?.value,
         rentalEndDate : this.carForm.get('rentalEndDate')?.value,
-        price: this.car ? this.car.price + this.carryPrice : this.carryPrice,
+        price: this.totalPrice,
         originBranch: this.carForm.get('originBranch')?.value,
         destinationBranch: this.carForm.get('destinationBranch')?.value
       } 
@@ -68,7 +67,13 @@ export class CarRentalComponent implements OnInit {
       console.log(rental);
 
       }
-      this.route.navigate(['/payment',this.car?.id]);
+      const paramId = this.someFormControlValue;
+      if (paramId) {
+        this.router.navigate(['/payment', this.car?.id]);
+      } else {
+        console.error('El parámetro no está definido');
+      }
+    
   }
 
   calculateDistanceAndCarryPrice(origins: string, destination: string): Observable<number> {
