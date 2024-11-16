@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car';
+import { Car } from '../../models/car';
 import { ActivatedRoute } from '@angular/router';
-import { CarService } from '../services/car.service';
-import { DistanceCalculatorService } from '../services/distance-calculator.service';
-import { Rental } from '../models/rental';
-import { ClientService } from '../../clients/services/client.service';
-import { PaymentService } from '../../payment/payment/services/payment.service';
-import { Purchase } from '../models/purchase';
+import { CarService } from '../../services/car.service';
 import { Router } from '@angular/router';
 import { FormBuilder,FormGroup } from '@angular/forms';
+import { DistanceCalculatorService } from '../../services/distance-calculator.service';
+import { ClientService } from '../../../clients/services/client.service';
+import { PaymentService } from '../../../payment/payment/services/payment.service';
+import { Rental } from '../../models/rental';
+import { Purchase } from '../../models/purchase';
 
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car';
+import { Car } from '../../models/car';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CarService } from '../services/car.service';
+import { CarService } from '../../services/car.service';
 
 @Component({
   selector: 'app-car-details-to-edit',
@@ -32,7 +32,6 @@ export class CarDetailsToEditComponent implements OnInit {
   }
 
   editCar(): void {
-    // Navega a la página de edición del auto, puedes pasar el ID como parámetro
     this.router.navigate(['/edit-car', this.car?.id]);
   }
 

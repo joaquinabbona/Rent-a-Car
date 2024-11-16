@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarDetailsComponent } from './cars/car-details/car-details.component';
-import { ListCarsComponent } from './cars/list-cars/list-cars.component';
-import { AddCarsComponent } from './cars/add-cars/add-cars.component';
-import { CarManagerComponent } from './cars/car-manager/car-manager.component';
+
+import { AuthGuard } from './auth/auth.guard';
+import { CarDetailsToEditComponent } from './cars/components/car-details-to-edit/car-details-to-edit.component';
+import { CarManagerComponent } from './cars/components/car-manager/car-manager.component';
+import { ListToEditComponent } from './cars/components/list-to-edit/list-to-edit.component';
+import { AddCarsComponent } from './cars/components/add-cars/add-cars.component';
 import { HomeComponent } from './home/home/home.component';
-import { EditCarsComponent } from './cars/edit-cars/edit-cars.component';
+import { EditCarsComponent } from './cars/components/edit-cars/edit-cars.component';
 import { PaymentComponent } from './payment/payment/payment.component';
 import { ClientLoginComponent } from './clients/clients/components/client-login/client-login.component';
-import { CarDetailsToEditComponent } from './cars/car-details-to-edit/car-details-to-edit.component';
-import { ListToEditComponent } from './cars/list-to-edit/list-to-edit.component';
-import { AuthGuard } from './auth/auth.guard';
-import { CarRentalComponent } from './cars/car-rental/car-rental.component';
+import { CarRentalComponent } from './cars/components/car-rental/car-rental.component';
+import { CarDetailsComponent } from './cars/components/car-details/car-details.component';
+import { ListCarsComponent } from './cars/components/list-cars/list-cars.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

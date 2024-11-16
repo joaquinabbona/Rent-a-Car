@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { CarsModule } from '../cars.module';
-import { CarService } from '../services/car.service';
-import { Car } from '../models/car';
+import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DistanceCalculatorService } from '../services/distance-calculator.service';
-import { ClientService } from '../../clients/services/client.service';
-import { PaymentService } from '../../payment/payment/services/payment.service';
-import { Rental } from '../models/rental';
-import { Purchase } from '../models/purchase';
 import { Observable } from 'rxjs';
+import { DistanceCalculatorService } from '../../services/distance-calculator.service';
+import { PaymentService } from '../../../payment/payment/services/payment.service'; 
+import { Rental } from '../../models/rental';
 
 @Component({
   selector: 'app-car-rental',
@@ -30,13 +27,18 @@ export class CarRentalComponent implements OnInit {
   clientService: any;
   someFormControlValue: string='';
 
-  constructor(private fb: FormBuilder, private distanceCalculator: DistanceCalculatorService, private route: ActivatedRoute, private router: Router,private paymentService: PaymentService) {
-    this.carForm = this.fb.group({
+  constructor(
+    private fb: FormBuilder, 
+    private distanceCalculator: DistanceCalculatorService,
+    private route: ActivatedRoute, 
+    private router: Router,
+    private paymentService: PaymentService) {
+      this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
       rentalEndDate: ['', Validators.required],
       originBranch: ['', Validators.required],
       destinationBranch: ['', Validators.required]
-    }, { validator: this.endDateAfterStartDateValidator });
+      }, { validator: this.endDateAfterStartDateValidator });
   }
 
   ngOnInit(): void {
