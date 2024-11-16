@@ -6,11 +6,10 @@
   <p>Sucursal: Mar del Plata</p>
 
   <div *ngIf="car?.rental">
-    <button [routerLink]="['/car-rental',  car?.id]"class="btn btn-primary">Alquilar</button>
+    <button (click)="ngOnSubmit()">Alquilar</button>
   </div>
 
   <div *ngIf="car?.isForSale">
-    <button [routerLink]="['/car-rental',  car?.id]"class="btn btn-primary">Alquilar</button>
     <button (click)="ngOnSubmit()">Comprar</button>
   </div>
 

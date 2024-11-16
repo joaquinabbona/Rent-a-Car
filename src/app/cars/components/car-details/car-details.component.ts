@@ -61,20 +61,9 @@ export class CarDetailsComponent implements OnInit {
   }
 
   ngOnSubmit(){
-    if(!this.car?.isForSale){
-      const rental: Rental={
-        clientId: this.clientService.getLoggedInClientId()!,
-        carId: Number(this.route.snapshot.paramMap.get('id')),
-        rentalStartDate : this.carForm.get('rentalStartDate')?.value,
-        rentalEndDate : this.carForm.get('rentalEndDate')?.value,
-        price: this.car ? this.car.price + this.carryPrice : this.carryPrice,
-        originBranch: 'Mar del Plata', // PONER QUE LEA LA SUCURSAL DEL AUTO
-        destinationBranch: 'Córdoba' // PONER QUE LEA EL SELECt
-      } 
-      this.paymentService.saveRentalData(rental);
-      console.log(rental);
-
-      }
+    if(this.car?.rental){
+      this.router.navigate(['/car-rental',this.car?.id]);
+    }
     if(this.car?.isForSale){
       const purchase: Purchase={
         clientId: this.clientService.getLoggedInClientId()!,
@@ -84,7 +73,6 @@ export class CarDetailsComponent implements OnInit {
       this.paymentService.savePurchaseData(purchase);
       console.log(purchase);
     }
-    this.router.navigate(['/payment',this.car?.id]);
 
 
 
