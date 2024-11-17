@@ -8,7 +8,7 @@ import { Client } from '../interfaces/client.interface';
 })
 export class ClientService {
   private apiUrl = 'http://localhost:3000/clients';//ACA VA EL JSON SERVER DE CLIENTES
-  private loggedInClientId: number | null = null;
+  private loggedInClientId: number=0;
 
   constructor(private http: HttpClient) { }
 
@@ -50,5 +50,8 @@ export class ClientService {
 
   getLoggedInClientId(): number | null {
     return this.loggedInClientId; 
+  }
+  saveLoggedInClientId(id:number){
+    this.loggedInClientId=id;
   }
 }

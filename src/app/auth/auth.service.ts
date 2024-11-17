@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map, tap } from 'rxjs';
 import { Admin } from '../admin/interfaces/admin';
 import { Client } from '../clients/interfaces/client.interface';
+import { ClientService } from '../clients/services/client.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,17 @@ export class AuthService {
   private adminApiUrl = 'http://localhost:3000/admin'; // La URL de admins en tu JSON server
   private loggedInUser: any = null; // Almacenará el usuario (client o admin)
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private clientService: ClientService
+  ) {}
 
   loginClient(email: string, password: string): Observable<boolean> {
     return this.http.get<Client[]>(`${this.clientApiUrl}?email=${email}&password=${password}`).pipe(
       map((clients) => {
         if (clients.length) {
           this.loggedInUser = { ...clients[0], role: 'client' };  // Asignar el rol 'client'
+          this.clientService.saveLoggedInClientId(this.loggedInUser.id);
           return true;
         }
         return false;
