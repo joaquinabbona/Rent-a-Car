@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ClientService } from '../../clients/services/client.service';
 import { Router } from '@angular/router';
 import { PaymentService } from './services/payment.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Car } from '../../cars/models/car';
 import { CarService } from '../../cars/services/car.service';
 import { ActivatedRoute } from '@angular/router';
@@ -31,13 +31,17 @@ export class PaymentComponent {
   ) {
     this.paymentForm = this.fb.group({
       paymentMethod: ['', Validators.required],
-      fullName: [''],
-      dni: [''],
-      currency: ['ARS'],
-      cardName: [''],
-      cardNumber: [''],
-      expiryDate: [''],
-      cvv: ['']
+      cashPayment: this.fb.group({
+        fullName: [''],
+        dni: [''],
+        currency: ['ARS']
+      }),
+      cardPayment: this.fb.group({
+        cardName: [''],
+        cardNumber: [''],
+        expiryDate: [''],
+        cvv: ['']
+      })
     });
   }
 
@@ -46,39 +50,96 @@ export class PaymentComponent {
 
 
   ngOnInit(): void {
-    this.clientId = this.clientService.getLoggedInClientId();
-    if (this.clientId = null) {
-      this.router.navigate(['/login']);                     // Si no inicio sesion, lo redirige a la pagina de login
-    }
-     
-    this.route.paramMap.subscribe(params => {
-     this.carId = params.get('carId');
-    });
-
-    this.carService.getCars().subscribe({
-      next: (cars) => {
-        this.carService.cars = cars;
-        this.car = this.carService.cars.find(car => car.id.toString() === this.carId) || null;
-      },
-      error: (error) => {
-        console.error('Error al cargar el coche:', error);
+    this.paymentForm.get('paymentMethod')?.valueChanges.subscribe(method => {
+      if (method === 'cash') {
+        this.setCashPaymentValidations();
+      } else if (method === 'card') {
+        this.setCardPaymentValidations();
       }
     });
+  }
+  
+  setCashPaymentValidations(): void {
+    const cashGroup = this.paymentForm.get('cashPayment') as FormGroup;
 
+    // Validaciones para el pago en efectivo
+    cashGroup.get('fullName')?.setValidators([
+      Validators.required,
+      Validators.minLength(3) // Longitud mínima de 3 caracteres
+    ]);
+    cashGroup.get('dni')?.setValidators([
+      Validators.required,
+      Validators.minLength(7), // Longitud mínima de 7 caracteres para DNI
+      Validators.pattern('^[0-9]*$') // Solo números
+    ]);
+    cashGroup.get('currency')?.setValidators([Validators.required]);
 
+    // Limpiar validaciones del grupo de pago con tarjeta
+    const cardGroup = this.paymentForm.get('cardPayment') as FormGroup;
+    cardGroup.get('cardName')?.clearValidators();
+    cardGroup.get('cardNumber')?.clearValidators();
+    cardGroup.get('expiryDate')?.clearValidators();
+    cardGroup.get('cvv')?.clearValidators();
+
+    cashGroup.updateValueAndValidity();
+    cardGroup.updateValueAndValidity();
+  }
+  
+  setCardPaymentValidations(): void {
+    const cardGroup = this.paymentForm.get('cardPayment') as FormGroup;
+    cardGroup.get('cardName')?.setValidators([Validators.required]);
+    cardGroup.get('cardNumber')?.setValidators([
+      Validators.required,
+      Validators.pattern(/^\d{16}$/)
+    ]);
+    cardGroup.get('expiryDate')?.setValidators([
+      Validators.required,
+      Validators.pattern(/^(0[1-9]|1[0-2])\/\d{4}$/),
+      this.expiryDateValidator
+    ]);
+    cardGroup.get('cvv')?.setValidators([
+      Validators.required,
+      Validators.pattern(/^\d{3}$/)
+    ]);
+  
+    const cashGroup = this.paymentForm.get('cashPayment') as FormGroup;
+    cashGroup.get('fullName')?.clearValidators();
+    cashGroup.get('dni')?.clearValidators();
+    cashGroup.get('currency')?.clearValidators();
+  
+    cardGroup.updateValueAndValidity();
+    cashGroup.updateValueAndValidity();
   }
 
-  ngOnSubmit() {
-    console.log('Car data:', this.car); // Agrega esto para revisar el valor de `this.car`
+    // Validador personalizado para verificar que la fecha de expiración no sea anterior al mes actual
+    expiryDateValidator(control: AbstractControl): ValidationErrors | null {
+      const expiryValue = control.value;
+      if (!expiryValue) return null;
+  
+      const [month, year] = expiryValue.split('/').map(Number);
+      if (!month || !year) return { invalidDate: true }; // Verificar que la fecha tenga formato correcto
+  
+      const today = new Date();
+      const currentMonth = today.getMonth() + 1; // Los meses en JavaScript son base 0
+      const currentYear = today.getFullYear();
+  
+      if (year < currentYear || (year === currentYear && month < currentMonth)) {
+        return { expired: true };
+      }
+  
+      return null;
+    }
 
-    if (this.car?.isForSale) {
-      this.payment.savePurchaseInDB().subscribe(response => {
-        console.log('Compra todo ok');
-      }, error => {
-        console.log('Compra todo mal');
-      });
-    } 
-}
+  ngOnSubmit(): void {
+    if (this.paymentMethod === 'cash' && this.paymentForm.get('cashPayment')?.valid) {
+      console.log('Formulario de efectivo válido:', this.paymentForm.get('cashPayment')?.value);
+    } else if (this.paymentMethod === 'card' && this.paymentForm.get('cardPayment')?.valid) {
+      console.log('Formulario de tarjeta válido:', this.paymentForm.get('cardPayment')?.value);
+    } else {
+      console.log('Formulario inválido');
+    }
+  }
+
 
   selectPaymentMethod(method: 'cash' | 'card') {
     this.paymentMethod = method;
