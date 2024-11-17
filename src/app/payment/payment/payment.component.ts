@@ -8,6 +8,7 @@ import { CarService } from '../../cars/services/car.service';
 import { ActivatedRoute } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -19,6 +20,7 @@ export class PaymentComponent {
   paymentMethod: 'cash' | 'card' | null = null;
   clientId: number | null = null;
   carId: string | null = null;
+  
 
   constructor(
     private clientService: ClientService,
@@ -26,7 +28,8 @@ export class PaymentComponent {
     private payment: PaymentService,
     private fb: FormBuilder,
     private carService: CarService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+
   ) {
     this.paymentForm = this.fb.group({
       paymentMethod: ['', Validators.required],

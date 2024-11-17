@@ -9,6 +9,8 @@ import { PaymentService } from '../../payment/payment/services/payment.service';
 import { Purchase } from '../models/purchase';
 import { Router } from '@angular/router';
 import { FormBuilder,FormGroup } from '@angular/forms';
+import { AuthService } from '../../auth/auth.service';
+
 
 
 
@@ -34,7 +36,8 @@ export class CarDetailsComponent implements OnInit {
     private clientService: ClientService,
     private paymentService: PaymentService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) {
     this.carForm = this.fb.group({
       rentalStartDate: [''],
@@ -63,7 +66,7 @@ export class CarDetailsComponent implements OnInit {
   ngOnSubmit(){
     if(!this.car?.isForSale){
       const rental: Rental={
-        clientId: this.clientService.getLoggedInClientId()!,
+        clientId: this.auth.getCurrentUser().id,
         carId: Number(this.route.snapshot.paramMap.get('id')),
         rentalStartDate : this.carForm.get('rentalStartDate')?.value,
         rentalEndDate : this.carForm.get('rentalEndDate')?.value,
@@ -77,7 +80,7 @@ export class CarDetailsComponent implements OnInit {
       }
     if(this.car?.isForSale){
       const purchase: Purchase={
-        clientId: this.clientService.getLoggedInClientId()!,
+        clientId:this.auth.getCurrentUser().id,
         carId: Number(this.route.snapshot.paramMap.get('id')),
         price: this.car ? this.car.price + this.carryPrice : this.carryPrice
       }

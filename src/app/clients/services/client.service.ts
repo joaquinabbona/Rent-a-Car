@@ -43,6 +43,7 @@ export class ClientService {
       tap((client) => {
         if (client) {
           this.loggedInClientId = client.id; 
+          
         }
       })
     );
