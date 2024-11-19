@@ -14,7 +14,6 @@ import { AdminModule } from './admin/module/admin/admin.module';
 import { AdminFirstpageComponent } from './admin/components/admin-firstpage/admin-firstpage.component';
 import { CommonModule } from '@angular/common';
 import { PaymentComponent } from './payment/payment/payment.component';
-import { AdminGestionSucursalesComponent } from './admin/components/admin-gestion-sucursales/admin-gestion-sucursales.component';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { AdminGestionSucursalesComponent } from './admin/components/admin-gestio
     AppComponent,
     ClientsManagerComponent,
     AdminFirstpageComponent,
-    AdminGestionSucursalesComponent,
 
   ],
   imports: [
