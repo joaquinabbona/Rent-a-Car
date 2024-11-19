@@ -12,9 +12,9 @@ export class ClientFirstpageComponent {
     private location: Location
     ) {}
 
-  activeComponent: 'listar-vehiculos' | 'editar-usuario' | null = null; 
+  activeComponent: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos' | null = null; 
 
-  showComponent(component: 'listar-vehiculos' | 'editar-usuario' ): void {
+  showComponent(component: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos'): void {
     this.activeComponent = component;
   }
   goBack(): void {

@@ -11,10 +11,17 @@
     class="btn btn-primary me-2">
     Editar mi Usuario
   </button>
+  <button 
+    (click)="showComponent('historial-vehiculos')"
+    [class.active]="activeComponent === 'historial-vehiculos'"
+    class="btn btn-primary me-2">
+    Ver mi Historial
+  </button>
     </div>
     <div [ngSwitch]="activeComponent">
         <app-list-vehicles *ngSwitchCase="'listar-vehiculos'"></app-list-vehicles>
         <app-edit-client *ngSwitchCase="'editar-usuario'"></app-edit-client>
+        <app-history *ngSwitchCase="'historial-vehiculos'"></app-history>
           </div>
 
   
