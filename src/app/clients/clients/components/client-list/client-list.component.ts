@@ -22,4 +22,16 @@ export class ClientListComponent implements OnInit {
       }
     });
   }
+  onToggleState(client: Client): void {
+    const newState = !client.isActive;
+    this.clientService.deactivateClient(client.id, newState).subscribe({
+      next: () => {
+        client.isActive = newState; // Actualiza el estado en la lista
+      },
+      error: (error) => {
+        console.error('Error al cambiar el estado del cliente:', error);
+        alert('No se pudo cambiar el estado del cliente.');
+      }
+    });
+  }
 }

@@ -11,11 +11,11 @@
           <th>Dirección</th>
           <th>Fecha de Nacimiento</th>
           <th>Editar Cliente</th>
-          <th>Eliminar Cliente</th>
+          <th>Estado Cliente</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let client of clients">
+        <tr *ngFor="let client of clients" [ngClass]="{'desactivado': !client.isActive}">
           <td>{{ client.id }}</td>
           <td>{{ client.firstName }}</td>
           <td>{{ client.lastName }}</td>
@@ -23,12 +23,18 @@
           <td>{{ client.phone }}</td>
           <td>{{ client.address }}</td>
           <td>{{ client.dateOfBirth | date }}</td>
-          <td><a [routerLink]="['/edit/', client.id]" class="btn btn-sm btn-primary">
-            Editar
-          </a></td>
-          <td><a [routerLink]="['/delete/', client.id]" class="btn btn-sm btn-primary">
-            Eliminar
-          </a></td>
+          <td>
+            <a [routerLink]="['/edit/', client.id]" class="btn btn-sm btn-primary">Editar</a>
+          </td>
+          <td>
+            <button 
+              (click)="onToggleState(client)" 
+              [class.btn-danger]="client.isActive" 
+              [class.btn-success]="!client.isActive" 
+              class="btn btn-sm">
+              {{ client.isActive ? 'Desactivar' : 'Activar' }}
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -7,4 +7,5 @@ export interface Client {
     phone: string;
     address: string;
     dateOfBirth: Date;
+    isActive: boolean
   }

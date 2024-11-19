@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../../models/car';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from '../../services/car.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-car-details-to-edit',
@@ -15,7 +16,8 @@ export class CarDetailsToEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private carService: CarService,
-    private router: Router
+    private router: Router,
+    private location:Location
   ) {}
 
   ngOnInit(): void {
@@ -51,4 +53,8 @@ export class CarDetailsToEditComponent implements OnInit {
       }
     }
   }
+  goBack(): void {
+    this.location.back();
+  }
+  
 }
