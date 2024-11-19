@@ -13,11 +13,11 @@ export class AdminFirstpageComponent {
     private location: Location
     ) {}
 
-    activeComponent: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos' | 'gestion-sucursales' | null = null;
+  activeComponent: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos'| null = null; 
 
-    showComponent(component: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos' | 'gestion-sucursales'): void {
-      this.activeComponent = component;
-    }
+  showComponent(component: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos'): void {
+    this.activeComponent = component;
+  }
   goBack(): void {
     this.location.back();
   }
