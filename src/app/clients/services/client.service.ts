@@ -16,9 +16,11 @@ export class ClientService {
     return this.http.get<Client[]>(this.apiUrl);
   }
 
-  getClient(id: number): Observable<Client> { 
+  getClient(id: number): Observable<Client> {
     return this.http.get<Client>(`${this.apiUrl}/${id}`);
   }
+  
+  
 
   addClient(client: Client): Observable<Client> {
     return this.getClients().pipe(
@@ -34,8 +36,13 @@ export class ClientService {
     return this.http.put<Client>(`${this.apiUrl}/${id}`, client);
   }
 
-  deleteClient(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deactivateClient(id: number, isActive: boolean): Observable<void> {
+    return this.getClient(id).pipe(
+      switchMap((client) => {
+        const updatedClient = { ...client, isActive }; // Cambia el estado
+        return this.http.put<void>(`${this.apiUrl}/${id}`, updatedClient);
+      })
+    );
   }
   login(email: string, password: string): Observable<Client | null> {
     return this.http.get<Client[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
@@ -43,6 +50,7 @@ export class ClientService {
       tap((client) => {
         if (client) {
           this.loggedInClientId = client.id; 
+          console.log('Cliente logueado, ID:', this.loggedInClientId); // Debug
         }
       })
     );

@@ -4,7 +4,8 @@ export interface Client {
     lastName: string;
     email: string;
     password: string;  
-    tel: string;
+    phone: string;
     address: string;
     dateOfBirth: Date;
+    isActive: boolean
   }

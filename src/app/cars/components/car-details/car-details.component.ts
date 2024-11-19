@@ -9,6 +9,7 @@ import { ClientService } from '../../../clients/services/client.service';
 import { PaymentService } from '../../../payment/payment/services/payment.service';
 import { Rental } from '../../models/rental';
 import { Purchase } from '../../models/purchase';
+import { Location } from '@angular/common';
 
 
 
@@ -34,7 +35,8 @@ export class CarDetailsComponent implements OnInit {
     private clientService: ClientService,
     private paymentService: PaymentService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     this.carForm = this.fb.group({
       rentalStartDate: [''],
@@ -79,5 +81,8 @@ export class CarDetailsComponent implements OnInit {
 
   }
   
+  goBack(): void {
+    this.location.back();
+  }
   
 }

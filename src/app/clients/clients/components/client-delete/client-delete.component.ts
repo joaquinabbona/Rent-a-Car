@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from '../../../services/client.service';
 import { Client } from '../../../interfaces/client.interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-delete-client',
@@ -15,7 +16,8 @@ export class ClientDeleteComponent implements OnInit {
   constructor(
     private clientService: ClientService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -31,20 +33,23 @@ export class ClientDeleteComponent implements OnInit {
     });
   }
 
-  onDelete(): void {
-    this.clientService.deleteClient(this.clientId).subscribe({
+  onToggleState(): void {
+    if (!this.client) return;
+
+    const newState = !this.client.isActive;
+    this.clientService.deactivateClient(this.clientId, newState).subscribe({
       next: () => {
-        alert('Cliente eliminado exitosamente');
+        alert(`Cliente ${newState ? 'activado' : 'desactivado'} exitosamente`);
         this.router.navigate(['/clients']);
       },
       error: (error) => {
-        console.error('Error al eliminar el cliente:', error);
-        alert('No se pudo eliminar el cliente.');
+        console.error('Error al cambiar el estado del cliente:', error);
+        alert('No se pudo cambiar el estado del cliente.');
       }
     });
   }
 
   onCancel(): void {
-    this.router.navigate(['/clients']);
+    this.location.back();
   }
 }

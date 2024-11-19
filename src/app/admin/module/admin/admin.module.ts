@@ -10,6 +10,7 @@ import { AdminGestionAdminComponent } from '../../components/admin-gestion-admin
 import { AdminGestionVehiculosComponent } from '../../components/admin-gestion-vehiculos/admin-gestion-vehiculos.component';
 import { AdminGestionClientesComponent } from '../../components/admin-gestion-clientes/admin-gestion-clientes.component';
 import { AuthService } from '../../../auth/auth.service';
+import { ListToEditComponent } from '../../../cars/components/list-to-edit/list-to-edit.component';
 
 
 
@@ -20,13 +21,13 @@ import { AuthService } from '../../../auth/auth.service';
     AdminGestionClientesComponent,
     AdminGestionAdminComponent,
     AdminGestionVehiculosComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     AdminRoutingModule, 
-    ClientsModule
+    ClientsModule,
 
   ],
   exports:[

@@ -5,14 +5,14 @@
       </div>
       <div class="card-body">
         <p *ngIf="client">
-          ¿Estás seguro de que deseas eliminar al cliente 
+          ¿Estás seguro de que deseas desactivar al cliente 
           <strong>{{ client.firstName }} {{ client.lastName }}</strong>?
         </p>
         <p *ngIf="!client">Cargando información del cliente...</p>
   
         <div class="d-flex justify-content-end gap-2">
           <button class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
-          <button class="btn btn-danger" (click)="onDelete()">Eliminar</button>
+          <button class="btn btn-danger" (click)="onToggleState()">Desactivar</button>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdminModule } from '../../module/admin/admin.module';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-admin-firstpage',
   templateUrl: './admin-firstpage.component.html',

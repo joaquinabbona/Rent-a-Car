@@ -351,14 +351,25 @@
   ],
   "clients": [
     {
-      "firstName": "Juands",
-      "lastName": "Pérez22",
+      "firstName": "Juan",
+      "lastName": "Pérez",
       "email": "juan.perez@example.com",
-      "password": "123456",
       "phone": "2",
       "address": "Av. Siempre Viva 742",
       "dateOfBirth": "1990-05-15",
-      "id": "1"
+      "id": "1",
+      "isActive": false
+    },
+    {
+      "firstName": "Ana",
+      "lastName": "Gómez",
+      "email": "ana.gomez@example.com",
+      "password": "abcdef",
+      "phone": "123456789",
+      "address": "Calle Ficticia 123",
+      "dateOfBirth": "1985-11-30",
+      "id": "2",
+      "isActive": true
     },
     {
       "id": "3",
@@ -368,7 +379,8 @@
       "password": "pepito",
       "phone": "+5492236015427",
       "address": "Alvarado 1487",
-      "dateOfBirth": "1999-12-28"
+      "dateOfBirth": "1999-12-28",
+      "isActive": true
     },
     {
       "id": "4",
@@ -378,7 +390,8 @@
       "password": "aaa123",
       "phone": "123123131",
       "address": "asddasd",
-      "dateOfBirth": "2004-03-11"
+      "dateOfBirth": "2004-03-11",
+      "isActive": true
     },
     {
       "id": "5",
@@ -388,7 +401,8 @@
       "password": "123456",
       "phone": "dasds",
       "address": "dasdas",
-      "dateOfBirth": "1995-01-03"
+      "dateOfBirth": "1995-01-03",
+      "isActive": true
     },
     {
       "id": "6",
@@ -398,26 +412,20 @@
       "password": "123456",
       "phone": "456",
       "address": "Piann",
-      "dateOfBirth": "2017-01-31"
+      "dateOfBirth": "2017-01-31",
+      "isActive": false
     }
   ],
   "admin": [
     {
-      "id": "0",
+      "id": "1",
       "username": "gva",
       "password": "123456",
       "email": "ff@gasf.com",
       "fullName": "Gonzalo Vazq"
     },
     {
-      "id": "0",
-      "username": "adsasd",
-      "password": "123456",
-      "email": "dsadas@g.com",
-      "fullName": "adssda"
-    },
-    {
-      "id": "0",
+      "id": "3",
       "username": "gonzalo",
       "password": "123456",
       "email": "assd@gmo.com",

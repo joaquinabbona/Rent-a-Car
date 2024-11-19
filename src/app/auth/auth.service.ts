@@ -22,15 +22,22 @@ export class AuthService {
     return this.http.get<Client[]>(`${this.clientApiUrl}?email=${email}&password=${password}`).pipe(
       map((clients) => {
         if (clients.length) {
-          this.loggedInUser = { ...clients[0], role: 'client' };  // Asignar el rol 'client'
+          const client = clients[0];
+          if (!client.isActive) {
+            // Cliente desactivado, no puede iniciar sesión
+            console.warn(`El cliente con email ${email} está desactivado y no puede iniciar sesión.`);
+            return false;
+          }
+          this.loggedInUser = { ...client, role: 'client' }; // Asignar el rol 'client'
           this.clientService.saveLoggedInClientId(this.loggedInUser.id);
+          console.log('Cliente logueado, ID:', this.loggedInUser.id); // Debug
           return true;
         }
         return false;
       })
     );
   }
-
+  
   loginAdmin(username: string, password: string): Observable<boolean> {
     return this.http.get<Admin[]>(`${this.adminApiUrl}?username=${username}&password=${password}`).pipe(
       map((admins) => {

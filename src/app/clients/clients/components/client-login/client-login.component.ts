@@ -18,7 +18,7 @@ export class ClientLoginComponent {
     private authService: AuthService
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
@@ -26,17 +26,27 @@ export class ClientLoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.loginClient(email, password).subscribe(isLoggedIn => {
-        if (!isLoggedIn) {
-          this.errorMessage = 'Usuario o contraseña incorrectos';
-        }else{
-          this.router.navigate(['firstpage'])
+
+      // Llamada al servicio de autenticación
+      this.authService.loginClient(email, password).subscribe({
+        next: (isLoggedIn) => {
+          if (!isLoggedIn) {
+            this.errorMessage =
+              'Usuario o contraseña incorrectos, o la cuenta está desactivada.';
+          } else {
+            // Redirigir al usuario a la página principal o dashboard
+            this.router.navigate(['firstpage']);
+          }
+        },
+        error: (err) => {
+          console.error('Error durante el inicio de sesión:', err);
+          this.errorMessage =
+            'Ocurrió un error durante el inicio de sesión. Inténtelo de nuevo más tarde.';
         }
       });
     } else {
+      // Mostrar mensaje de error si los campos están incompletos
       this.errorMessage = 'Por favor, complete todos los campos requeridos.';
     }
   }
-
-
 }

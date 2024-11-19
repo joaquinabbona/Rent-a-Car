@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../../models/car';
 import { CarService } from '../../services/car.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-cars',
@@ -23,7 +24,9 @@ export class AddCarsComponent implements OnInit{
     imageUrl: ''
   };
 
-  constructor(private carService: CarService) {}
+  constructor(private carService: CarService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {}
   
@@ -52,5 +55,8 @@ export class AddCarsComponent implements OnInit{
       rental: true,
       imageUrl: ''
     };
+  }
+  goBack(): void {
+    this.location.back();
   }
 }
