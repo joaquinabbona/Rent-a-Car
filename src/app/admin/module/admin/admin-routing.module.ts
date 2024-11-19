@@ -8,6 +8,7 @@ import { AdminGestionClientesComponent } from '../../components/admin-gestion-cl
 import { AdminGestionAdminComponent } from '../../components/admin-gestion-admin/admin-gestion-admin.component';
 import { AdminGestionVehiculosComponent } from '../../components/admin-gestion-vehiculos/admin-gestion-vehiculos.component';
 import { AuthGuard } from '../../../auth/auth.guard';
+import { ListToEditComponent } from '../../../cars/components/list-to-edit/list-to-edit.component';
 
 const routes: Routes = [
   { path: 'admin-login', component: AdminLoginComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'admin-firstpage', component: AdminFirstpageComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'gestion-clientes', component: AdminGestionClientesComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'gestion-admin', component: AdminGestionAdminComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
-  { path: 'gestion-vehiculos', component: AdminGestionVehiculosComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } }
+  { path: 'gestion-vehiculos', component: ListToEditComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } }
 ];
 
 @NgModule({

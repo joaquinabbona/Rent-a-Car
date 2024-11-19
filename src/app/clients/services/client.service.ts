@@ -16,9 +16,11 @@ export class ClientService {
     return this.http.get<Client[]>(this.apiUrl);
   }
 
-  getClient(id: number): Observable<Client> { 
+  getClient(id: number): Observable<Client> {
     return this.http.get<Client>(`${this.apiUrl}/${id}`);
   }
+  
+  
 
   addClient(client: Client): Observable<Client> {
     return this.getClients().pipe(
@@ -43,6 +45,7 @@ export class ClientService {
       tap((client) => {
         if (client) {
           this.loggedInClientId = client.id; 
+          console.log('Cliente logueado, ID:', this.loggedInClientId); // Debug
         }
       })
     );

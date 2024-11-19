@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../../models/car';
 import { CarService } from '../../services/car.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-list-vehicles',
@@ -23,7 +24,9 @@ export class ListCarsComponent implements OnInit {
   uniqueYears: number[] = [];
   uniqueTypes: string[] = [];
 
-  constructor(public carService: CarService) {}
+  constructor(public carService: CarService,
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.getCars();
@@ -81,5 +84,9 @@ export class ListCarsComponent implements OnInit {
       maxPrice: null
     };
     this.filteredCars = this.cars;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

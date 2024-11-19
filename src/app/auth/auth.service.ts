@@ -24,6 +24,7 @@ export class AuthService {
         if (clients.length) {
           this.loggedInUser = { ...clients[0], role: 'client' };  // Asignar el rol 'client'
           this.clientService.saveLoggedInClientId(this.loggedInUser.id);
+          console.log('Cliente logueado, ID:', this.loggedInUser.id); // Debug
           return true;
         }
         return false;
