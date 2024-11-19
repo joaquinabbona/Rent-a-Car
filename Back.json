@@ -531,19 +531,5 @@
       "carId": 5,
       "price": 50000
     }
-  ],
-  "branches": [
-    {
-      "id": "1",
-      "city": "Mar del Plata"
-    },
-    {
-      "id": 0,
-      "city": "Buenos Aires"
-    },
-    {
-      "id": 0,
-      "city": "Rosario"
-    }
   ]
 }

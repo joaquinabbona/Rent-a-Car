@@ -1,37 +1,30 @@
-
-<div class="button-group mb-4">
-  <button 
-    (click)="showComponent('gestion-admin')"
-    [class.active]="activeComponent === 'gestion-admin'"
-    class="btn btn-primary me-2">
-    Gestion de Administradores
+    <!-- Botones de navegación -->
+    <div class="button-group mb-4">
+        <button 
+          (click)="showComponent('gestion-admin')"
+          [class.active]="activeComponent === 'gestion-admin'"
+          class="btn btn-primary me-2">
+          Gestion de Administradores
+        </button>
+        <button 
+          (click)="showComponent('gestion-clientes')"
+          [class.active]="activeComponent === 'gestion-clientes'"
+          class="btn btn-success">
+          Gestion de Clientes
+      </button>
+      <button 
+      (click)="showComponent('gestion-vehiculos')"
+      [class.active]="activeComponent === 'gestion-vehiculos'"
+      class="btn btn-success">
+      Gestion de Vehiculos
   </button>
-  <button 
-    (click)="showComponent('gestion-clientes')"
-    [class.active]="activeComponent === 'gestion-clientes'"
-    class="btn btn-success">
-    Gestion de Clientes
-  </button>
-  <button 
-    (click)="showComponent('gestion-vehiculos')"
-    [class.active]="activeComponent === 'gestion-vehiculos'"
-    class="btn btn-success">
-    Gestion de Vehiculos
-  </button>
-  <button 
-    (click)="showComponent('gestion-sucursales')"
-    [class.active]="activeComponent === 'gestion-sucursales'"
-    class="btn btn-warning">
-    Gestion de Sucursales
-  </button>
-</div>
-
-
-<div [ngSwitch]="activeComponent">
-  <app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
-  <app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
-  <app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
-  <app-admin-gestion-sucursales *ngSwitchCase="'gestion-sucursales'"></app-admin-gestion-sucursales>
-</div>
+      </div>
+    
+      <!-- Componentes condicionalmente mostrados -->
+      <div [ngSwitch]="activeComponent">
+        <app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
+        <app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
+        <app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
+          </div>
 
   

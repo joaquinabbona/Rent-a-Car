@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 import { DistanceCalculatorService } from '../../services/distance-calculator.service';
 import { PaymentService } from '../../../payment/payment/services/payment.service'; 
 import { Rental } from '../../models/rental';
-import { Branch } from '../../models/branch';
-import { BranchService } from '../../services/branch.service';
 
 @Component({
   selector: 'app-car-rental',
@@ -17,7 +15,8 @@ import { BranchService } from '../../services/branch.service';
 })
 export class CarRentalComponent implements OnInit {
   carForm: FormGroup;
-  branches: Branch[] = [];  minEndDate: string = '';
+  branches = ['Mar del Plata', 'Córdoba', 'Bariloche'];
+  minEndDate: string = '';
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
@@ -31,26 +30,21 @@ export class CarRentalComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private distanceCalculator: DistanceCalculatorService,
-    private branchService: BranchService, 
     private route: ActivatedRoute, 
     private router: Router,
-    private paymentService: PaymentService)
-    {
+    private paymentService: PaymentService) {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
       rentalEndDate: ['', Validators.required],
       originBranch: ['', Validators.required],
       destinationBranch: ['', Validators.required]
       }, { validator: this.endDateAfterStartDateValidator });
-    }
+  }
 
   ngOnInit(): void {
     this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
       this.minEndDate = startDate;
       this.carForm.get('rentalEndDate')?.updateValueAndValidity();
-    });
-    this.branchService.getBranches().subscribe(branches => {
-      this.branches = branches;
     });
   }
 
@@ -120,11 +114,11 @@ export class CarRentalComponent implements OnInit {
 
           this.auxTotalPrice = `El precio total del alquiler es de $${rentalPrice.toLocaleString()}`;
   
-          observer.next(rentalPrice);  
+          observer.next(rentalPrice);  // Emitir el precio total calculado
           observer.complete();
         } else {
           this.totalPrice = 0;
-          observer.next(0);  
+          observer.next(0);  // Si no hay fechas, se devuelve 0 como precio
           observer.complete();
         }
       });
