@@ -13,9 +13,9 @@ export class AdminFirstpageComponent {
     private location: Location
     ) {}
 
-  activeComponent: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos'| null = null; 
+  activeComponent: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos'| 'gestion-sucursales' | null = null; 
 
-  showComponent(component: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos'): void {
+  showComponent(component: 'gestion-clientes' | 'gestion-admin' | 'gestion-vehiculos' | 'gestion-sucursales'): void {
     this.activeComponent = component;
   }
   goBack(): void {

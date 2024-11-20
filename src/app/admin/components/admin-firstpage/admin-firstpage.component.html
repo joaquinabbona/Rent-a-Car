@@ -18,13 +18,18 @@
       class="btn btn-success">
       Gestion de Vehiculos
   </button>
-      </div>
-    
-      <!-- Componentes condicionalmente mostrados -->
-      <div [ngSwitch]="activeComponent">
-        <app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
-        <app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
-        <app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
-          </div>
+  <button 
+  (click)="showComponent('gestion-sucursales')"
+  [class.active]="activeComponent === 'gestion-sucursales'"
+  class="btn btn-info">
+  Gestión de Sucursales
+</button>
+</div>
 
+<div [ngSwitch]="activeComponent">
+<app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
+<app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
+<app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
+<app-admin-gestion-sucursales *ngSwitchCase="'gestion-sucursales'"></app-admin-gestion-sucursales>
+</div>
   

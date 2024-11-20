@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import { DistanceCalculatorService } from '../../services/distance-calculator.service';
 import { PaymentService } from '../../../payment/payment/services/payment.service'; 
 import { Rental } from '../../models/rental';
+import { Branch } from '../../models/branch';
+import { BranchService } from '../../services/branch.service';
 
 @Component({
   selector: 'app-car-rental',
@@ -15,7 +17,7 @@ import { Rental } from '../../models/rental';
 })
 export class CarRentalComponent implements OnInit {
   carForm: FormGroup;
-  branches = ['Mar del Plata', 'Córdoba', 'Bariloche'];
+  branches: Branch[] = []; 
   minEndDate: string = '';
   distance: string='';
   messagePrice: string='';
@@ -32,6 +34,7 @@ export class CarRentalComponent implements OnInit {
     private distanceCalculator: DistanceCalculatorService,
     private route: ActivatedRoute, 
     private router: Router,
+    private branchService: BranchService,
     private paymentService: PaymentService) {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
@@ -42,9 +45,21 @@ export class CarRentalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadBranches();
     this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
       this.minEndDate = startDate;
       this.carForm.get('rentalEndDate')?.updateValueAndValidity();
+    });
+  }
+
+  loadBranches(): void {
+    this.branchService.getBranches().subscribe({
+      next: (data) => {
+        this.branches = data;
+      },
+      error: (err) => {
+        console.error('Error al cargar las sucursales:', err);
+      }
     });
   }
 

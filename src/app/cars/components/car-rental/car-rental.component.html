@@ -36,26 +36,26 @@
         </div>
   
         <div>
-            <label for="originBranch">Sucursal de retiro:</label>
-            <select id="originBranch" formControlName="originBranch" class="form-control">
-              <option value="" disabled selected>Seleccione una sucursal</option>
-              <option *ngFor="let branch of branches" [value]="branch">{{ branch }}</option>
-            </select>
-            <div *ngIf="carForm.get('originBranch')?.invalid && carForm.get('originBranch')?.touched" class="is-invalid">
-              Selecciona una sucursal.
-            </div>
+          <label for="originBranch">Sucursal de retiro:</label>
+          <select id="originBranch" formControlName="originBranch" class="form-control">
+            <option value="" disabled selected>Seleccione una sucursal</option>
+            <option *ngFor="let branch of branches" [value]="branch.city">{{ branch.city }}</option>
+          </select>
+          <div *ngIf="carForm.get('originBranch')?.invalid && carForm.get('originBranch')?.touched" class="is-invalid">
+            Seleccione una sucursal.
           </div>
+        </div>
         
-          <div>
-            <label for="destinationBranch">Sucursal donde se devuelve el vehiculo:</label>
-            <select id="destinationBranch" formControlName="destinationBranch" class="form-control">
-              <option value="" disabled selected>Seleccione una sucursal</option>
-              <option *ngFor="let branch of branches" [value]="branch">{{ branch }}</option>
-            </select>
-            <div *ngIf="carForm.get('destinationBranch')?.invalid && carForm.get('destinationBranch')?.touched" class="is-invalid">
-              Selecciona una sucursal.
-            </div>
+        <div>
+          <label for="destinationBranch">Sucursal donde se devuelve el vehículo:</label>
+          <select id="destinationBranch" formControlName="destinationBranch" class="form-control">
+            <option value="" disabled selected>Seleccione una sucursal</option>
+            <option *ngFor="let branch of branches" [value]="branch.city">{{ branch.city }}</option>
+          </select>
+          <div *ngIf="carForm.get('destinationBranch')?.invalid && carForm.get('destinationBranch')?.touched" class="is-invalid">
+            Seleccione una sucursal.
           </div>
+        </div>
           <div><button type="button" 
             (click)="onCalculatePrice()">
       Calcular acarreo
