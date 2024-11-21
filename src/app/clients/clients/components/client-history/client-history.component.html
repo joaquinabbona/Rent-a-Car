@@ -15,19 +15,21 @@
         <h2 class="h5">Alquileres</h2>
       </div>
       <div class="card-body">
-        <ul class="list-group" *ngIf="rentals.length > 0; else noRentals">
-          <li class="list-group-item" *ngFor="let rental of rentals">
-            <p class="mb-1"><strong>Vehículo:</strong> {{ rental.carName }}</p>
-            <p class="mb-1"><strong>Desde:</strong> {{ rental.rentalStartDate | date:'yyyy-MM-dd' }}</p>
-            <p class="mb-1"><strong>Hasta:</strong> {{ rental.rentalEndDate | date:'yyyy-MM-dd'}}</p>
-            <p class="mb-1"><strong>Precio:</strong> ${{ rental.price }}</p>
-            <p class="mb-1"><strong>Origen:</strong> {{ rental.originBranch }}</p>
-            <p><strong>Destino:</strong> {{ rental.destinationBranch }}</p>
-            <button class="btn btn-danger" (click)="cancelReservation(rental.id)">
-              <i class="bi bi-trash"></i> Cancelar Reserva
-            </button>
-          </li>
-        </ul>
+          <ul class="list-group" *ngIf="rentals.length > 0; else noRentals">
+            <li class="list-group-item" *ngFor="let rental of rentals">
+              <p class="mb-1"><strong>Vehículo:</strong> {{ rental.carName }}</p>
+              <p class="mb-1"><strong>Desde:</strong> {{ rental.rentalStartDate | date:'yyyy-MM-dd' }}</p>
+              <p class="mb-1"><strong>Hasta:</strong> {{ rental.rentalEndDate | date:'yyyy-MM-dd'}}</p>
+              <p class="mb-1"><strong>Precio:</strong> ${{ rental.price }}</p>
+              <p class="mb-1"><strong>Origen:</strong> {{ rental.originBranch }}</p>
+              <p><strong>Destino:</strong> {{ rental.destinationBranch }}</p>
+              <div *ngIf="rental.rentalStartDate > today">
+                <button class="btn btn-danger" (click)="cancelReservation(rental.id)">
+                  <i class="bi bi-trash"></i> Cancelar Reserva
+                </button>
+              </div>
+            </li>
+          </ul>
         <ng-template #noRentals>
           <div class="alert alert-secondary text-center">No hay alquileres registrados.</div>
         </ng-template>

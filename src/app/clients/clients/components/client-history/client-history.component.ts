@@ -15,13 +15,16 @@ export class ClientHistoryComponent implements OnInit {
   rentals: any[] = [];
   purchases: any[] = [];
   errorMessage: string | null = null;
+  today: string;
   
 
   constructor(
     private historyService: ClientHistoryService,
     private clientService: ClientService,
     private paymentService: PaymentService
-  ) {}
+  ) {
+    this.today = new Date().toISOString().split('T')[0];
+  }
 
  
   ngOnInit(): void {
