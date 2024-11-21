@@ -23,7 +23,9 @@
             <p class="mb-1"><strong>Precio:</strong> ${{ rental.price }}</p>
             <p class="mb-1"><strong>Origen:</strong> {{ rental.originBranch }}</p>
             <p><strong>Destino:</strong> {{ rental.destinationBranch }}</p>
-            <button (click)="cancelReservation(rental.id)">Eliminar reserva</button>
+            <button class="btn btn-danger" (click)="cancelReservation(rental.id)">
+              <i class="bi bi-trash"></i> Cancelar Reserva
+            </button>
           </li>
         </ul>
         <ng-template #noRentals>
