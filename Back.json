@@ -24,7 +24,7 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Mondeo.jpg",
-      "branchId": 5
+      "branchId": 3
     },
     {
       "id": "3",
@@ -781,6 +781,24 @@
       "price": 71781.5,
       "originBranch": "Ciudad Autónoma de Buenos Aires",
       "destinationBranch": "Pinamar"
+    },
+    {
+      "clientId": "2",
+      "carId": 22,
+      "rentalStartDate": "2025-02-03T00:00:00.000Z",
+      "rentalEndDate": "2025-02-11T00:00:00.000Z",
+      "price": 80288.5,
+      "destinationBranch": "La Plata",
+      "id": "A3ky8j9"
+    },
+    {
+      "clientId": "2",
+      "carId": 2,
+      "rentalStartDate": "2024-12-03T00:00:00.000Z",
+      "rentalEndDate": "2024-12-04T00:00:00.000Z",
+      "price": 13769.5,
+      "destinationBranch": "Córdoba",
+      "id": "F1f1ziD"
     }
   ],
   "purchase": [

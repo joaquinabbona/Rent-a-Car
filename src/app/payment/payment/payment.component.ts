@@ -6,6 +6,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 import { Car } from '../../cars/models/car';
 import { CarService } from '../../cars/services/car.service';
 import { ActivatedRoute } from '@angular/router';
+import { BranchService } from '../../cars/services/branch.service';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class PaymentComponent {
     private router: Router,
     private payment: PaymentService,
     private fb: FormBuilder,
+    private branchService: BranchService,
     private carService: CarService,
     private route: ActivatedRoute
 
@@ -141,41 +143,57 @@ export class PaymentComponent {
     }
     
     private saveTransaction(): void {
-
-    const carId = this.route.snapshot.paramMap.get('id');
-    console.log('CAR ID:ESTOY EN PAYMENT',carId);
-    this.carService.getCarById(Number(carId)).subscribe({
-      next: (car) => {
-        this.car = car;
-        console.log('Auto leido en payment: ', this.car);
-        if(this.car.isForSale){
-          console.log('SE VENTDE')
-          this.payment.savePurchaseInDB().subscribe({
-            next: (response) => {
-              this.router.navigate(['/payment-success']);
-              console.log('Purchase saved successfully:', response);
-            },
-            error: (error) => {
-              console.error('Error saving purchase:', error);
-            }
-          });
-
-
-        }else{
-          console.log('SE alquila')
-          this.payment.saveRentalInDB().subscribe({
-            next: (response) => {
-              this.router.navigate(['/payment-success']);
-              console.log('Rental saved successfully:', response);
-            },
-            error: (error) => {
-              console.error('Error saving rental:', error);
-            }
-          });
+      const carId = this.route.snapshot.paramMap.get('id');
+      console.log('CAR ID:ESTOY EN PAYMENT', carId);
+    
+      this.carService.getCarById(Number(carId)).subscribe({
+        next: (car) => {
+          this.car = car;
+          console.log('Auto leido en payment: ', this.car);
+    
+          if (this.car.isForSale) {
+            console.log('SE VENDE');
+            this.payment.savePurchaseInDB().subscribe({
+              next: (response) => {
+                this.router.navigate(['/payment-success']);
+                console.log('Purchase saved successfully:', response);
+              },
+              error: (error) => {
+                console.error('Error saving purchase:', error);
+              }
+            });
+          } else {
+            console.log('SE alquila');
+            this.payment.saveRentalInDB().subscribe({
+              next: (response) => {
+                const rental = this.payment.getRentalData();
+                
+                if (rental?.destinationBranch) {
+                  this.branchService.getBranchByName(rental.destinationBranch).subscribe({
+                    next: (branch) => {
+                      this.carService.updateCarBranch(Number(carId), Number(branch.id)).subscribe({
+                        next: (updatedCar) => {
+                          this.router.navigate(['/payment-success']);
+                          console.log('Rental and car branch updated successfully:', updatedCar);
+                        },
+                        error: (error) => {
+                          console.error('Error updating car branch:', error);
+                        }
+                      });
+                    },
+                    error: (error) => {
+                      console.error('Error finding branch:', error);
+                    }
+                  });
+                }
+              },
+              error: (error) => {
+                console.error('Error saving rental:', error);
+              }
+            });
+          }
         }
-      }
-    })
-      
+      });
     }
 
 

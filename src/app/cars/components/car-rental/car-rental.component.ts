@@ -62,7 +62,6 @@ export class CarRentalComponent implements OnInit {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
       rentalEndDate: ['', Validators.required],
-      originBranch: ['', Validators.required],
       destinationBranch: ['', Validators.required]
       }, { });
   }
