@@ -662,6 +662,16 @@
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
       "id": 23
+    },
+    {
+      "clientId": "2",
+      "carId": 2,
+      "rentalStartDate": "2025-01-05T00:00:00.000Z",
+      "rentalEndDate": null,
+      "price": 0,
+      "originBranch": "",
+      "destinationBranch": "",
+      "id": 24
     }
   ],
   "purchase": [
