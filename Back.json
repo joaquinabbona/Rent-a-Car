@@ -592,6 +592,16 @@
       "originBranch": "Pinamar",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
       "id": 16
+    },
+    {
+      "clientId": null,
+      "carId": 29,
+      "rentalStartDate": "2025-03-11T00:00:00.000Z",
+      "rentalEndDate": "2025-03-27T00:00:00.000Z",
+      "price": 0,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Pinamar",
+      "id": 17
     }
   ],
   "purchase": [

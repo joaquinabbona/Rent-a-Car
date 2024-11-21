@@ -38,7 +38,7 @@ export class CarRentalComponent implements OnInit {
   today: Date = new Date();
   pickupDate: Date | null = null; // Fecha de retiro
   dropoffDate: Date | null = null; // Fecha de devolución
-  
+  datesConfirmed: boolean = false;
   selectionMode: 'pickup' | 'dropoff' = 'pickup'; // Modo de selección actual
 
   constructor(
@@ -104,7 +104,7 @@ export class CarRentalComponent implements OnInit {
       }
     });
   }
-
+  
   generateSixMonths(): void {
     const today = new Date();
     this.calendarMonths = [];
@@ -195,7 +195,7 @@ export class CarRentalComponent implements OnInit {
         rentalStartDate: sortedDates[0].toISOString().split('T')[0],
         rentalEndDate: sortedDates[sortedDates.length - 1].toISOString().split('T')[0],
       });
-  
+      this.datesConfirmed = true;
       this.rentalConfirmed = true;
       console.log('Fechas confirmadas para el alquiler:', this.carForm.value);
     } else {
