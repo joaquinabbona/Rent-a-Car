@@ -54,6 +54,10 @@ export class AuthService {
     return this.loggedInUser;
   }
 
+  getCurrentUserID(): number {
+    return this.loggedInUser ? this.loggedInUser.id : null;
+  }
+
   isAuthenticated(): boolean {
     return this.loggedInUser !== null;
   }
