@@ -169,18 +169,6 @@
       "imageUrl": "assets/images/tilda2023.jpg"
     },
     {
-      "id": "15",
-      "brand": "Toyota",
-      "model": "Hilux",
-      "type": "Pick-Up",
-      "price": 39000,
-      "year": 2023,
-      "description": "Legendaria Toyota Hilux con durabilidad comprobada",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/hilux2023.jpg"
-    },
-    {
       "id": "16",
       "brand": "Toyota",
       "model": "Etios",
@@ -491,7 +479,7 @@
       "price": 61784.5,
       "originBranch": "Pinamar",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
-      "id": 6
+      "id": "6"
     },
     {
       "clientId": "3",
@@ -501,7 +489,7 @@
       "price": 61784.5,
       "originBranch": "Rosario",
       "destinationBranch": "La Plata",
-      "id": 7
+      "id": "7"
     },
     {
       "clientId": "3",
@@ -511,7 +499,7 @@
       "price": 141495,
       "originBranch": "Rosario",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
-      "id": 8
+      "id": "8"
     },
     {
       "clientId": "3",
@@ -521,7 +509,7 @@
       "price": 10000,
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
-      "id": 9
+      "id": "9"
     },
     {
       "clientId": "3",
@@ -531,7 +519,7 @@
       "price": 51563.5,
       "originBranch": "La Plata",
       "destinationBranch": "Pinamar",
-      "id": 10
+      "id": "10"
     },
     {
       "clientId": "3",
@@ -541,7 +529,7 @@
       "price": 21781.5,
       "originBranch": "Ciudad Autónoma de Buenos Aires",
       "destinationBranch": "Pinamar",
-      "id": 11
+      "id": "11"
     },
     {
       "clientId": "3",
@@ -551,7 +539,7 @@
       "price": 10289.5,
       "originBranch": "La Plata",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
-      "id": 12
+      "id": "12"
     },
     {
       "clientId": "3",
@@ -561,7 +549,7 @@
       "price": 30000,
       "originBranch": "La Plata",
       "destinationBranch": "La Plata",
-      "id": 13
+      "id": "13"
     },
     {
       "clientId": "3",
@@ -571,7 +559,7 @@
       "price": 11781.5,
       "originBranch": "Ciudad Autónoma de Buenos Aires",
       "destinationBranch": "Pinamar",
-      "id": 14
+      "id": "14"
     },
     {
       "clientId": "3",
@@ -581,7 +569,7 @@
       "price": 150000,
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
-      "id": 15
+      "id": "15"
     },
     {
       "clientId": "3",
@@ -591,7 +579,7 @@
       "price": 531784.5,
       "originBranch": "Pinamar",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
-      "id": 16
+      "id": "16"
     },
     {
       "clientId": null,
@@ -601,7 +589,7 @@
       "price": 0,
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
-      "id": 17
+      "id": "17"
     },
     {
       "clientId": "3",
@@ -611,7 +599,7 @@
       "price": 20632,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Pinamar",
-      "id": 18
+      "id": "18"
     },
     {
       "clientId": "3",
@@ -621,7 +609,7 @@
       "price": 20632,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Pinamar",
-      "id": 19
+      "id": "19"
     },
     {
       "clientId": "3",
@@ -631,7 +619,7 @@
       "price": 31558.5,
       "originBranch": "Pinamar",
       "destinationBranch": "La Plata",
-      "id": 20
+      "id": "20"
     },
     {
       "clientId": "2",
@@ -641,7 +629,7 @@
       "price": 35253,
       "originBranch": "Córdoba",
       "destinationBranch": "Pinamar",
-      "id": 21
+      "id": "21"
     },
     {
       "clientId": null,
@@ -651,7 +639,7 @@
       "price": 30000,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Mar del Plata",
-      "id": 22
+      "id": "22"
     },
     {
       "clientId": null,
@@ -661,7 +649,7 @@
       "price": 30000,
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
-      "id": 23
+      "id": "23"
     },
     {
       "clientId": "2",
@@ -671,7 +659,7 @@
       "price": 0,
       "originBranch": "",
       "destinationBranch": "",
-      "id": 24
+      "id": "24"
     },
     {
       "clientId": "2",
@@ -681,7 +669,7 @@
       "price": 53568.5,
       "originBranch": "Rosario",
       "destinationBranch": "Mar del Plata",
-      "id": 25
+      "id": "25"
     },
     {
       "id": "9b9d",
@@ -787,6 +775,18 @@
       "clientId": "4",
       "carId": 4,
       "price": 38000
+    },
+    {
+      "id": "c1d9",
+      "clientId": "4",
+      "carId": 20,
+      "price": 28000
+    },
+    {
+      "id": "4ebf",
+      "clientId": "4",
+      "carId": 15,
+      "price": 39000
     }
   ],
   "branches": [

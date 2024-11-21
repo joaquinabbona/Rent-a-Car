@@ -153,6 +153,11 @@ export class PaymentComponent {
           this.payment.savePurchaseInDB().subscribe({
             next: (response) => {
               this.router.navigate(['/payment-success']);
+              this.carService.deleteCar(car.id).subscribe({
+                next: () => {
+                  console.log('Car deleted');
+                }
+              })
               console.log('Purchase saved successfully:', response);
             },
             error: (error) => {
