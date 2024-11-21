@@ -9,4 +9,5 @@ export interface Car {
     isForSale : boolean;
     rental : boolean;
     imageUrl : string;
+    branchId : number;
 }

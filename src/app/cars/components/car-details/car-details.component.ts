@@ -10,6 +10,8 @@ import { PaymentService } from '../../../payment/payment/services/payment.servic
 import { Rental } from '../../models/rental';
 import { Purchase } from '../../models/purchase';
 import { Location } from '@angular/common';
+import { BranchService } from '../../services/branch.service';
+import { Branch } from '../../models/branch';
 
 
 
@@ -27,7 +29,8 @@ export class CarDetailsComponent implements OnInit {
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
-
+  branchCity: string = '';
+  
   constructor(
     private route: ActivatedRoute,
     private carService: CarService,
@@ -36,6 +39,7 @@ export class CarDetailsComponent implements OnInit {
     private paymentService: PaymentService,
     private fb: FormBuilder,
     private router: Router,
+    private branchService: BranchService,
     private location: Location
   ) {
     this.carForm = this.fb.group({
@@ -53,8 +57,20 @@ export class CarDetailsComponent implements OnInit {
 
     this.carService.getCars().subscribe({
       next: (cars) => {
-        this.carService.cars = cars;  // Actualiza la lista en el servicio
-        this.car = this.carService.cars.find(car => car.id.toString() === carId) || null;
+        this.carService.cars = cars;
+        const car = this.carService.cars.find(car => car.id.toString() === carId);
+        
+        if (car) {
+          this.carService.getCarById(car.id).subscribe((fullCar: Car) => {
+            this.car = fullCar;
+            
+            if (fullCar.branchId) {
+              this.branchService.getBranchById(fullCar.branchId).subscribe((branch: Branch) => {
+                this.branchCity = branch.city;
+              });
+            }
+          });
+        }
       },
       error: (error) => {
         console.error('Error al cargar el coche:', error);
