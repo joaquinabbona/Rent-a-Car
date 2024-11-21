@@ -88,7 +88,7 @@
     <input type="text" id="cvv" formControlName="cvv" required>
     <div *ngIf="paymentForm.get('cardPayment.cvv')?.invalid && paymentForm.get('cardPayment.cvv')?.touched"
       class="error">
-      El código de seguridad es obligatorio y debe tener 3 o 4 dígitos.
+      El código de seguridad es obligatorio y debe tener 3.
     </div>
 
     <button type="submit" [disabled]="paymentForm.invalid">Realizar Pago</button>
