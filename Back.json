@@ -482,6 +482,16 @@
       "originBranch": "Pinamar",
       "destinationBranch": "La Plata",
       "id": 5
+    },
+    {
+      "clientId": "3",
+      "carId": 5,
+      "rentalStartDate": "2025-04-05T00:00:00.000Z",
+      "rentalEndDate": "2025-04-11T00:00:00.000Z",
+      "price": 61784.5,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires",
+      "id": 6
     }
   ],
   "purchase": [
