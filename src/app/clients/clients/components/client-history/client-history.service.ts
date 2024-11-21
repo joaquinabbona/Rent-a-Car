@@ -14,7 +14,7 @@ export class ClientHistoryService {
   private purchasesUrl = 'http://localhost:3000/purchase';
   private carsUrl = 'http://localhost:3000/cars';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRentalsByClient(clientId: number): Observable<Rental[]> {
     return this.http.get<Rental[]>(`${this.rentalsUrl}?clientId=${clientId}`);
@@ -39,5 +39,7 @@ export class ClientHistoryService {
   getCarById(carId: number): Observable<any> {
     return this.http.get<any>(`${this.carsUrl}/${carId}`);
   }
+
+  
 
 }

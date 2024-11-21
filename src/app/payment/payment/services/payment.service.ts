@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Rental } from '../../../cars/models/rental';
 import { Purchase } from '../../../cars/models/purchase';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -49,6 +49,29 @@ export class PaymentService {
   getReservationsByCarId(carId: number): Observable<Rental[]> {
     const url = `${this.rentalsUrl}?carId=${carId}`;
     return this.http.get<Rental[]>(url);
+  }
+
+  cancelReservation(reservationId: number): Observable<any> {
+    return this.http.get<Rental[]>(this.rentalsUrl).pipe(
+      map((rentals: Rental[]) => {  // Especificamos el tipo de datos esperados
+        const rental = rentals.find((r) => r.id === reservationId); // Buscar la reserva por ID
+        if (rental) {
+          const rentalStartDate = new Date(rental.rentalStartDate); // Convierte la fecha en objeto Date
+          if (rentalStartDate > new Date()) {
+            // Si la fecha de inicio es posterior a la fecha actual
+            return rental.id; // Devuelve solo el ID de la reserva a eliminar
+          } else {
+            throw new Error('La fecha de inicio ya ha pasado. No se puede cancelar.');
+          }
+        } else {
+          throw new Error('Reserva no encontrada');
+        }
+      }),
+      switchMap((reservationId) => {
+        // Si la fecha es válida, se hace la eliminación
+        return this.http.delete(`${this.rentalsUrl}/${reservationId}`);
+      })
+    );
   }
 
 

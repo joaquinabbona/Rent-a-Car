@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../../services/client.service';
 import { ClientHistoryService } from './client-history.service';
-
+import { PaymentService } from '../../../../payment/payment/services/payment.service';
 import { Rental } from '../../../../cars/models/rental';
 import { Purchase } from '../../../../cars/models/purchase';
 
@@ -19,7 +19,8 @@ export class ClientHistoryComponent implements OnInit {
 
   constructor(
     private historyService: ClientHistoryService,
-    private clientService: ClientService
+    private clientService: ClientService,
+    private paymentService: PaymentService
   ) {}
 
  
@@ -80,6 +81,21 @@ export class ClientHistoryComponent implements OnInit {
 
   isPurchase(item: any): item is Purchase {
     return 'price' in item && !('rentalStartDate' in item);
+  }
+
+  cancelReservation(reservationId: number) {
+    this.paymentService.cancelReservation(reservationId).subscribe({
+      next: () => {
+        // Mostrar un mensaje de éxito si se eliminó la reserva
+        console.log('Reserva cancelada con éxito');
+        // Opcional: actualizar la lista de reservas en el componente
+         this.ngOnInit();
+      },
+      error: (error) => {
+        // Mostrar un mensaje de error si no se puede cancelar la reserva
+        console.error(error.message);
+      }
+    });
   }
 }  
 

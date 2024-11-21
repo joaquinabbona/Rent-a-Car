@@ -1,4 +1,5 @@
 export interface Rental {
+    id?: number;
     clientId: number;
     carId: number | null;
     rentalStartDate: Date ;
