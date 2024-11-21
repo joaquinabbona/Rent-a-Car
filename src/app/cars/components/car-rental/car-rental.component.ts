@@ -226,7 +226,9 @@ export class CarRentalComponent implements OnInit {
       next: (response) => {
         console.log('Rental saved successfully:', response);
         alert('¡Alquiler confirmado exitosamente!');
-        this.router.navigate(['/rentals']); // Navega a otra página si es necesario.
+        
+        
+        this.router.navigate(['/payment', Number(this.route.snapshot.paramMap.get('id'))]);
       },
       error: (error) => {
         console.error('Error saving rental:', error);

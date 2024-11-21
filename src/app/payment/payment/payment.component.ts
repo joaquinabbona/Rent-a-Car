@@ -159,4 +159,20 @@ export class PaymentComponent {
     this.paymentMethod = method;
   }
 
+  redirectToFirstPage(): void {
+    alert('¡Alquiler confirmado exitosamente!');
+    this.router.navigate(['/firstpage']);
+  }
+
+  checkSubmit(): void {
+    if (this.car?.rental) {
+      
+      console.log("El auto es de alquiler, no se ejecuta ngOnSubmit.");
+      this.redirectToFirstPage();
+      return;
+    }
+  
+    this.ngOnSubmit(); 
+  }
+
 }

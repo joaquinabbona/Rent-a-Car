@@ -492,6 +492,106 @@
       "originBranch": "Pinamar",
       "destinationBranch": "Ciudad Autónoma de Buenos Aires",
       "id": 6
+    },
+    {
+      "clientId": "3",
+      "carId": 5,
+      "rentalStartDate": "2024-11-21T00:00:00.000Z",
+      "rentalEndDate": "2024-11-27T00:00:00.000Z",
+      "price": 61784.5,
+      "originBranch": "Rosario",
+      "destinationBranch": "La Plata",
+      "id": 7
+    },
+    {
+      "clientId": "3",
+      "carId": 16,
+      "rentalStartDate": "2025-04-09T00:00:00.000Z",
+      "rentalEndDate": "2025-04-23T00:00:00.000Z",
+      "price": 141495,
+      "originBranch": "Rosario",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires",
+      "id": 8
+    },
+    {
+      "clientId": "3",
+      "carId": 24,
+      "rentalStartDate": "2024-11-25T00:00:00.000Z",
+      "rentalEndDate": "2024-11-26T00:00:00.000Z",
+      "price": 10000,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Pinamar",
+      "id": 9
+    },
+    {
+      "clientId": "3",
+      "carId": 21,
+      "rentalStartDate": "2025-01-16T00:00:00.000Z",
+      "rentalEndDate": "2025-01-21T00:00:00.000Z",
+      "price": 51563.5,
+      "originBranch": "La Plata",
+      "destinationBranch": "Pinamar",
+      "id": 10
+    },
+    {
+      "clientId": "3",
+      "carId": 3,
+      "rentalStartDate": "2025-01-25T00:00:00.000Z",
+      "rentalEndDate": "2025-01-27T00:00:00.000Z",
+      "price": 21781.5,
+      "originBranch": "Ciudad Autónoma de Buenos Aires",
+      "destinationBranch": "Pinamar",
+      "id": 11
+    },
+    {
+      "clientId": "3",
+      "carId": 3,
+      "rentalStartDate": "2025-03-11T00:00:00.000Z",
+      "rentalEndDate": "2025-03-12T00:00:00.000Z",
+      "price": 10289.5,
+      "originBranch": "La Plata",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires",
+      "id": 12
+    },
+    {
+      "clientId": "3",
+      "carId": 3,
+      "rentalStartDate": "2025-01-03T00:00:00.000Z",
+      "rentalEndDate": "2025-01-06T00:00:00.000Z",
+      "price": 30000,
+      "originBranch": "La Plata",
+      "destinationBranch": "La Plata",
+      "id": 13
+    },
+    {
+      "clientId": "3",
+      "carId": 3,
+      "rentalStartDate": "2024-12-20T00:00:00.000Z",
+      "rentalEndDate": "2024-12-21T00:00:00.000Z",
+      "price": 11781.5,
+      "originBranch": "Ciudad Autónoma de Buenos Aires",
+      "destinationBranch": "Pinamar",
+      "id": 14
+    },
+    {
+      "clientId": "3",
+      "carId": 7,
+      "rentalStartDate": "2025-01-06T00:00:00.000Z",
+      "rentalEndDate": "2025-01-21T00:00:00.000Z",
+      "price": 150000,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Pinamar",
+      "id": 15
+    },
+    {
+      "clientId": "3",
+      "carId": 25,
+      "rentalStartDate": "2025-01-02T00:00:00.000Z",
+      "rentalEndDate": "2025-02-24T00:00:00.000Z",
+      "price": 531784.5,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires",
+      "id": 16
     }
   ],
   "purchase": [
@@ -512,6 +612,33 @@
       "clientId": "4",
       "carId": 1,
       "price": 35000
+    },
+    {
+      "id": "YkTc4YM"
+    },
+    {
+      "clientId": "3",
+      "carId": 1,
+      "price": 35000,
+      "id": "O9YRKW9"
+    },
+    {
+      "id": "p55iuCo"
+    },
+    {
+      "id": "p0ruLET"
+    },
+    {
+      "id": "E6tvnII"
+    },
+    {
+      "id": "-QyBkvf"
+    },
+    {
+      "id": "G89TlFV"
+    },
+    {
+      "id": "eBYXORO"
     }
   ],
   "branches": [

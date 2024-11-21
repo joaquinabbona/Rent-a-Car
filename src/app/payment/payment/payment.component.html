@@ -1,4 +1,4 @@
-<form [formGroup]="paymentForm" (ngSubmit)="ngOnSubmit()">
+<form [formGroup]="paymentForm" (ngSubmit)="checkSubmit()">
   <h2>Formulario de Pago</h2>
 
   <!-- Radio buttons para seleccionar el método de pago -->
@@ -52,7 +52,7 @@
       class="error">
       La divisa es obligatoria.
     </div>
-
+    <button *ngIf="car?.rental" type="button" (click)="redirectToFirstPage()">Confirmar Alquiler</button>
     <button type="submit" [disabled]="paymentForm.invalid">Realizar Pago</button>
   </div>
 
@@ -90,7 +90,7 @@
       class="error">
       El código de seguridad es obligatorio y debe tener 3 o 4 dígitos.
     </div>
-
+    <button *ngIf="car?.rental" type="button" (click)="redirectToFirstPage()">Confirmar Alquiler</button>
     <button type="submit" [disabled]="paymentForm.invalid">Realizar Pago</button>
   </div>
 </form>
