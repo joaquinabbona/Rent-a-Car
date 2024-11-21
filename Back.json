@@ -10,7 +10,7 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "rental": false,
-      "imageUrl": ""
+      "imageUrl": "assets/images/rangerposta.jpg"
     },
     {
       "id": "2",

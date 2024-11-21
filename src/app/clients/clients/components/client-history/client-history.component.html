@@ -1,31 +1,52 @@
-<h1>Historial de Alquileres y Compras</h1>
+<div class="container mt-5">
+  <!-- Título principal -->
+  <h1 class="text-center mb-4">Historial de Alquileres y Compras</h1>
 
-<div *ngIf="errorMessage" class="error">
-  {{ errorMessage }}
-</div>
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    {{ errorMessage }}
+  </div>
 
-<div *ngIf="!errorMessage">
-  <h2>Alquileres:</h2>
-  <ul *ngIf="rentals.length > 0; else noRentals">
-    <li *ngFor="let rental of rentals">
-      
-      <strong>Vehículo:</strong> {{ rental.carName }} (ID: {{ rental.carId }}) <br />
-      <strong>Desde:</strong> {{ rental.rentalStartDate }} <br />
-      <strong>Hasta:</strong> {{ rental.rentalEndDate }} <br />
-      <strong>Precio:</strong> ${{ rental.price }} <br />
-      <strong>Origen:</strong> {{ rental.originBranch }} <br />
-      <strong>Destino:</strong> {{ rental.destinationBranch }}
-    </li>
-  </ul>
-  <ng-template #noRentals>No hay alquileres registrados.</ng-template>
+  <!-- Historial -->
+  <div *ngIf="!errorMessage">
+    <!-- Sección de Alquileres -->
+    <div class="card shadow mb-4">
+      <div class="card-header bg-warning text-white">
+        <h2 class="h5">Alquileres</h2>
+      </div>
+      <div class="card-body">
+        <ul class="list-group" *ngIf="rentals.length > 0; else noRentals">
+          <li class="list-group-item" *ngFor="let rental of rentals">
+            <p class="mb-1"><strong>Vehículo:</strong> {{ rental.carName }} (ID: {{ rental.carId }})</p>
+            <p class="mb-1"><strong>Desde:</strong> {{ rental.rentalStartDate }}</p>
+            <p class="mb-1"><strong>Hasta:</strong> {{ rental.rentalEndDate }}</p>
+            <p class="mb-1"><strong>Precio:</strong> ${{ rental.price }}</p>
+            <p class="mb-1"><strong>Origen:</strong> {{ rental.originBranch }}</p>
+            <p><strong>Destino:</strong> {{ rental.destinationBranch }}</p>
+          </li>
+        </ul>
+        <ng-template #noRentals>
+          <div class="alert alert-secondary text-center">No hay alquileres registrados.</div>
+        </ng-template>
+      </div>
+    </div>
 
-  <h2>Compras:</h2>
-  <ul *ngIf="purchases.length > 0; else noPurchases">
-    <li *ngFor="let purchase of purchases">
-      
-      <strong>Vehículo:</strong> {{ purchase.carName }} (ID: {{ purchase.carId }}) <br />
-      <strong>Precio:</strong> ${{ purchase.price }}
-    </li>
-  </ul>
-  <ng-template #noPurchases>No hay compras registradas.</ng-template>
+    <!-- Sección de Compras -->
+    <div class="card shadow">
+      <div class="card-header bg-success text-white">
+        <h2 class="h5">Compras</h2>
+      </div>
+      <div class="card-body">
+        <ul class="list-group" *ngIf="purchases.length > 0; else noPurchases">
+          <li class="list-group-item" *ngFor="let purchase of purchases">
+            <p class="mb-1"><strong>Vehículo:</strong> {{ purchase.carName }} (ID: {{ purchase.carId }})</p>
+            <p><strong>Precio:</strong> ${{ purchase.price }}</p>
+          </li>
+        </ul>
+        <ng-template #noPurchases>
+          <div class="alert alert-secondary text-center">No hay compras registradas.</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
 </div>
