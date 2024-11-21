@@ -143,13 +143,13 @@ export class PaymentComponent {
     private saveTransaction(): void {
 
     const carId = this.route.snapshot.paramMap.get('id');
-    console.log('CAR ID:ESTOY EN PAYMENT',carId);
+    
     this.carService.getCarById(Number(carId)).subscribe({
       next: (car) => {
         this.car = car;
-        console.log('Auto leido en payment: ', this.car);
+       
         if(this.car.isForSale){
-          console.log('SE VENTDE')
+          
           this.payment.savePurchaseInDB().subscribe({
             next: (response) => {
               this.router.navigate(['/payment-success']);
@@ -162,7 +162,7 @@ export class PaymentComponent {
 
 
         }else{
-          console.log('SE alquila')
+          
           this.payment.saveRentalInDB().subscribe({
             next: (response) => {
               this.router.navigate(['/payment-success']);

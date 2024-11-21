@@ -9,7 +9,7 @@ export class PagoExitosoComponent {
   constructor(private router: Router) {}
 
   goToHome(): void {
-    this.router.navigate(['/list-cars']); 
+    this.router.navigate(['/firstpage']); 
   }
 }
 
