@@ -7,7 +7,12 @@ import { Observable } from 'rxjs';
 import { DistanceCalculatorService } from '../../services/distance-calculator.service';
 import { PaymentService } from '../../../payment/payment/services/payment.service'; 
 import { Rental } from '../../models/rental';
+<<<<<<< HEAD
 import { AuthService } from '../../../auth/auth.service';
+=======
+import { Branch } from '../../models/branch';
+import { BranchService } from '../../services/branch.service';
+>>>>>>> master
 
 @Component({
   selector: 'app-car-rental',
@@ -16,7 +21,12 @@ import { AuthService } from '../../../auth/auth.service';
 })
 export class CarRentalComponent implements OnInit {
   carForm: FormGroup;
+<<<<<<< HEAD
   branches = ['Mar del Plata', 'Córdoba', 'Bariloche'];
+=======
+  branches: Branch[] = []; 
+  minEndDate: string = '';
+>>>>>>> master
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
@@ -41,7 +51,11 @@ export class CarRentalComponent implements OnInit {
     private distanceCalculator: DistanceCalculatorService,
     private route: ActivatedRoute, 
     private router: Router,
+<<<<<<< HEAD
     private authService: AuthService,
+=======
+    private branchService: BranchService,
+>>>>>>> master
     private paymentService: PaymentService) {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
@@ -52,6 +66,7 @@ export class CarRentalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.today.setHours(0, 0, 0, 0);
     this.generateSixMonths();
   
@@ -95,6 +110,30 @@ export class CarRentalComponent implements OnInit {
         dates: monthDates,
       });
     }
+=======
+    this.loadBranches();
+    this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
+      this.minEndDate = startDate;
+      this.carForm.get('rentalEndDate')?.updateValueAndValidity();
+    });
+  }
+
+  loadBranches(): void {
+    this.branchService.getBranches().subscribe({
+      next: (data) => {
+        this.branches = data;
+      },
+      error: (err) => {
+        console.error('Error al cargar las sucursales:', err);
+      }
+    });
+  }
+
+  endDateAfterStartDateValidator(group: FormGroup) {
+    const startDate = group.get('rentalStartDate')?.value;
+    const endDate = group.get('rentalEndDate')?.value;
+    return startDate && endDate && endDate >= startDate ? null : { endDateInvalid: true };
+>>>>>>> master
   }
 
   generateDatesInRange(startDate: Date, endDate: Date): Date[] {

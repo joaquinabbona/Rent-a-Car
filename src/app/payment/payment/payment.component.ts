@@ -132,9 +132,23 @@ export class PaymentComponent {
 
   ngOnSubmit(): void {
     if (this.paymentMethod === 'cash' && this.paymentForm.get('cashPayment')?.valid) {
-      console.log('Formulario de efectivo válido:', this.paymentForm.get('cashPayment')?.value);
+      this.payment.savePurchaseInDB().subscribe({
+        next: (response) => {
+          console.log('Purchase saved successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error saving purchase:', error);
+        }
+      });
     } else if (this.paymentMethod === 'card' && this.paymentForm.get('cardPayment')?.valid) {
-      console.log('Formulario de tarjeta válido:', this.paymentForm.get('cardPayment')?.value);
+      this.payment.savePurchaseInDB().subscribe({
+        next: (response) => {
+          console.log('Purchase saved successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error saving purchase:', error);
+        }
+      });
     } else {
       console.log('Formulario inválido');
     }

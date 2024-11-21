@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2 class="text-center">Gestión de Sucursales</h2>
+
+  <!-- Mostrar errores -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+
+  <!-- Formulario para agregar sucursales -->
+  <form (ngSubmit)="addBranch()" class="d-flex align-items-center gap-2 mt-4">
+    <input 
+      [(ngModel)]="newBranch.city" 
+      name="city" 
+      class="form-control" 
+      placeholder="Ciudad" 
+      required 
+    />
+    <button type="submit" class="btn btn-primary">Agregar Sucursal</button>
+  </form>
+
+  <!-- Listado de sucursales -->
+  <ul class="list-group mt-4">
+    <li 
+      *ngFor="let branch of branches" 
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      {{ branch.city }}
+      <button class="btn btn-danger btn-sm" (click)="deleteBranch(branch.id)">Eliminar</button>
+    </li>
+  </ul>
+</div>

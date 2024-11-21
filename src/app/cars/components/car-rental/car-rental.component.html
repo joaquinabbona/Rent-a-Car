@@ -4,6 +4,7 @@
     <div class="card-body">
       <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit($event)">
         
+<<<<<<< HEAD
         <div class="calendar-container">
           <label for="rentalStartDate">Fechas de alquiler:</label>
         
@@ -23,8 +24,51 @@
                 </button>
               </div>
             </div>
+=======
+        <div class="mb-3">
+          <label for="rentalStartDate" class="form-label">Fecha inicio:</label>
+          <input 
+            type="date"
+            class="form-control" 
+            id="rentalStartDate"
+            formControlName="rentalStartDate"
+            min="2024-11-14"  
+          >
+          <div *ngIf="carForm.get('rentalStartDate')?.invalid && carForm.get('rentalStartDate')?.touched" class="is-invalid">
+            Seleccione una fecha de inicio válida.
           </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="rentalEndDate" class="form-label">Fecha final:</label>
+          <input 
+            type="date"
+            class="form-control" 
+            id="rentalEndDate"
+            formControlName="rentalEndDate"
+            [attr.min]="minEndDate"  
+          >
+          <div *ngIf="carForm.get('rentalEndDate')?.invalid && carForm.get('rentalEndDate')?.touched" class="is-invalid">
+            Seleccione una fecha final válida.
+          </div>
+          <div *ngIf="carForm.errors?.['endDateInvalid'] && carForm.get('rentalEndDate')?.touched" class="is-invalid">
+            La fecha final debe ser posterior a la fecha de inicio.
+          </div>
+        </div>
+  
+        <div>
+          <label for="originBranch">Sucursal de retiro:</label>
+          <select id="originBranch" formControlName="originBranch" class="form-control">
+            <option value="" disabled selected>Seleccione una sucursal</option>
+            <option *ngFor="let branch of branches" [value]="branch.city">{{ branch.city }}</option>
+          </select>
+          <div *ngIf="carForm.get('originBranch')?.invalid && carForm.get('originBranch')?.touched" class="is-invalid">
+            Seleccione una sucursal.
+>>>>>>> master
+          </div>
+        </div>
         
+<<<<<<< HEAD
           <div>
             <p>Días seleccionados:</p>
             <ul>
@@ -57,7 +101,18 @@
             <div *ngIf="carForm.get('destinationBranch')?.invalid && carForm.get('destinationBranch')?.touched" class="is-invalid">
               Selecciona una sucursal.
             </div>
+=======
+        <div>
+          <label for="destinationBranch">Sucursal donde se devuelve el vehículo:</label>
+          <select id="destinationBranch" formControlName="destinationBranch" class="form-control">
+            <option value="" disabled selected>Seleccione una sucursal</option>
+            <option *ngFor="let branch of branches" [value]="branch.city">{{ branch.city }}</option>
+          </select>
+          <div *ngIf="carForm.get('destinationBranch')?.invalid && carForm.get('destinationBranch')?.touched" class="is-invalid">
+            Seleccione una sucursal.
+>>>>>>> master
           </div>
+        </div>
           <div><button type="button" 
             (click)="onCalculatePrice()">
       Calcular acarreo

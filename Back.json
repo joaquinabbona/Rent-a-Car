@@ -450,6 +450,38 @@
       "clientId": 1,
       "carId": 5,
       "price": 50000
+    },
+    {
+      "id": "ff46",
+      "clientId": "4",
+      "carId": 1,
+      "price": 35000
+    }
+  ],
+  "branches": [
+    {
+      "id": "m3q6duexrmlyh5jetz",
+      "city": "Rosario"
+    },
+    {
+      "id": "m3q6dzbi147t6um3yny",
+      "city": "Mar del Plata"
+    },
+    {
+      "id": "m3q6efzlsyd4gp2ccxf",
+      "city": "Córdoba"
+    },
+    {
+      "id": "m3q6mmae5kehppgzra4",
+      "city": "Ciudad Autónoma de Buenos Aires"
+    },
+    {
+      "id": "m3q6puulte1g7wtboa",
+      "city": "La Plata"
+    },
+    {
+      "id": "m3q86qb0hb4ppu7rlmw",
+      "city": "Pinamar"
     }
   ]
 }
