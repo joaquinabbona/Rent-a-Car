@@ -38,8 +38,8 @@ export class PaymentService {
 
 
 
-  saveRentalInDB( rentalData: Rental): Observable<Rental>{
-    return this.http.post<Rental>(this.rentalsUrl,rentalData);
+  saveRentalInDB(): Observable<Rental>{
+    return this.http.post<Rental>(this.rentalsUrl,this.rentalData);
   }
 
   savePurchaseInDB(): Observable<Purchase>{
