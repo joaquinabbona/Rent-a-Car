@@ -152,6 +152,7 @@ export class PaymentComponent {
           console.log('SE VENTDE')
           this.payment.savePurchaseInDB().subscribe({
             next: (response) => {
+              this.router.navigate(['/payment-success']);
               console.log('Purchase saved successfully:', response);
             },
             error: (error) => {
@@ -164,6 +165,7 @@ export class PaymentComponent {
           console.log('SE alquila')
           this.payment.saveRentalInDB().subscribe({
             next: (response) => {
+              this.router.navigate(['/payment-success']);
               console.log('Rental saved successfully:', response);
             },
             error: (error) => {
