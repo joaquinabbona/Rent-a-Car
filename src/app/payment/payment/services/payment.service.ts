@@ -46,6 +46,10 @@ export class PaymentService {
     return this.http.post<Purchase>(this.purchasesUrl,this.purchaseData);
   }
 
+  getReservationsByCarId(carId: number): Observable<Rental[]> {
+    const url = `${this.rentalsUrl}?carId=${carId}`;
+    return this.http.get<Rental[]>(url);
+  }
 
 
 
