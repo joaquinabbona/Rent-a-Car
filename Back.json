@@ -10,7 +10,7 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "rental": false,
-      "imageUrl": ""
+      "imageUrl": "assets/images/rangerposta.jpg"
     },
     {
       "id": "2",
@@ -520,6 +520,36 @@
       "rentalStartDate": "2024-04-23",
       "rentalEndDate": "2024-05-23",
       "price": 300000,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "fbc4",
+      "clientId": 1,
+      "carId": 2,
+      "rentalStartDate": "2024-11-20",
+      "rentalEndDate": "2024-11-23",
+      "price": 30000,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "bcd2",
+      "clientId": 1,
+      "carId": 2,
+      "rentalStartDate": "2024-11-20",
+      "rentalEndDate": "2024-11-23",
+      "price": 30000,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "7f6e",
+      "clientId": 1,
+      "carId": 2,
+      "rentalStartDate": "2024-11-20",
+      "rentalEndDate": "2024-11-23",
+      "price": 30000,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Mar del Plata"
     }
