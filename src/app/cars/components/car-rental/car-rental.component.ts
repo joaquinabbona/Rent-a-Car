@@ -7,12 +7,9 @@ import { Observable } from 'rxjs';
 import { DistanceCalculatorService } from '../../services/distance-calculator.service';
 import { PaymentService } from '../../../payment/payment/services/payment.service'; 
 import { Rental } from '../../models/rental';
-<<<<<<< HEAD
 import { AuthService } from '../../../auth/auth.service';
-=======
 import { Branch } from '../../models/branch';
 import { BranchService } from '../../services/branch.service';
->>>>>>> master
 
 @Component({
   selector: 'app-car-rental',
@@ -21,12 +18,8 @@ import { BranchService } from '../../services/branch.service';
 })
 export class CarRentalComponent implements OnInit {
   carForm: FormGroup;
-<<<<<<< HEAD
-  branches = ['Mar del Plata', 'Córdoba', 'Bariloche'];
-=======
   branches: Branch[] = []; 
   minEndDate: string = '';
->>>>>>> master
   distance: string='';
   messagePrice: string='';
   carryPrice:number=0;
@@ -37,25 +30,24 @@ export class CarRentalComponent implements OnInit {
   clientService: any;
   someFormControlValue: string='';
   minDate: string = '';
-  minEndDate: string = '';
   errorEndDate: boolean = false;
   calendarMonths: { label: string; dates: Date[] }[] = [];
   disabledDates: string[] = [];
   selectedDates: string[] = [];
   rentalConfirmed: boolean = false;
   today: Date = new Date();
-
+  pickupDate: Date | null = null; // Fecha de retiro
+  dropoffDate: Date | null = null; // Fecha de devolución
+  
+  selectionMode: 'pickup' | 'dropoff' = 'pickup'; // Modo de selección actual
 
   constructor(
     private fb: FormBuilder, 
     private distanceCalculator: DistanceCalculatorService,
     private route: ActivatedRoute, 
     private router: Router,
-<<<<<<< HEAD
     private authService: AuthService,
-=======
     private branchService: BranchService,
->>>>>>> master
     private paymentService: PaymentService) {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
@@ -66,7 +58,6 @@ export class CarRentalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-<<<<<<< HEAD
     this.today.setHours(0, 0, 0, 0);
     this.generateSixMonths();
   
@@ -74,8 +65,26 @@ export class CarRentalComponent implements OnInit {
     if (carId) {
       this.loadReservations(carId);
     }
+
+    this.updateMinEndDate();
   }
-  
+  onStartDateChange(event: any) {
+    const startDate = event.target.value;
+    this.carForm.patchValue({ rentalStartDate: startDate });
+    this.updateMinEndDate();
+  }
+
+  onEndDateChange(event: any) {
+    const endDate = event.target.value;
+    this.carForm.patchValue({ rentalEndDate: endDate });
+  }
+
+  updateMinEndDate() {
+    const startDate = this.carForm.value.rentalStartDate;
+    if (startDate) {
+      this.minEndDate = startDate;
+    }
+  }
   loadReservations(carId: number): void {
     this.paymentService.getReservationsByCarId(carId).subscribe({
       next: (reservations) => {
@@ -110,7 +119,6 @@ export class CarRentalComponent implements OnInit {
         dates: monthDates,
       });
     }
-=======
     this.loadBranches();
     this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
       this.minEndDate = startDate;
@@ -133,7 +141,6 @@ export class CarRentalComponent implements OnInit {
     const startDate = group.get('rentalStartDate')?.value;
     const endDate = group.get('rentalEndDate')?.value;
     return startDate && endDate && endDate >= startDate ? null : { endDateInvalid: true };
->>>>>>> master
   }
 
   generateDatesInRange(startDate: Date, endDate: Date): Date[] {
@@ -287,5 +294,24 @@ export class CarRentalComponent implements OnInit {
     });
   }
   
-  
+
+  selectDate(date: Date): void {
+    if (this.isDateDisabled(date)) {
+      return;
+    }
+
+    if (this.selectionMode === 'pickup') {
+      this.pickupDate = date;
+      this.carForm.patchValue({ rentalStartDate: date.toISOString().split('T')[0] });
+      this.selectionMode = 'dropoff'; // Cambiar al modo de devolución
+    } else if (this.selectionMode === 'dropoff') {
+      this.dropoffDate = date;
+      this.carForm.patchValue({ rentalEndDate: date.toISOString().split('T')[0] });
+    }
+  }
+
+  toggleSelectionMode(): void {
+    this.selectionMode = this.selectionMode === 'pickup' ? 'dropoff' : 'pickup';
+  }
 }
+  
