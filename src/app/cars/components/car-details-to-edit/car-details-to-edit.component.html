@@ -1,9 +1,46 @@
-<h1>{{ car?.brand }} {{ car?.model }} ({{ car?.year }})</h1>
-<img [src]="car?.imageUrl" alt="Imagen del auto" class="car-image" style="width: 200px; height: 200px;">
-<p><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
-<p>Descripción: {{ car?.description }}</p>
+<div class="container mt-5">
+    <!-- Encabezado del detalle -->
+    <div class="text-center mb-4">
+      <h1 class="display-5">{{ car?.brand }} {{ car?.model }} {{ car?.year }}</h1>
+    </div>
+  
+    <!-- Contenedor principal -->
+    <div class="row justify-content-center align-items-start">
+      <!-- Imagen del vehículo -->
+      <div class="col-md-6 text-center mb-4">
+        <img 
+          [src]="car?.imageUrl" 
+          alt="Imagen del auto" 
+          class="img-fluid rounded shadow-sm" 
+          style="max-width: 100%; height: auto;">
+      </div>
+  
+      <!-- Información del vehículo -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Detalles del vehículo</h4>
+            <p class="card-text"><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
+            <p class="card-text"><strong>Descripción:</strong> {{ car?.description }}</p>
+            <p class="card-text"><strong>Sucursal:</strong> Mar del Plata</p>
+          </div>
+  
 
-
-<button (click)="editCar()" class="btn btn-primary">Editar</button>
-<button (click)="deleteCar()" class="btn btn-danger">Eliminar</button>
-<button (click)="goBack()" class="btn btn-secondary">← Volver</button>
+          <div class="mt-2">
+            <button 
+              (click)="editCar()" 
+              class="btn btn-primary w-100 mb-2">
+              Editar
+            </button>
+            <button 
+              (click)="deleteCar()" 
+              class="btn btn-danger w-100 mb-2">
+              Eliminar
+            </button>
+            <button 
+              (click)="goBack()" 
+              class="btn btn-secondary w-100">
+              ← Volver
+            </button>
+        </div>
+    </div>

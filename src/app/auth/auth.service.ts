@@ -67,6 +67,7 @@ export class AuthService {
   }
 
   getCurrentUserRole(): string | null {
+    console.log('Usuario logueado:', this.loggedInUser); // Para depurar
     return this.loggedInUser ? this.loggedInUser.role : null;
   }
 }
