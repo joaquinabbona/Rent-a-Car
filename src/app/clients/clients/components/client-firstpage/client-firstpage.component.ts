@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ClientsModule } from '../../clients.module';
+import { AuthService } from '../../../../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-client-firstpage',
@@ -9,7 +11,9 @@ import { ClientsModule } from '../../clients.module';
 })
 export class ClientFirstpageComponent {
   constructor(private clientModule: ClientsModule,
-    private location: Location
+    private location: Location,
+    private router: Router,
+    private auth: AuthService
     ) {}
 
   activeComponent: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos' | null = null; 
@@ -21,5 +25,9 @@ export class ClientFirstpageComponent {
     this.location.back();
   }
 
+  logoff(): void {
+    this.auth.logout(); 
+    this.router.navigate(['/login']); 
+  }
 
 }

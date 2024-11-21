@@ -1,35 +1,42 @@
-    <!-- Botones de navegación -->
-    <div class="button-group mb-4">
-        <button 
-          (click)="showComponent('gestion-admin')"
-          [class.active]="activeComponent === 'gestion-admin'"
-          class="btn btn-primary me-2">
-          Gestion de Administradores
-        </button>
-        <button 
-          (click)="showComponent('gestion-clientes')"
-          [class.active]="activeComponent === 'gestion-clientes'"
-          class="btn btn-success">
-          Gestion de Clientes
-      </button>
-      <button 
-      (click)="showComponent('gestion-vehiculos')"
-      [class.active]="activeComponent === 'gestion-vehiculos'"
-      class="btn btn-success">
-      Gestion de Vehiculos
+<!-- Botones de navegación -->
+<div class="button-group mb-4">
+  <button 
+    (click)="showComponent('gestion-admin')"
+    [class.active]="activeComponent === 'gestion-admin'"
+    class="btn btn-primary me-2">
+    Gestión de Administradores
   </button>
   <button 
-  (click)="showComponent('gestion-sucursales')"
-  [class.active]="activeComponent === 'gestion-sucursales'"
-  class="btn btn-info">
-  Gestión de Sucursales
-</button>
+    (click)="showComponent('gestion-clientes')"
+    [class.active]="activeComponent === 'gestion-clientes'"
+    class="btn btn-success me-2">
+    Gestión de Clientes
+  </button>
+  <button 
+    (click)="showComponent('gestion-vehiculos')"
+    [class.active]="activeComponent === 'gestion-vehiculos'"
+    class="btn btn-success me-2">
+    Gestión de Vehículos
+  </button>
+  <button 
+    (click)="showComponent('gestion-sucursales')"
+    [class.active]="activeComponent === 'gestion-sucursales'"
+    class="btn btn-info me-2">
+    Gestión de Sucursales
+  </button>
+
+  <!-- Botón de Logoff -->
+  <button 
+    (click)="logoff()"
+    class="btn btn-danger">
+    Cerrar sesión
+  </button>
 </div>
 
+<!-- Contenido dinámico -->
 <div [ngSwitch]="activeComponent">
-<app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
-<app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
-<app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
-<app-admin-gestion-sucursales *ngSwitchCase="'gestion-sucursales'"></app-admin-gestion-sucursales>
+  <app-admin-gestion-clientes *ngSwitchCase="'gestion-clientes'"></app-admin-gestion-clientes>
+  <app-admin-gestion-admin *ngSwitchCase="'gestion-admin'"></app-admin-gestion-admin>
+  <app-car-manager *ngSwitchCase="'gestion-vehiculos'"></app-car-manager>
+  <app-admin-gestion-sucursales *ngSwitchCase="'gestion-sucursales'"></app-admin-gestion-sucursales>
 </div>
-  

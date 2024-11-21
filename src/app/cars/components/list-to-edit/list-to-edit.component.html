@@ -1,45 +1,88 @@
-<div>
-    
-    <form (submit)="applyFilters()" class="filters-form">
-        <label for="brand">Marca:</label>
-        <select id="brand" [(ngModel)]="filters.brand" name="brand">
-            <option value="">Todos</option>
-            <option *ngFor="let brand of uniqueBrands" [value]="brand">{{ brand }}</option>
-        </select>
+<div class="container mt-4">
+    <!-- Título -->
+    <h2 class="text-center mb-4">Explora nuestros vehículos</h2>
 
-        <label for="year">Año:</label>
-        <select id="year" [(ngModel)]="filters.year" name="year">
-            <option value="">Todos</option>
-            <option *ngFor="let year of uniqueYears" [value]="year">{{ year }}</option>
-        </select>
+    <!-- Formulario de filtros -->
+    <form (submit)="applyFilters()" class="row g-3">
+        <!-- Marca -->
+        <div class="col-md-3">
+            <label for="brand" class="form-label">Marca</label>
+            <select id="brand" [(ngModel)]="filters.brand" name="brand" class="form-select">
+                <option value="">Todos</option>
+                <option *ngFor="let brand of uniqueBrands" [value]="brand">{{ brand }}</option>
+            </select>
+        </div>
 
-        <label for="type">Tipo:</label>
-        <select id="type" [(ngModel)]="filters.type" name="type">
-            <option value="">Todos</option>
-            <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
-        </select>
+        <!-- Año -->
+        <div class="col-md-3">
+            <label for="year" class="form-label">Año</label>
+            <select id="year" [(ngModel)]="filters.year" name="year" class="form-select">
+                <option value="">Todos</option>
+                <option *ngFor="let year of uniqueYears" [value]="year">{{ year }}</option>
+            </select>
+        </div>
 
-       
-        <label for="minPrice" class="form-label">Precio</label>
-        <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" placeholder="Mínimo" min="0" (change)="adjustPrices('min')">
-        <span>-</span>
-        <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" placeholder="Máximo" min="0" (change)="adjustPrices('max')">
+        <!-- Tipo -->
+        <div class="col-md-3">
+            <label for="type" class="form-label">Tipo</label>
+            <select id="type" [(ngModel)]="filters.type" name="type" class="form-select">
+                <option value="">Todos</option>
+                <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
+            </select>
+        </div>
 
-        <button type="submit">Filtrar</button>
-        <button type="button" (click)="clearFilters()">Limpiar Filtros</button>
+        <!-- Precio -->
+        <div class="col-md-3">
+            <label class="form-label">Precio</label>
+            <div class="input-group">
+                <input type="number" id="minPrice" [(ngModel)]="filters.minPrice" name="minPrice" class="form-control" placeholder="Mín" min="0" (change)="adjustPrices('min')">
+                <span class="input-group-text">-</span>
+                <input type="number" id="maxPrice" [(ngModel)]="filters.maxPrice" name="maxPrice" class="form-control" placeholder="Máx" min="0" (change)="adjustPrices('max')">
+            </div>
+        </div>
+
+        <!-- Tipo de transacción -->
+        <div class="col-md-3">
+            <label for="transactionType" class="form-label">Transacción</label>
+            <select id="transactionType" [(ngModel)]="filters.transactionType" name="transactionType" class="form-select">
+                <option value="">Todos</option>
+                <option value="comprar">Comprar</option>
+                <option value="alquilar">Alquilar</option>
+            </select>
+        </div>
+
+        <!-- Botones -->
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="button" (click)="clearFilters()" class="btn btn-secondary w-100">Limpiar</button>
+        </div>
     </form>
 
-   
-    <div *ngIf="filteredCars.length === 0" class="no-results-message">
+    <!-- Mensaje cuando no hay resultados -->
+    <div *ngIf="filteredCars.length === 0" class="alert alert-warning text-center mt-4">
         Por el momento no contamos con vehículos de esas características.
     </div>
 
-    <!-- Lista de carros -->
-    <div *ngIf="filteredCars.length > 0" class="car-list">
-        <div class="car-item" *ngFor="let car of filteredCars">
-            <h3>{{ car.brand }} {{ car.model }}</h3>
-            <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="car-image">
-            <button [routerLink]="['/admin-edit-car', car.id]" class="view-button">Ver</button>
+    <!-- Lista de vehículos -->
+    <div *ngIf="filteredCars.length > 0" class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+        <div class="col" *ngFor="let car of filteredCars">
+            <div class="card h-100">
+                <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                    <p class="card-text">
+                        <strong>Año:</strong> {{ car.year }}<br>
+                        <strong>Tipo:</strong> {{ car.type }}<br>
+                        <strong>Precio:</strong> ${{ car.price | number }}
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <button [routerLink]="['/admin-edit-car', car.id]" class="view-button">Ver</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<button (click)="goBack()" class="btn btn-secondary mb-3">← Volver</button>
