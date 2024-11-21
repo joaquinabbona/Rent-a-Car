@@ -42,21 +42,35 @@ export class ClientAddComponent implements OnInit {
 
   onSubmit() {
     if (this.clientForm.valid) {
-      const userData = { 
-        ...this.clientForm.value, 
-        isActive: true 
-      };
-      delete userData.confirmPassword;
+      const email = this.clientForm.get('email')?.value;
   
-      this.clientService.addClient(userData).subscribe({
-        next: () => {
-          alert('Usuario registrado exitosamente');
-          this.router.navigate(['/login']);
+      this.clientService.isEmailinUse(email).subscribe({
+        next: (isTaken) => {
+          if (isTaken) {
+            alert('El email ya está en uso, por favor ingrese otro');
+          } else {
+            const userData = {
+              ...this.clientForm.value,
+              isActive: true,
+            };
+            delete userData.confirmPassword;
+  
+            this.clientService.addClient(userData).subscribe({
+              next: () => {
+                alert('Usuario registrado exitosamente');
+                this.router.navigate(['/login']);
+              },
+              error: (error) => {
+                console.error('Error al registrar usuario:', error);
+                alert('Error al registrar usuario');
+              },
+            });
+          }
         },
         error: (error) => {
-          console.error('Error al registrar usuario:', error);
-          alert('Error al registrar usuario');
-        }
+          console.error('Error al verificar email:', error);
+          alert('Hubo un problema al validar el email');
+        },
       });
     }
   }
