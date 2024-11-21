@@ -10,4 +10,5 @@ export interface Car {
     rental : boolean;
     imageUrl : string;
     branchId : number;
+    isActive: Boolean;
 }

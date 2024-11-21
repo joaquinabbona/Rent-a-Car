@@ -73,7 +73,9 @@ export class PaymentService {
       })
     );
   }
-
+  updateCarStatus(carId: number, updateData: { isActive: boolean }) {
+    return this.http.patch(`http://localhost:3000/cars/${carId}`, updateData);
+  }
 
 
 

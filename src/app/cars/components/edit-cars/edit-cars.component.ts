@@ -23,7 +23,8 @@ export class EditCarsComponent {
     isForSale: true,
     rental: true,
     imageUrl: '',
-    branchId: 0
+    branchId: 0,
+    isActive: true
   };
   loading: boolean = true;
   error: string | null = null;

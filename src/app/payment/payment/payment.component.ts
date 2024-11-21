@@ -157,11 +157,13 @@ export class PaymentComponent {
               next: (response) => {
                 this.router.navigate(['/payment-success']);
                 console.log('Purchase saved successfully:', response);
-                this.carService.deleteCar(car.id).subscribe({
+                this.payment.updateCarStatus(car.id, { isActive: false }).subscribe({
                   next: () => {
-                    console.log('Car deleted');
-                  }
-                })
+                    console.log('Car status updated successfully');
+                    car.isActive = false;
+                  },
+                  error: (err) => console.error('Failed to update car status:', err)
+                });
               },
               error: (error) => {
                 console.error('Error saving purchase:', error);

@@ -11,7 +11,8 @@
       "isForSale": true,
       "rental": false,
       "imageUrl": "assets/images/rangerposta.jpg",
-      "branchId": 3
+      "branchId": 3,
+      "isActive": false
     },
     {
       "id": "2",
@@ -24,7 +25,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Mondeo.jpg",
-      "branchId": 3
+      "branchId": 3,
+      "isActive": true
     },
     {
       "id": "3",
@@ -37,7 +39,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/fordTransit.jpg",
-      "branchId": 2
+      "branchId": 2,
+      "isActive": true
     },
     {
       "id": "4",
@@ -50,7 +53,8 @@
       "isForSale": true,
       "rental": false,
       "imageUrl": "assets/images/Amarok2023.jpg",
-      "branchId": 6
+      "branchId": 6,
+      "isActive": true
     },
     {
       "id": "5",
@@ -63,7 +67,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Vento2023.jpg",
-      "branchId": 1
+      "branchId": 1,
+      "isActive": true
     },
     {
       "id": "6",
@@ -76,7 +81,8 @@
       "isForSale": true,
       "rental": false,
       "imageUrl": "assets/images/Tiguan2023.jpg",
-      "branchId": 4
+      "branchId": 4,
+      "isActive": true
     },
     {
       "id": "7",
@@ -89,7 +95,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Toro2023.jpg",
-      "branchId": 2
+      "branchId": 2,
+      "isActive": true
     },
     {
       "id": "8",
@@ -102,7 +109,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Cronos2023.jpg",
-      "branchId": 6
+      "branchId": 6,
+      "isActive": true
     },
     {
       "id": "9",
@@ -115,7 +123,8 @@
       "isForSale": true,
       "rental": false,
       "imageUrl": "assets/images/208.2023.jpg",
-      "branchId": 3
+      "branchId": 3,
+      "isActive": false
     },
     {
       "id": "10",
@@ -128,254 +137,8 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Partner2023.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "11",
-      "brand": "Chevrolet",
-      "model": "S10",
-      "type": "Pick-Up",
-      "price": 36000,
-      "year": 2023,
-      "description": "Robusta pick-up Chevrolet S10 con capacidad de carga superior",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/S10.2023.jpg",
-      "branchId": 1
-    },
-    {
-      "id": "12",
-      "brand": "Chevrolet",
-      "model": "Cruze",
-      "type": "Hatchback",
-      "price": 27000,
-      "year": 2023,
-      "description": "Deportivo Chevrolet Cruze con excelente rendimiento",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/Cruze2023.jpg",
-      "branchId": 3
-    },
-    {
-      "id": "13",
-      "brand": "Nissan",
-      "model": "Frontier",
-      "type": "Pick-Up",
-      "price": 37000,
-      "year": 2023,
-      "description": "Resistente pick-up Nissan Frontier para todo terreno",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/Frontier2023.jpg",
-      "branchId": 6
-    },
-    {
-      "id": "14",
-      "brand": "Nissan",
-      "model": "Tiida",
-      "type": "Sedan",
-      "price": 23000,
-      "year": 2023,
-      "description": "Confortable Nissan Tiida con gran espacio interior",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/tilda2023.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "15",
-      "brand": "Toyota",
-      "model": "Hilux",
-      "type": "Pick-Up",
-      "price": 39000,
-      "year": 2023,
-      "description": "Legendaria Toyota Hilux con durabilidad comprobada",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/hilux2023.jpg",
-      "branchId": 5
-    },
-    {
-      "id": "16",
-      "brand": "Toyota",
-      "model": "Etios",
-      "type": "Hatchback",
-      "price": 21000,
-      "year": 2023,
-      "description": "Económico Toyota Etios ideal para ciudad",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/etios2023.jpg",
-      "branchId": 1
-    },
-    {
-      "id": "17",
-      "brand": "Toyota",
-      "model": "Corolla",
-      "type": "Sedan",
-      "price": 29000,
-      "year": 2023,
-      "description": "Clásico Toyota Corolla con tecnología híbrida",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/corolla2023.jpg",
-      "branchId": 2
-    },
-    {
-      "id": "18",
-      "brand": "Toyota",
-      "model": "Corolla-Cross",
-      "type": "SUV",
-      "price": 34000,
-      "year": 2023,
-      "description": "Moderna Toyota Corolla Cross con estilo SUV",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/corollaCross.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "19",
-      "brand": "Renault",
-      "model": "Sandero",
-      "type": "Hatchback",
-      "price": 20000,
-      "year": 2023,
-      "description": "Versátil Renault Sandero con gran relación calidad-precio",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/sandero.jpg",
-      "branchId": 6
-    },
-    {
-      "id": "20",
-      "brand": "Renault",
-      "model": "Duster",
-      "type": "SUV",
-      "price": 25000,
-      "year": 2023,
-      "description": "Renault Duster para aventuras y ciudad",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/duster.jpg",
-      "branchId": 3
-    },
-    {
-      "id": "21",
-      "brand": "Renault",
-      "model": "Kangoo",
-      "type": "Utilitario",
-      "price": 25000,
-      "year": 2023,
-      "description": "Práctica Renault Kangoo para uso comercial",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/kangoo.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "22",
-      "brand": "Fiat",
-      "model": "Linea",
-      "type": "Sedan",
-      "price": 23000,
-      "year": 2023,
-      "description": "Elegante Fiat Linea con acabados refinados",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/linea.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "23",
-      "brand": "Jeep",
-      "model": "Wrangler",
-      "type": "Pick-Up",
-      "price": 45000,
-      "year": 2023,
-      "description": "Icónico Jeep Wrangler para aventuras extremas",
-      "isForSale": true,
-      "rental": false,
-      "imageUrl": "assets/images/wrangler.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "24",
-      "brand": "Dodge",
-      "model": "Caravan",
-      "type": "Familiar",
-      "price": 33000,
-      "year": 2023,
-      "description": "Espaciosa Dodge Caravan para toda la familia",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/caravan.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "25",
-      "brand": "Jeep",
-      "model": "Grand Cheeroke",
-      "type": "SUV",
-      "price": 48000,
-      "year": 2023,
-      "description": "Lujosa Jeep Grand Cherokee con máximo confort",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/grandCherokee.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "26",
-      "brand": "Fiat",
-      "model": "Argo",
-      "type": "Hatchback",
-      "price": 21500,
-      "year": 2023,
-      "description": "Moderno Fiat Argo con diseño deportivo",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/argo.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "27",
-      "brand": "Subaru",
-      "model": "Impreza",
-      "type": "Hatchback",
-      "price": 15000,
-      "year": 2012,
-      "description": "4x4 solo para entendidos",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/Subaru Impreza 2012.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "28",
-      "brand": "Honda",
-      "model": "Civic",
-      "price": 34000,
-      "type": "Sedan",
-      "year": 2014,
-      "description": "Gran sedan",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/civic.jpg",
-      "branchId": 4
-    },
-    {
-      "id": "29",
-      "brand": "Fiat",
-      "model": "Mobi",
-      "type": "Hatchback",
-      "price": 2000,
-      "year": 2024,
-      "description": "Como primer auto, ideal!",
-      "isForSale": false,
-      "rental": true,
-      "imageUrl": "assets/images/mobi.jpg",
-      "branchId": 4
+      "branchId": 4,
+      "isActive": true
     }
   ],
   "clients": [
@@ -639,12 +402,6 @@
       "clientId": "4",
       "carId": 4,
       "price": 38000
-    },
-    {
-      "id": "1a81",
-      "clientId": "4",
-      "carId": 9,
-      "price": 24000
     }
   ],
   "branches": [

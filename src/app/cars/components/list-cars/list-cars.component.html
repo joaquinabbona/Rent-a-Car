@@ -67,22 +67,25 @@
 
     <!-- Lista de vehículos -->
     <div *ngIf="filteredCars.length > 0" class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-        <div class="col" *ngFor="let car of filteredCars">
+        <ng-container *ngFor="let car of filteredCars">
+          <div class="col" *ngIf="car.isActive">
             <div class="card h-100">
-                <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
-                    <p class="card-text">
-                        <strong>Año:</strong> {{ car.year }}<br>
-                        <strong>Tipo:</strong> {{ car.type }}<br>
-                        <strong>Precio:</strong> ${{ car.price | number }}
-                    </p>
-                </div>
-                <div class="card-footer text-center">
-                    <button [routerLink]="['/car-details', car.id]" class="btn btn-info w-100">Ver detalles</button>
-                </div>
+              <img [src]="car.imageUrl" alt="{{ car.brand }} {{ car.model }}" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                <p class="card-text">
+                  <strong>Año:</strong> {{ car.year }}<br>
+                  <strong>Tipo:</strong> {{ car.type }}<br>
+                  <strong>Precio:</strong> ${{ car.price | number }}
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button [routerLink]="['/car-details', car.id]" class="btn btn-info w-100">Ver detalles</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+        </ng-container>
+      </div>
+
 </div>
 <button (click)="goBack()" class="btn btn-secondary mb-3">← Volver</button>
