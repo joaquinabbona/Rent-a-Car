@@ -414,23 +414,23 @@
     {
       "id": "4",
       "firstName": "Ignacio Valentin",
-      "lastName": "ASD",
+      "lastName": "Gomez",
       "email": "nacho2012gomez@gmail.com",
       "password": "aaa123",
-      "phone": "123123131",
-      "address": "asddasd",
+      "phone": "223500287",
+      "address": "Maipu 1900",
       "dateOfBirth": "2004-03-11",
       "isActive": true
     },
     {
       "id": "5",
-      "firstName": "GGG",
-      "lastName": "AAA",
-      "email": "gasasg@fgaas.com",
+      "firstName": "Joaquin",
+      "lastName": "Abbona",
+      "email": "joaquinabbona@gmail.com",
       "password": "123456",
-      "phone": "dasds",
-      "address": "dasdas",
-      "dateOfBirth": "1995-01-03",
+      "phone": "2233001750",
+      "address": "Pringles 1972",
+      "dateOfBirth": "2004-02-04",
       "isActive": true
     },
     {
@@ -448,17 +448,17 @@
   "admin": [
     {
       "id": "1",
-      "username": "gva",
+      "username": "admin",
       "password": "123456",
-      "email": "ff@gasf.com",
+      "email": "admin@gmail.com",
       "fullName": "Gonzalo Vazq"
     },
     {
       "id": "3",
-      "username": "gonzalo",
+      "username": "admin2",
       "password": "123456",
-      "email": "assd@gmo.com",
-      "fullName": "Gonzalo Vazquez"
+      "email": "lisandro@gmail.com",
+      "fullName": "Lisandro Torre"
     }
   ],
   "rentals": [
