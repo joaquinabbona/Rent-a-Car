@@ -530,6 +530,12 @@
       "clientId": 1,
       "carId": 5,
       "price": 50000
+    },
+    {
+      "id": "ff46",
+      "clientId": "4",
+      "carId": 1,
+      "price": 35000
     }
   ],
   "branches": [
