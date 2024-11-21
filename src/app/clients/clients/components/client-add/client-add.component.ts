@@ -42,9 +42,12 @@ export class ClientAddComponent implements OnInit {
 
   onSubmit() {
     if (this.clientForm.valid) {
-      const userData = {...this.clientForm.value};
+      const userData = { 
+        ...this.clientForm.value, 
+        isActive: true 
+      };
       delete userData.confirmPassword;
-
+  
       this.clientService.addClient(userData).subscribe({
         next: () => {
           alert('Usuario registrado exitosamente');
@@ -57,6 +60,7 @@ export class ClientAddComponent implements OnInit {
       });
     }
   }
+  
   onCancel(): void {
     this.router.navigate(['/clients']);
   }
