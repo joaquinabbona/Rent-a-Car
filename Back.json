@@ -470,7 +470,7 @@
       "price": 25551,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Córdoba",
-      "id": 1
+      "id": "1"
     },
     {
       "clientId": null,
@@ -480,7 +480,7 @@
       "price": 0,
       "originBranch": "La Plata",
       "destinationBranch": "Pinamar",
-      "id": 2
+      "id": "2"
     },
     {
       "clientId": null,
@@ -490,7 +490,7 @@
       "price": 0,
       "originBranch": "La Plata",
       "destinationBranch": "Pinamar",
-      "id": 3
+      "id": "3"
     },
     {
       "clientId": null,
@@ -500,7 +500,7 @@
       "price": 50294,
       "originBranch": "Ciudad Autónoma de Buenos Aires",
       "destinationBranch": "La Plata",
-      "id": 4
+      "id": "4"
     },
     {
       "clientId": null,
@@ -510,7 +510,7 @@
       "price": 101562.5,
       "originBranch": "Pinamar",
       "destinationBranch": "La Plata",
-      "id": 5
+      "id": "5"
     },
     {
       "clientId": "3",
@@ -733,14 +733,54 @@
       "destinationBranch": "Rosario"
     },
     {
-      "clientId": "2",
-      "carId": 7,
-      "rentalStartDate": "2025-02-05T00:00:00.000Z",
-      "rentalEndDate": "2025-04-04T00:00:00.000Z",
-      "price": 580000,
-      "originBranch": "Pinamar",
-      "destinationBranch": "Pinamar",
-      "id": "_psgm92"
+      "id": "b35b",
+      "clientId": "4",
+      "carId": 2,
+      "rentalStartDate": "2025-02-23T00:00:00.000Z",
+      "rentalEndDate": "2025-02-24T00:00:00.000Z",
+      "price": 10289.5,
+      "originBranch": "La Plata",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires"
+    },
+    {
+      "id": "7de3",
+      "clientId": "4",
+      "carId": 2,
+      "rentalStartDate": "2025-02-23T00:00:00.000Z",
+      "rentalEndDate": "2025-02-24T00:00:00.000Z",
+      "price": 10289.5,
+      "originBranch": "La Plata",
+      "destinationBranch": "Ciudad Autónoma de Buenos Aires"
+    },
+    {
+      "id": "9412",
+      "clientId": "4",
+      "carId": 3,
+      "rentalStartDate": "2025-04-23T00:00:00.000Z",
+      "rentalEndDate": "2025-04-24T00:00:00.000Z",
+      "price": 11852,
+      "originBranch": "La Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "82ae",
+      "clientId": "4",
+      "carId": 3,
+      "rentalStartDate": "2025-04-23T00:00:00.000Z",
+      "rentalEndDate": "2025-04-24T00:00:00.000Z",
+      "price": 11852,
+      "originBranch": "La Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "6325",
+      "clientId": "4",
+      "carId": 2,
+      "rentalStartDate": "2025-04-16T00:00:00.000Z",
+      "rentalEndDate": "2025-04-23T00:00:00.000Z",
+      "price": 71781.5,
+      "originBranch": "Ciudad Autónoma de Buenos Aires",
+      "destinationBranch": "Pinamar"
     }
   ],
   "purchase": [
@@ -772,25 +812,10 @@
       "id": "O9YRKW9"
     },
     {
-      "id": "p55iuCo"
-    },
-    {
-      "id": "p0ruLET"
-    },
-    {
-      "id": "E6tvnII"
-    },
-    {
-      "id": "-QyBkvf"
-    },
-    {
-      "id": "G89TlFV"
-    },
-    {
-      "id": "eBYXORO"
-    },
-    {
-      "id": "YCNon-y"
+      "id": "a95a",
+      "clientId": "4",
+      "carId": 4,
+      "price": 38000
     }
   ],
   "branches": [

@@ -13,7 +13,7 @@ import { ClientLoginComponent } from './clients/clients/components/client-login/
 import { CarRentalComponent } from './cars/components/car-rental/car-rental.component';
 import { CarDetailsComponent } from './cars/components/car-details/car-details.component';
 import { ListCarsComponent } from './cars/components/list-cars/list-cars.component';
-
+import { PagoExitosoComponent } from './payment/pago-exitoso/pago-exitoso.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'car-manager', component: CarManagerComponent},
   {path: 'home', component: HomeComponent},
   { path: 'edit-car/:id', component: EditCarsComponent },
-  {path: 'payment/:carId',component:PaymentComponent},
+  {path: 'payment/:id',component:PaymentComponent},
   {path: 'login',component:ClientLoginComponent},
   {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
   {path: 'list-to-edit', component: ListToEditComponent},
@@ -49,6 +49,7 @@ const routes: Routes = [
   { path: 'add-cars', component: AddCarsComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'edit-car/:id', component: EditCarsComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'payment/:carId', component: PaymentComponent, canActivate: [AuthGuard], data: { roles: ['client'] } },
+  { path: 'payment-success', component: PagoExitosoComponent },
   
   // Login de clientes y de admin
   { path: 'login', component: ClientLoginComponent },
