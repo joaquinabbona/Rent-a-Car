@@ -36,10 +36,19 @@ export class CarRentalComponent implements OnInit {
   selectedDates: string[] = [];
   rentalConfirmed: boolean = false;
   today: Date = new Date();
-  pickupDate: Date | null = null; // Fecha de retiro
-  dropoffDate: Date | null = null; // Fecha de devolución
   datesConfirmed: boolean = false;
-  selectionMode: 'pickup' | 'dropoff' = 'pickup'; // Modo de selección actual
+  isSelectingStartDate: boolean = true;
+  selectedStartDate: string | null = null;
+  selectedEndDate: string | null = null;
+  rentalSummary: {
+    days: number;
+    startDate: string;
+    endDate: string;
+  } | null = null;
+  
+
+
+
 
   constructor(
     private fb: FormBuilder, 
@@ -68,16 +77,36 @@ export class CarRentalComponent implements OnInit {
 
     this.updateMinEndDate();
   }
-  onStartDateChange(event: any) {
-    const startDate = event.target.value;
-    this.carForm.patchValue({ rentalStartDate: startDate });
-    this.updateMinEndDate();
+
+  onStartDateChange(startDate: Date): void {
+    const startDateControl = this.carForm.get('rentalStartDate');
+    if (!startDateControl) {
+      console.error('Control rentalStartDate no inicializado');
+      return;
+    }
+  
+    
+    startDateControl.setValue(startDate.toISOString().split('T')[0]);
+  
+    console.log('Fecha de inicio actualizada:', startDate);
   }
 
-  onEndDateChange(event: any) {
-    const endDate = event.target.value;
-    this.carForm.patchValue({ rentalEndDate: endDate });
+  onEndDateChange(endDate: Date): void {
+    console.log('Fecha recibida en onEndDateChange:', endDate);
+  
+    
+    const endDateControl = this.carForm.get('rentalEndDate');
+    if (!endDateControl) {
+      console.error('Control rentalEndDate no inicializado');
+      return;
+    }
+  
+   
+    endDateControl.setValue(endDate.toISOString().split('T')[0]);
+  
+    console.log('Fecha de devolución actualizada:', endDate);
   }
+  
 
   updateMinEndDate() {
     const startDate = this.carForm.value.rentalStartDate;
@@ -85,6 +114,7 @@ export class CarRentalComponent implements OnInit {
       this.minEndDate = startDate;
     }
   }
+
   loadReservations(carId: number): void {
     this.paymentService.getReservationsByCarId(carId).subscribe({
       next: (reservations) => {
@@ -158,7 +188,7 @@ export class CarRentalComponent implements OnInit {
   isDateDisabled(date: Date): boolean {
     const formattedDate = date.toISOString().split('T')[0];
 
-    // Compara con la fecha actual y verifica si está en la lista de fechas deshabilitadas
+    
     return this.disabledDates.includes(formattedDate) || date < this.today;
   }
 
@@ -169,14 +199,21 @@ export class CarRentalComponent implements OnInit {
       return;
     }
 
-    if (this.selectedDates.includes(formattedDate)) {
-      // Si ya está seleccionada, la quitamos
-      this.selectedDates = this.selectedDates.filter(d => d !== formattedDate);
+    if (this.isSelectingStartDate) {
+      this.selectedStartDate = formattedDate;
+      this.carForm.patchValue({ rentalStartDate: formattedDate });
+      this.onStartDateChange(date);
     } else {
-      // Si no está seleccionada, la añadimos
-      this.selectedDates.push(formattedDate);
+      this.selectedEndDate = formattedDate;
+      this.carForm.patchValue({ rentalEndDate: formattedDate });
+      this.onEndDateChange(date); 
     }
   }
+
+  switchSelectionMode(): void {
+    this.isSelectingStartDate = !this.isSelectingStartDate;
+  }
+  
   
 
 
@@ -186,22 +223,18 @@ export class CarRentalComponent implements OnInit {
   }
 
   confirmRental(): void {
-    if (this.selectedDates.length > 0) {
-      // Ordenar las fechas seleccionadas
-      const sortedDates = this.selectedDates.map(date => new Date(date)).sort((a, b) => a.getTime() - b.getTime());
-  
-      // Establecer la primera y última fecha en el formulario
+    if (this.selectedStartDate && this.selectedEndDate) {
       this.carForm.patchValue({
-        rentalStartDate: sortedDates[0].toISOString().split('T')[0],
-        rentalEndDate: sortedDates[sortedDates.length - 1].toISOString().split('T')[0],
+        rentalStartDate: this.selectedStartDate,
+        rentalEndDate: this.selectedEndDate,
       });
       this.datesConfirmed = true;
       this.rentalConfirmed = true;
       console.log('Fechas confirmadas para el alquiler:', this.carForm.value);
     } else {
-      console.error('No se han seleccionado fechas.');
+      console.error('No se han seleccionado ambas fechas.');
     }
-  }
+  }  
   
 
   ngOnSubmit(event: Event): void {
@@ -273,47 +306,49 @@ export class CarRentalComponent implements OnInit {
 
           this.auxTotalPrice = `El precio total del alquiler es de $${rentalPrice.toLocaleString()}`;
   
-          observer.next(rentalPrice);  // Emitir el precio total calculado
+          observer.next(rentalPrice);  
           observer.complete();
         } else {
           this.totalPrice = 0;
-          observer.next(0);  // Si no hay fechas, se devuelve 0 como precio
+          observer.next(0);  
           observer.complete();
         }
       });
     });
   }
-  onCalculatePrice(): void {
-    const origin = this.carForm.get('originBranch')?.value;
-    const destination = this.carForm.get('destinationBranch')?.value;
-  
-    this.calculateDistanceAndCarryPrice(origin, destination).subscribe(totalPrice => {
-      
-      console.log('Precio total calculado:', totalPrice);
-  
-      
-      this.totalPrice = totalPrice;
-    });
-  }
-  
 
-  selectDate(date: Date): void {
-    if (this.isDateDisabled(date)) {
-      return;
+onCalculatePrice(): void {
+  const origin = this.carForm.get('originBranch')?.value;
+  const destination = this.carForm.get('destinationBranch')?.value;
+
+  this.calculateDistanceAndCarryPrice(origin, destination).subscribe(totalPrice => {
+    console.log('Precio total calculado:', totalPrice);
+
+    this.totalPrice = totalPrice;
+
+    // Calcular la cantidad de días y generar el resumen
+    const rentalStartDate = this.carForm.get('rentalStartDate')?.value;
+    const rentalEndDate = this.carForm.get('rentalEndDate')?.value;
+
+    if (rentalStartDate && rentalEndDate) {
+      const startDate = new Date(rentalStartDate);
+      const endDate = new Date(rentalEndDate);
+
+      const timeDiff = endDate.getTime() - startDate.getTime();
+      const numDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+      this.rentalSummary = {
+        days: numDays,
+        startDate: startDate.toISOString().split('T')[0],
+        endDate: endDate.toISOString().split('T')[0],
+      };
+
+      console.log('Resumen del alquiler:', this.rentalSummary);
     }
+  });
+}
 
-    if (this.selectionMode === 'pickup') {
-      this.pickupDate = date;
-      this.carForm.patchValue({ rentalStartDate: date.toISOString().split('T')[0] });
-      this.selectionMode = 'dropoff'; // Cambiar al modo de devolución
-    } else if (this.selectionMode === 'dropoff') {
-      this.dropoffDate = date;
-      this.carForm.patchValue({ rentalEndDate: date.toISOString().split('T')[0] });
-    }
-  }
 
-  toggleSelectionMode(): void {
-    this.selectionMode = this.selectionMode === 'pickup' ? 'dropoff' : 'pickup';
-  }
+  
 }
   

@@ -72,3 +72,59 @@
   button:disabled {
     pointer-events: none;
   }
+
+  h4 {
+    margin-top: 20px;
+    color: #4caf50;
+  }
+  
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+/* Calendar date buttons */
+.calendar button {
+  background-color: #e0e0e0; /* Grey for calendar date buttons */
+  color: #333;
+  border: 1px solid #999;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calendar button:hover {
+  background-color: #d0d0d0;
+}
+
+.calendar button.selected-date {
+  background-color: #4CAF50; /* Green for selected dates */
+  color: white;
+}
+
+.calendar button:disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Other buttons */
+button {
+  background-color: #4CAF50; /* Green for other buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

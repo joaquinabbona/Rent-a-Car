@@ -1,4 +1,3 @@
-
 <div class="container">
   <h2>Alquiler</h2>
 
@@ -6,31 +5,43 @@
     <form [formGroup]="carForm" (ngSubmit)="ngOnSubmit($event)">
       <div class="calendar-container">
         <label for="rentalStartDate">Fechas de alquiler:</label>
+        <p>Por favor primero seleccionar día de retiro del vehículo, y luego seleccionar fecha de devolución. </p>
         <div class="calendar-months">
           <div class="month" *ngFor="let month of calendarMonths">
             <h3>{{ month.label }}</h3>
             <div class="calendar">
-              <button 
-                *ngFor="let date of month.dates" 
+              <button
+                *ngFor="let date of month.dates"
                 [disabled]="isDateDisabled(date)"
                 (click)="toggleDateSelection(date)"
                 [ngClass]="{
-                  'disabled-date': isDateDisabled(date),
-                  'selected-date': isSelected(date)
-                }">
+                  'selected-date': date.toISOString().split('T')[0] === selectedStartDate || date.toISOString().split('T')[0] === selectedEndDate
+                }"
+              >
                 {{ date | date: 'dd' }}
               </button>
             </div>
           </div>
         </div>
       </div>
-
+      <br>
+      <div>
+        <button (click)="switchSelectionMode()" [disabled]="!isSelectingStartDate">
+          Seleccionar Fecha de Retiro
+        </button>
+        <button (click)="switchSelectionMode()" [disabled]="isSelectingStartDate">
+          Seleccionar Fecha de Devolución
+        </button>
+      </div>
+      <br>
       <div>
         <p>Días seleccionados:</p>
         <ul>
+          <p>Fecha de Retiro: {{ selectedStartDate ? (selectedStartDate | date: 'dd/MM/yyyy') : 'No seleccionada'  }}</p>
+           <p>Fecha de Devolución: {{selectedEndDate ? (selectedEndDate | date: 'dd/MM/yyyy') : 'No seleccionada' }}</p>
           <li *ngFor="let date of selectedDates">{{ date | date: 'shortDate':'UTC' }}</li>
         </ul>
-        <button (click)="confirmRental()" [disabled]="selectedDates.length === 0">Confirmar días</button>
+        <button (click)="confirmRental()" [disabled]="!selectedStartDate || !selectedEndDate">Confirmar días</button>
       </div>
       <div *ngIf="datesConfirmed">
       <div>
@@ -57,10 +68,17 @@
 
       <div>
         <button type="button" (click)="onCalculatePrice()">Calcular acarreo</button>
-        <p>{{ distance }}</p>
-        <p>{{ messagePrice }}</p>
-        <p>{{ auxTotalPrice }}</p>
+        <div *ngIf="rentalSummary">
+          <h4>Resumen del Alquiler</h4>
+          <p>Fecha de Retiro: {{ rentalSummary.startDate | date: 'dd/MM/yyyy' }}</p>
+          <p>Fecha de Devolución: {{ rentalSummary.endDate | date: 'dd/MM/yyyy' }}</p>
+          <p>Cantidad de días a alquilar: {{ rentalSummary.days }}</p>
+          <p>{{ distance }}</p>
+          <p>{{ messagePrice }}</p>
+          <p>{{ auxTotalPrice }}</p>
+        </div>
       </div>
+      
 
       <button type="submit">Confirmar</button>
     </div>

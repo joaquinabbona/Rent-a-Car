@@ -602,6 +602,66 @@
       "originBranch": "Pinamar",
       "destinationBranch": "Pinamar",
       "id": 17
+    },
+    {
+      "clientId": "3",
+      "carId": 21,
+      "rentalStartDate": "2025-03-08T00:00:00.000Z",
+      "rentalEndDate": "2025-03-10T00:00:00.000Z",
+      "price": 20632,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Pinamar",
+      "id": 18
+    },
+    {
+      "clientId": "3",
+      "carId": 5,
+      "rentalStartDate": "2024-12-04T00:00:00.000Z",
+      "rentalEndDate": "2024-12-06T00:00:00.000Z",
+      "price": 20632,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Pinamar",
+      "id": 19
+    },
+    {
+      "clientId": "3",
+      "carId": 2,
+      "rentalStartDate": "2025-03-04T00:00:00.000Z",
+      "rentalEndDate": "2025-03-07T00:00:00.000Z",
+      "price": 31558.5,
+      "originBranch": "Pinamar",
+      "destinationBranch": "La Plata",
+      "id": 20
+    },
+    {
+      "clientId": "2",
+      "carId": 25,
+      "rentalStartDate": "2024-12-02T00:00:00.000Z",
+      "rentalEndDate": "2024-12-05T00:00:00.000Z",
+      "price": 35253,
+      "originBranch": "Córdoba",
+      "destinationBranch": "Pinamar",
+      "id": 21
+    },
+    {
+      "clientId": null,
+      "carId": 22,
+      "rentalStartDate": "2024-12-03T00:00:00.000Z",
+      "rentalEndDate": "2024-12-06T00:00:00.000Z",
+      "price": 30000,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Mar del Plata",
+      "id": 22
+    },
+    {
+      "clientId": null,
+      "carId": 25,
+      "rentalStartDate": "2024-12-10T00:00:00.000Z",
+      "rentalEndDate": "2024-12-13T00:00:00.000Z",
+      "price": 30000,
+      "originBranch": "Pinamar",
+      "destinationBranch": "Pinamar",
+      "id": 23
     }
   ],
   "purchase": [
@@ -653,27 +713,27 @@
   ],
   "branches": [
     {
-      "id": "m3q6duexrmlyh5jetz",
+      "id": "1",
       "city": "Rosario"
     },
     {
-      "id": "m3q6dzbi147t6um3yny",
+      "id": "2",
       "city": "Mar del Plata"
     },
     {
-      "id": "m3q6efzlsyd4gp2ccxf",
+      "id": "3",
       "city": "Córdoba"
     },
     {
-      "id": "m3q6mmae5kehppgzra4",
+      "id": "4",
       "city": "Ciudad Autónoma de Buenos Aires"
     },
     {
-      "id": "m3q6puulte1g7wtboa",
+      "id": "5",
       "city": "La Plata"
     },
     {
-      "id": "m3q86qb0hb4ppu7rlmw",
+      "id": "6",
       "city": "Pinamar"
     }
   ]
