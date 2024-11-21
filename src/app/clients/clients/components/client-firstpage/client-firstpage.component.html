@@ -1,30 +1,22 @@
 <div class="button-group mb-4">
-    <button 
-      (click)="showComponent('listar-vehiculos')"
-      [class.active]="activeComponent === 'listar-vehiculos'"
-      class="btn btn-primary me-2">
-      Listar Vehiculos
-    </button>
-    <button 
-    (click)="showComponent('editar-usuario')"
-    [class.active]="activeComponent === 'editar-usuario'"
+  <button (click)="showComponent('listar-vehiculos')" [class.active]="activeComponent === 'listar-vehiculos'"
+    class="btn btn-primary me-2">
+    Listar Vehiculos
+  </button>
+  <button (click)="showComponent('editar-usuario')" [class.active]="activeComponent === 'editar-usuario'"
     class="btn btn-primary me-2">
     Editar mi Usuario
   </button>
-  <button 
-    (click)="showComponent('historial-vehiculos')"
-    [class.active]="activeComponent === 'historial-vehiculos'"
+  <button (click)="showComponent('historial-vehiculos')" [class.active]="activeComponent === 'historial-vehiculos'"
     class="btn btn-primary me-2">
     Ver mi Historial
   </button>
-  <button 
-  (click)="logoff()"
-  class="btn btn-danger">
-  Cerrar sesión
-</button>
-    </div>
-    <div [ngSwitch]="activeComponent">
-        <app-list-vehicles *ngSwitchCase="'listar-vehiculos'"></app-list-vehicles>
-        <app-edit-client *ngSwitchCase="'editar-usuario'"></app-edit-client>
-        <app-history *ngSwitchCase="'historial-vehiculos'"></app-history>
-          </div>
+  <button (click)="logoff()" class="btn btn-danger">
+    Cerrar sesión
+  </button>
+</div>
+<div [ngSwitch]="activeComponent">
+  <app-list-vehicles *ngSwitchCase="'listar-vehiculos'"></app-list-vehicles>
+  <app-edit-client *ngSwitchCase="'editar-usuario'"></app-edit-client>
+  <app-history *ngSwitchCase="'historial-vehiculos'"></app-history>
+</div>

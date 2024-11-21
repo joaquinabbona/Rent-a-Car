@@ -62,6 +62,6 @@ export class ClientAddComponent implements OnInit {
   }
   
   onCancel(): void {
-    this.router.navigate(['/clients']);
+    this.router.navigate(['/login']);
   }
 }

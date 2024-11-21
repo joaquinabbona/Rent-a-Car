@@ -16,7 +16,7 @@ export class ClientFirstpageComponent {
     private auth: AuthService
     ) {}
 
-  activeComponent: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos' | null = null; 
+  activeComponent: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos' = 'listar-vehiculos'; 
 
   showComponent(component: 'listar-vehiculos' | 'editar-usuario' | 'historial-vehiculos'): void {
     this.activeComponent = component;
