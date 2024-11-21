@@ -132,6 +132,7 @@ export class PaymentComponent {
 
   ngOnSubmit(): void {
     if (this.paymentMethod === 'cash' && this.paymentForm.get('cashPayment')?.valid) {
+     if(this.car?.isForSale){
       this.payment.savePurchaseInDB().subscribe({
         next: (response) => {
           console.log('Purchase saved successfully:', response);
@@ -140,15 +141,38 @@ export class PaymentComponent {
           console.error('Error saving purchase:', error);
         }
       });
+     }else if(!this.car?.isForSale){
+      this.payment.saveRentalInDB().subscribe({
+        next: (response) => {
+          console.log('Rental saved successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error saving rental:', error);
+        }
+      }); 
+     }
+
+      
     } else if (this.paymentMethod === 'card' && this.paymentForm.get('cardPayment')?.valid) {
-      this.payment.savePurchaseInDB().subscribe({
-        next: (response) => {
-          console.log('Purchase saved successfully:', response);
-        },
-        error: (error) => {
-          console.error('Error saving purchase:', error);
-        }
-      });
+      if(this.car?.isForSale){
+        this.payment.savePurchaseInDB().subscribe({
+          next: (response) => {
+            console.log('Purchase saved successfully:', response);
+          },
+          error: (error) => {
+            console.error('Error saving purchase:', error);
+          }
+        });
+       }else if(!this.car?.isForSale){
+        this.payment.saveRentalInDB().subscribe({
+          next: (response) => {
+            console.log('Rental saved successfully:', response);
+          },
+          error: (error) => {
+            console.error('Error saving rental:', error);
+          }
+        }); 
+       }
     } else {
       console.log('Formulario inválido');
     }

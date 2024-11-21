@@ -682,7 +682,28 @@
       "originBranch": "Rosario",
       "destinationBranch": "Mar del Plata",
       "id": 25
+    },
+    {
+      "id": "9b9d",
+      "clientId": null,
+      "carId": 2,
+      "rentalStartDate": "2024-12-27T00:00:00.000Z",
+      "rentalEndDate": "2024-12-29T00:00:00.000Z",
+      "price": 20632,
+      "originBranch": "Mar del Plata",
+      "destinationBranch": "Pinamar"
+    },
+    {
+      "id": "2207",
+      "clientId": "4",
+      "carId": 8,
+      "rentalStartDate": "2024-12-31T00:00:00.000Z",
+      "rentalEndDate": "2025-01-02T00:00:00.000Z",
+      "price": 22003,
+      "originBranch": "Córdoba",
+      "destinationBranch": "Rosario"
     }
+    
   ],
   "purchase": [
     {

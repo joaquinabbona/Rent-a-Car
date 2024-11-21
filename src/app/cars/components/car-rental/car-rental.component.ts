@@ -254,20 +254,12 @@ export class CarRentalComponent implements OnInit {
       originBranch: this.carForm.get('originBranch')?.value,
       destinationBranch: this.carForm.get('destinationBranch')?.value,
     };
-  
-    this.paymentService.saveRentalInDB(rental).subscribe({
-      next: (response) => {
-        console.log('Rental saved successfully:', response);
-        alert('¡Alquiler confirmado exitosamente!');
-        
-        
-        this.router.navigate(['/payment', Number(this.route.snapshot.paramMap.get('id'))]);
-      },
-      error: (error) => {
-        console.error('Error saving rental:', error);
-        alert('Ocurrió un error al guardar el alquiler. Por favor, intenta de nuevo.');
-      },
-    });
+
+    this.paymentService.saveRentalData(rental);
+    console.log(rental);
+    this.router.navigate(['/payment', Number(this.route.snapshot.paramMap.get('id'))]);
+
+    
   }
   
 
