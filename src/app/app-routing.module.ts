@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'car-manager', component: CarManagerComponent},
   {path: 'home', component: HomeComponent},
   { path: 'edit-car/:id', component: EditCarsComponent },
-  {path: 'payment/:carId',component:PaymentComponent},
+  {path: 'payment/:id',component:PaymentComponent},
   {path: 'login',component:ClientLoginComponent},
   {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
   {path: 'list-to-edit', component: ListToEditComponent},

@@ -90,7 +90,6 @@
       class="error">
       El código de seguridad es obligatorio y debe tener 3.
     </div>
-    <button *ngIf="car?.rental" type="button" (click)="redirectToFirstPage()">Confirmar Alquiler</button>
     <button type="submit" [disabled]="paymentForm.invalid">Realizar Pago</button>
   </div>
 </form>

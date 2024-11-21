@@ -17,6 +17,11 @@
     class="btn btn-primary me-2">
     Ver mi Historial
   </button>
+  <button 
+  (click)="logoff()"
+  class="btn btn-danger">
+  Cerrar sesión
+</button>
     </div>
     <div [ngSwitch]="activeComponent">
         <app-list-vehicles *ngSwitchCase="'listar-vehiculos'"></app-list-vehicles>
