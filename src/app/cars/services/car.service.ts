@@ -62,9 +62,4 @@ export class CarService {
     return this.http.delete<void>(`${this.apiUrl}/${carId}`);
   }
 
-  updateCarBranch(carId: number, newBranchId: number): Observable<Car> {
-    const url = `${this.apiUrl}/${carId}`;
-    return this.http.patch<Car>(url, { branchId: newBranchId });
-  }
-
 }
