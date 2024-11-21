@@ -135,6 +135,7 @@ export class PaymentComponent {
       this.payment.savePurchaseInDB().subscribe({
         next: (response) => {
           console.log('Purchase saved successfully:', response);
+          this.router.navigate(['/payment-success']);
         },
         error: (error) => {
           console.error('Error saving purchase:', error);
@@ -144,6 +145,7 @@ export class PaymentComponent {
       this.payment.savePurchaseInDB().subscribe({
         next: (response) => {
           console.log('Purchase saved successfully:', response);
+          this.router.navigate(['/payment-success']);
         },
         error: (error) => {
           console.error('Error saving purchase:', error);
