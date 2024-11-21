@@ -277,14 +277,14 @@ export class CarRentalComponent implements OnInit {
   }
   
 
-  calculateDistanceAndCarryPrice(origins: string, destination: string): Observable<number> {
+  calculateDistanceAndCarryPrice(destination: string): Observable<number> {
     return new Observable(observer => {
-      this.distanceCalculator.getDistance(origins, destination).subscribe(response => {
+      this.distanceCalculator.getDistance(this.originBranchName, destination).subscribe(response => {
         const dist = response.rows[0].elements[0].distance.text;
         this.distance = `La distancia total es ${dist}`;
   
         
-        if (origins === destination) {
+        if (this.originBranchName === destination) {
           this.carryPrice = 0;
         } else {
           this.carryPrice = parseFloat(dist) * 5;
@@ -327,7 +327,7 @@ onCalculatePrice(): void {
   const origin = this.carForm.get('originBranch')?.value;
   const destination = this.carForm.get('destinationBranch')?.value;
 
-  this.calculateDistanceAndCarryPrice(origin, destination).subscribe(totalPrice => {
+  this.calculateDistanceAndCarryPrice(destination).subscribe(totalPrice => {
     console.log('Precio total calculado:', totalPrice);
 
     this.totalPrice = totalPrice;

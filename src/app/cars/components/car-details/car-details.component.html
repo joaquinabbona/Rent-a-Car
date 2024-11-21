@@ -22,7 +22,7 @@
           <h4 class="card-title">Detalles del vehículo</h4>
           <p class="card-text"><strong>Precio:</strong> {{ car?.price | currency: 'USD' }}</p>
           <p class="card-text"><strong>Descripción:</strong> {{ car?.description }}</p>
-          <p class="card-text"><strong>Sucursal:</strong> Mar del Plata</p>
+          <p class="card-text"><strong>Sucursal:</strong>{{ branchCity }}</p>
         </div>
 
         <!-- Acciones: Comprar o Alquilar -->
