@@ -14,11 +14,11 @@ export class AppComponent {
     const userRole = this.authService.getCurrentUserRole();
 
     if (userRole === 'admin') {
-      this.router.navigate(['/admin/admin-firstpage']);
+      this.router.navigate(['/admin-firstpage']);
     } else if (userRole === 'client') {
-      this.router.navigate(['/client/firstpage']);
+      this.router.navigate(['/firstpage']);
     } else {
-      this.router.navigate(['/client/login']);
+      this.router.navigate(['/login']);
     }
   }
 }
