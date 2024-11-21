@@ -17,7 +17,7 @@
       <div class="card-body">
         <ul class="list-group" *ngIf="rentals.length > 0; else noRentals">
           <li class="list-group-item" *ngFor="let rental of rentals">
-            <p class="mb-1"><strong>Vehículo:</strong> {{ rental.carName }} (ID: {{ rental.carId }})</p>
+            <p class="mb-1"><strong>Vehículo:</strong> {{ rental.carName }}</p>
             <p class="mb-1"><strong>Desde:</strong> {{ rental.rentalStartDate | date:'yyyy-MM-dd' }}</p>
             <p class="mb-1"><strong>Hasta:</strong> {{ rental.rentalEndDate | date:'yyyy-MM-dd'}}</p>
             <p class="mb-1"><strong>Precio:</strong> ${{ rental.price }}</p>
@@ -39,7 +39,7 @@
       <div class="card-body">
         <ul class="list-group" *ngIf="purchases.length > 0; else noPurchases">
           <li class="list-group-item" *ngFor="let purchase of purchases">
-            <p class="mb-1"><strong>Vehículo:</strong> {{ purchase.carName }} (ID: {{ purchase.carId }})</p>
+            <p class="mb-1"><strong>Vehículo:</strong> {{ purchase.carName }}</p>
             <p><strong>Precio:</strong> ${{ purchase.price }}</p>
           </li>
         </ul>
