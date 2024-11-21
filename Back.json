@@ -10,7 +10,8 @@
       "description": "Robusta pick-up Ford Ranger, ideal para trabajo y aventura",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/rangerposta.jpg"
+      "imageUrl": "assets/images/rangerposta.jpg",
+      "branchId": 3
     },
     {
       "id": "2",
@@ -22,7 +23,8 @@
       "description": "Elegante sedán Ford Mondeo con acabados premium",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Mondeo.jpg"
+      "imageUrl": "assets/images/Mondeo.jpg",
+      "branchId": 3
     },
     {
       "id": "3",
@@ -34,7 +36,8 @@
       "description": "Versátil utilitario Ford Transit para necesidades comerciales",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/fordTransit.jpg"
+      "imageUrl": "assets/images/fordTransit.jpg",
+      "branchId": 2
     },
     {
       "id": "4",
@@ -46,7 +49,8 @@
       "description": "Potente pick-up Volkswagen Amarok con tecnología alemana",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/Amarok2023.jpg"
+      "imageUrl": "assets/images/Amarok2023.jpg",
+      "branchId": 6
     },
     {
       "id": "5",
@@ -58,7 +62,8 @@
       "description": "Confortable sedán Volkswagen Vento con excelente rendimiento",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Vento2023.jpg"
+      "imageUrl": "assets/images/Vento2023.jpg",
+      "branchId": 1
     },
     {
       "id": "6",
@@ -70,7 +75,8 @@
       "description": "SUV Volkswagen Tiguan con diseño moderno y amplio espacio",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/Tiguan2023.jpg"
+      "imageUrl": "assets/images/Tiguan2023.jpg",
+      "branchId": 4
     },
     {
       "id": "7",
@@ -82,7 +88,8 @@
       "description": "Pick-up Fiat Toro con diseño innovador y confort superior",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Toro2023.jpg"
+      "imageUrl": "assets/images/Toro2023.jpg",
+      "branchId": 2
     },
     {
       "id": "8",
@@ -94,7 +101,8 @@
       "description": "Sedán Fiat Cronos con estilo italiano y economía",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Cronos2023.jpg"
+      "imageUrl": "assets/images/Cronos2023.jpg",
+      "branchId": 6
     },
     {
       "id": "9",
@@ -106,7 +114,8 @@
       "description": "Dinámico Peugeot 208 con diseño juvenil y tecnología avanzada",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/208.2023.jpg"
+      "imageUrl": "assets/images/208.2023.jpg",
+      "branchId": 3
     },
     {
       "id": "10",
@@ -118,7 +127,8 @@
       "description": "Práctica Peugeot Partner ideal para uso familiar y comercial",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Partner2023.jpg"
+      "imageUrl": "assets/images/Partner2023.jpg",
+      "branchId": 4
     },
     {
       "id": "11",
@@ -130,7 +140,8 @@
       "description": "Robusta pick-up Chevrolet S10 con capacidad de carga superior",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/S10.2023.jpg"
+      "imageUrl": "assets/images/S10.2023.jpg",
+      "branchId": 1
     },
     {
       "id": "12",
@@ -142,7 +153,8 @@
       "description": "Deportivo Chevrolet Cruze con excelente rendimiento",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Cruze2023.jpg"
+      "imageUrl": "assets/images/Cruze2023.jpg",
+      "branchId": 3
     },
     {
       "id": "13",
@@ -154,7 +166,8 @@
       "description": "Resistente pick-up Nissan Frontier para todo terreno",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/Frontier2023.jpg"
+      "imageUrl": "assets/images/Frontier2023.jpg",
+      "branchId": 6
     },
     {
       "id": "14",
@@ -166,7 +179,8 @@
       "description": "Confortable Nissan Tiida con gran espacio interior",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/tilda2023.jpg"
+      "imageUrl": "assets/images/tilda2023.jpg",
+      "branchId": 4
     },
     {
       "id": "15",
@@ -178,7 +192,8 @@
       "description": "Legendaria Toyota Hilux con durabilidad comprobada",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/hilux2023.jpg"
+      "imageUrl": "assets/images/hilux2023.jpg",
+      "branchId": 5
     },
     {
       "id": "16",
@@ -190,7 +205,8 @@
       "description": "Económico Toyota Etios ideal para ciudad",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/etios2023.jpg"
+      "imageUrl": "assets/images/etios2023.jpg",
+      "branchId": 1
     },
     {
       "id": "17",
@@ -202,7 +218,8 @@
       "description": "Clásico Toyota Corolla con tecnología híbrida",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/corolla2023.jpg"
+      "imageUrl": "assets/images/corolla2023.jpg",
+      "branchId": 2
     },
     {
       "id": "18",
@@ -214,7 +231,8 @@
       "description": "Moderna Toyota Corolla Cross con estilo SUV",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/corollaCross.jpg"
+      "imageUrl": "assets/images/corollaCross.jpg",
+      "branchId": 4
     },
     {
       "id": "19",
@@ -226,19 +244,21 @@
       "description": "Versátil Renault Sandero con gran relación calidad-precio",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/sandero.jpg"
+      "imageUrl": "assets/images/sandero.jpg",
+      "branchId": 6
     },
     {
       "id": "20",
       "brand": "Renault",
       "model": "Duster",
       "type": "SUV",
-      "price": 28000,
+      "price": 25000,
       "year": 2023,
-      "description": "Aventurero Renault Duster con capacidades off-road",
+      "description": "Renault Duster para aventuras y ciudad",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/duster.jpg"
+      "imageUrl": "assets/images/duster.jpg",
+      "branchId": 3
     },
     {
       "id": "21",
@@ -250,7 +270,8 @@
       "description": "Práctica Renault Kangoo para uso comercial",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/kangoo.jpg"
+      "imageUrl": "assets/images/kangoo.jpg",
+      "branchId": 4
     },
     {
       "id": "22",
@@ -262,7 +283,8 @@
       "description": "Elegante Fiat Linea con acabados refinados",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/linea.jpg"
+      "imageUrl": "assets/images/linea.jpg",
+      "branchId": 4
     },
     {
       "id": "23",
@@ -274,7 +296,8 @@
       "description": "Icónico Jeep Wrangler para aventuras extremas",
       "isForSale": true,
       "rental": false,
-      "imageUrl": "assets/images/wrangler.jpg"
+      "imageUrl": "assets/images/wrangler.jpg",
+      "branchId": 4
     },
     {
       "id": "24",
@@ -286,7 +309,8 @@
       "description": "Espaciosa Dodge Caravan para toda la familia",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/caravan.jpg"
+      "imageUrl": "assets/images/caravan.jpg",
+      "branchId": 4
     },
     {
       "id": "25",
@@ -298,7 +322,8 @@
       "description": "Lujosa Jeep Grand Cherokee con máximo confort",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/grandCherokee.jpg"
+      "imageUrl": "assets/images/grandCherokee.jpg",
+      "branchId": 4
     },
     {
       "id": "26",
@@ -310,7 +335,8 @@
       "description": "Moderno Fiat Argo con diseño deportivo",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/argo.jpg"
+      "imageUrl": "assets/images/argo.jpg",
+      "branchId": 4
     },
     {
       "id": "27",
@@ -322,7 +348,8 @@
       "description": "4x4 solo para entendidos",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/Subaru Impreza 2012.jpg"
+      "imageUrl": "assets/images/Subaru Impreza 2012.jpg",
+      "branchId": 4
     },
     {
       "id": "28",
@@ -334,7 +361,8 @@
       "description": "Gran sedan",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/civic.jpg"
+      "imageUrl": "assets/images/civic.jpg",
+      "branchId": 4
     },
     {
       "id": "29",
@@ -346,7 +374,8 @@
       "description": "Como primer auto, ideal!",
       "isForSale": false,
       "rental": true,
-      "imageUrl": "assets/images/mobi.jpg"
+      "imageUrl": "assets/images/mobi.jpg",
+      "branchId": 4
     }
   ],
   "clients": [
@@ -552,6 +581,44 @@
       "price": 300000,
       "originBranch": "Mar del Plata",
       "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "82ae",
+      "clientId": "4",
+      "carId": 3,
+      "rentalStartDate": "2025-04-23T00:00:00.000Z",
+      "rentalEndDate": "2025-04-24T00:00:00.000Z",
+      "price": 11852,
+      "originBranch": "La Plata",
+      "destinationBranch": "Mar del Plata"
+    },
+    {
+      "id": "6325",
+      "clientId": "4",
+      "carId": 2,
+      "rentalStartDate": "2025-04-16T00:00:00.000Z",
+      "rentalEndDate": "2025-04-23T00:00:00.000Z",
+      "price": 71781.5,
+      "originBranch": "Ciudad Autónoma de Buenos Aires",
+      "destinationBranch": "Pinamar"
+    },
+    {
+      "clientId": "2",
+      "carId": 22,
+      "rentalStartDate": "2025-02-03T00:00:00.000Z",
+      "rentalEndDate": "2025-02-11T00:00:00.000Z",
+      "price": 80288.5,
+      "destinationBranch": "La Plata",
+      "id": "A3ky8j9"
+    },
+    {
+      "clientId": "2",
+      "carId": 2,
+      "rentalStartDate": "2024-12-03T00:00:00.000Z",
+      "rentalEndDate": "2024-12-04T00:00:00.000Z",
+      "price": 13769.5,
+      "destinationBranch": "Córdoba",
+      "id": "F1f1ziD"
     }
   ],
   "purchase": [

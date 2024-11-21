@@ -22,7 +22,8 @@ export class EditCarsComponent {
     description: '',
     isForSale: true,
     rental: true,
-    imageUrl: ''
+    imageUrl: '',
+    branchId: 0
   };
   loading: boolean = true;
   error: string | null = null;

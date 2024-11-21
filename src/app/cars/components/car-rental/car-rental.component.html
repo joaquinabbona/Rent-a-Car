@@ -44,23 +44,16 @@
         <button (click)="confirmRental()" [disabled]="!selectedStartDate || !selectedEndDate">Confirmar días</button>
       </div>
       <div *ngIf="datesConfirmed">
-       <div>
-      <label for="originBranch">Sucursal de retiro:</label>
-      <select
-        id="originBranch"
-        formControlName="originBranch"
-        class="form-control"
-        [ngClass]="{ 'invalid-field': carForm.get('originBranch')?.invalid && carForm.get('originBranch')?.touched }"
-      >
-        <option value="" disabled selected>Seleccione una sucursal</option>
-        <option *ngFor="let branch of branches" [value]="branch.city">
-          {{ branch.city }}
-        </option>
-      </select>
-      <div *ngIf="carForm.get('originBranch')?.invalid && carForm.get('originBranch')?.touched" class="error-message">
-        Selecciona una sucursal de retiro.
-      </div>
-    </div>
+        <div>
+          <label for="originBranch">Sucursal de retiro:</label>
+          <input
+            type="text"
+            id="originBranch"
+            [value]="originBranchName"
+            readonly
+            class="form-control"
+          />
+        </div>
 
     <div>
       <label for="destinationBranch">Sucursal de devolución:</label>
