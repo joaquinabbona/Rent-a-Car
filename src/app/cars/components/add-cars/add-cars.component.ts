@@ -21,7 +21,8 @@ export class AddCarsComponent implements OnInit{
     description: '',
     isForSale: true,
     rental: true,
-    imageUrl: ''
+    imageUrl: '',
+    branchId: 0
   };
 
   constructor(private carService: CarService,
@@ -53,7 +54,8 @@ export class AddCarsComponent implements OnInit{
       description: '',
       isForSale: true,
       rental: true,
-      imageUrl: ''
+      imageUrl: '',
+      branchId: 0
     };
   }
   goBack(): void {

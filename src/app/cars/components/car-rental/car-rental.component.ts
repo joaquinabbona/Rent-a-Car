@@ -45,8 +45,8 @@ export class CarRentalComponent implements OnInit {
     startDate: string;
     endDate: string;
   } | null = null;
-  
-
+  branchID: number=0;
+  originBranchName: string = '';
 
 
 
@@ -57,6 +57,7 @@ export class CarRentalComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private branchService: BranchService,
+    private carService: CarService,
     private paymentService: PaymentService) {
       this.carForm = this.fb.group({
       rentalStartDate: ['', Validators.required],
@@ -67,10 +68,23 @@ export class CarRentalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const carId = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.carService.getCarById(carId).subscribe((car: Car) => {
+      if (car.branchId) {
+        this.branchService.getBranchById(car.branchId).subscribe((branch: Branch) => {
+      this.originBranchName = branch.city; // Asume que `branch.name` es el atributo que contiene el nombre.
+    });
+      } else {
+        console.error('El automóvil no tiene branchId asociado.');
+      }
+    });
+    
+
     this.today.setHours(0, 0, 0, 0);
     this.generateSixMonths();
   
-    const carId = Number(this.route.snapshot.paramMap.get('id'));
+    
     if (carId) {
       this.loadReservations(carId);
     }

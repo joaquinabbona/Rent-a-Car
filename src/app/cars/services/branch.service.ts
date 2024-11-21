@@ -25,5 +25,7 @@ export class BranchService {
     return this.http.delete<Branch>(this.url+'/'+id)
   }
 
-
+  getBranchById(id: number): Observable<Branch> {
+    return this.http.get<Branch>(`${this.url}/${id}`);
+  }
 }
