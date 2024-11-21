@@ -672,6 +672,16 @@
       "originBranch": "",
       "destinationBranch": "",
       "id": 24
+    },
+    {
+      "clientId": "2",
+      "carId": 27,
+      "rentalStartDate": "2024-11-27T00:00:00.000Z",
+      "rentalEndDate": "2024-12-02T00:00:00.000Z",
+      "price": 53568.5,
+      "originBranch": "Rosario",
+      "destinationBranch": "Mar del Plata",
+      "id": 25
     }
   ],
   "purchase": [
@@ -719,6 +729,9 @@
     },
     {
       "id": "eBYXORO"
+    },
+    {
+      "id": "YCNon-y"
     }
   ],
   "branches": [
