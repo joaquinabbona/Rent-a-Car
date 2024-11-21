@@ -49,4 +49,6 @@ export class ClientLoginComponent {
       this.errorMessage = 'Por favor, complete todos los campos requeridos.';
     }
   }
+
+  
 }
