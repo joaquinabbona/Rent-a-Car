@@ -12,7 +12,7 @@
       "rental": false,
       "imageUrl": "assets/images/rangerposta.jpg",
       "branchId": 3,
-      "isActive": false
+      "isActive": true
     },
     {
       "id": "2",
@@ -68,7 +68,7 @@
       "rental": true,
       "imageUrl": "assets/images/Vento2023.jpg",
       "branchId": 1,
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "6",
@@ -124,7 +124,7 @@
       "rental": false,
       "imageUrl": "assets/images/208.2023.jpg",
       "branchId": 3,
-      "isActive": false
+      "isActive": true
     },
     {
       "id": "10",
@@ -390,18 +390,6 @@
       "clientId": 1,
       "carId": 5,
       "price": 50000
-    },
-    {
-      "clientId": "3",
-      "carId": 1,
-      "price": 35000,
-      "id": "O9YRKW9"
-    },
-    {
-      "id": "a95a",
-      "clientId": "4",
-      "carId": 4,
-      "price": 38000
     }
   ],
   "branches": [
