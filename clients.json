@@ -1,0 +1,67 @@
+[
+    {
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com",
+      "phone": "2",
+      "address": "Av. Siempre Viva 742",
+      "dateOfBirth": "1990-05-15",
+      "id": "1",
+      "isActive": false
+    },
+    {
+      "firstName": "Ana",
+      "lastName": "Gómez",
+      "email": "ana.gomez@example.com",
+      "password": "abcdef",
+      "phone": "123456789",
+      "address": "Calle Ficticia 123",
+      "dateOfBirth": "1985-11-30",
+      "id": "2",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "firstName": "Juan",
+      "lastName": "Unanue",
+      "email": "juanunanue@gmail.com",
+      "password": "pepito",
+      "phone": "+5492236015427",
+      "address": "Alvarado 1487",
+      "dateOfBirth": "1999-12-28",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "firstName": "Ignacio Valentin",
+      "lastName": "Gomez",
+      "email": "nacho2012gomez@gmail.com",
+      "password": "aaa123",
+      "phone": "223500287",
+      "address": "Maipu 1900",
+      "dateOfBirth": "2004-03-11",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "firstName": "Joaquin",
+      "lastName": "Abbona",
+      "email": "joaquinabbona@gmail.com",
+      "password": "123456",
+      "phone": "2233001750",
+      "address": "Pringles 1972",
+      "dateOfBirth": "2004-02-04",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "firstName": "Gonzalo",
+      "lastName": "Acevedo",
+      "email": "gon@gon.com.ar",
+      "password": "123456",
+      "phone": "456",
+      "address": "Piann",
+      "dateOfBirth": "2017-01-31",
+      "isActive": false
+    }
+]

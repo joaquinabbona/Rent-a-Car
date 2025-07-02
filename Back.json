@@ -137,7 +137,7 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Partner2023.jpg",
-      "branchId": 4,
+      "branchId": 5,
       "isActive": true
     }
   ],
@@ -382,6 +382,24 @@
       "price": 13769.5,
       "destinationBranch": "Córdoba",
       "id": "F1f1ziD"
+    },
+    {
+      "id": "808e",
+      "clientId": "2",
+      "carId": 2,
+      "rentalStartDate": "2025-08-13T00:00:00.000Z",
+      "rentalEndDate": "2025-11-27T00:00:00.000Z",
+      "price": 1060000,
+      "destinationBranch": "Córdoba"
+    },
+    {
+      "id": "2c91",
+      "clientId": "2",
+      "carId": 10,
+      "rentalStartDate": "2025-07-02T00:00:00.000Z",
+      "rentalEndDate": "2025-07-07T00:00:00.000Z",
+      "price": 50290,
+      "destinationBranch": "La Plata"
     }
   ],
   "purchase": [
