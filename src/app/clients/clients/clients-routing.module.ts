@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: ClientLoginComponent },
   { path: 'delete/:id', component: ClientDeleteComponent},
   { path: 'firstpage', component: ClientFirstpageComponent, canActivate: [AuthGuard], data: { roles: ['client'] } }
+  
 ];
 
 @NgModule({

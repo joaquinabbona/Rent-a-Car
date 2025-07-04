@@ -14,6 +14,7 @@ import { CarRentalComponent } from './cars/components/car-rental/car-rental.comp
 import { CarDetailsComponent } from './cars/components/car-details/car-details.component';
 import { ListCarsComponent } from './cars/components/list-cars/list-cars.component';
 import { PagoExitosoComponent } from './payment/pago-exitoso/pago-exitoso.component';
+import { ChangePasswordComponent } from './clients/clients/components/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'admin-edit-car/:id', component:CarDetailsToEditComponent},
   {path: 'list-to-edit', component: ListToEditComponent},
   {path: 'car-rental/:id', component: CarRentalComponent},
+  
 
   // Rutas accesibles para clientes
   { path: 'car-details/:id', component: CarDetailsComponent, canActivate: [AuthGuard], data: { roles: ['client', 'admin'] } },
@@ -49,6 +51,7 @@ const routes: Routes = [
   { path: 'edit-car/:id', component: EditCarsComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'payment/:carId', component: PaymentComponent, canActivate: [AuthGuard], data: { roles: ['client'] } },
   { path: 'payment-success', component: PagoExitosoComponent },
+  { path: 'cambiar-contraseña/:id', component: ChangePasswordComponent},
   
   // Login de clientes y de admin
   { path: 'login', component: ClientLoginComponent },

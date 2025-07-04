@@ -12,6 +12,7 @@ import { ClientDeleteComponent } from './components/client-delete/client-delete.
 import { ClientFirstpageComponent } from './components/client-firstpage/client-firstpage.component';
 import { CarsModule } from '../../cars/cars.module';
 import { ClientHistoryComponent } from './components/client-history/client-history.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClientHistoryComponent } from './components/client-history/client-histo
     EditClientComponent,
     ClientDeleteComponent,
     ClientFirstpageComponent,
-    ClientHistoryComponent, 
+    ClientHistoryComponent,
+    ChangePasswordComponent, 
   ],
   imports: [
     CommonModule,

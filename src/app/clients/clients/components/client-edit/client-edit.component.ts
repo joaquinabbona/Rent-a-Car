@@ -16,12 +16,20 @@ export class EditClientComponent implements OnInit {
   clientForm: FormGroup;
   clientId!: number;
 
+
+                                      isLoading = true;
+                                      private originalClient!: Client;
+
+
+
+
   constructor(
     private fb: FormBuilder,
     private clientService: ClientService,
     private router: Router,
     private route: ActivatedRoute,
-    private auth: AuthService
+    private auth: AuthService,
+    
   ) {
     // Inicializamos el formulario sin los campos de contraseña
     this.clientForm = this.fb.group({
@@ -34,7 +42,8 @@ export class EditClientComponent implements OnInit {
     });
   }
 
-  isLoading = true; // Nueva variable de estado
+   // Nueva variable de estado
+
 
   ngOnInit(): void {
 
@@ -46,7 +55,7 @@ export class EditClientComponent implements OnInit {
     } else {
           // Obtener el clientId de la URL
           this.clientId = this.auth.getCurrentUser()?.id || 0; // Si no está logueado, ponemos 0 como fallback
-          console.log('ID del cliente logueado:', this.clientId); // Debug
+          
     }
 
   
@@ -58,6 +67,13 @@ export class EditClientComponent implements OnInit {
      // Cargar los datos del cliente desde el servicio
      this.clientService.getClient(this.clientId).subscribe({
       next: (client) => {
+
+
+
+                                      this.originalClient = client;
+
+
+
         console.log('Cliente recibido:', client);
 
         // Rellenar el formulario con los datos
@@ -75,8 +91,17 @@ export class EditClientComponent implements OnInit {
   
   onSubmit(): void {
     if (this.clientForm.valid) {
-      const updatedClient = this.clientForm.value;
-      updatedClient.id = this.clientId;
+      //const updatedClient = this.clientForm.value;
+      //updatedClient.id = this.clientId;
+                                const formValues = this.clientForm.value;
+
+                                const updatedClient: Client = {
+        ...this.originalClient, // Mantenemos password, isActive, etc.
+        ...formValues,          // Sobrescribimos con los datos modificados
+        id: this.clientId       // Reafirmamos el ID
+      };
+
+
 
       // Actualizamos el cliente sin enviar la contraseña
       this.clientService.updateClient(this.clientId, updatedClient).subscribe({
@@ -97,4 +122,8 @@ export class EditClientComponent implements OnInit {
   onCancel(): void {
     this.router.navigate(['/clients']);
   }
+
+  goToChangePassword() {
+  this.router.navigate(['/cambiar-contraseña',this.clientId]);
+}
 }

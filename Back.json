@@ -137,7 +137,7 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Partner2023.jpg",
-      "branchId": 5,
+      "branchId": 3,
       "isActive": true
     }
   ],
@@ -147,11 +147,11 @@
       "firstName": "Ignacio Valentin",
       "lastName": "Gomez",
       "email": "nacho2012gomez@gmail.com",
-      "password": "aaa123",
-      "phone": "223500287",
+      "phone": "223500286",
       "address": "Maipu 1900",
       "dateOfBirth": "2004-03-11",
-      "isActive": true
+      "isActive": true,
+      "password": "aaa123"
     },
     {
       "id": "5",
@@ -174,6 +174,17 @@
       "address": "Piann",
       "dateOfBirth": "2017-01-31",
       "isActive": false
+    },
+    {
+      "id": "7",
+      "firstName": "salioo",
+      "lastName": "aks",
+      "email": "prueba@gmail.com",
+      "phone": "1133",
+      "address": "3311",
+      "dateOfBirth": "2025-07-07",
+      "isActive": true,
+      "password": "aks123"
     }
   ],
   "admin": [
