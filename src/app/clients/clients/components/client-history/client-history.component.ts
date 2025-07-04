@@ -6,6 +6,8 @@ import { PaymentService } from '../../../../payment/payment/services/payment.ser
 import { Rental } from '../../../../cars/models/rental';
 import { Purchase } from '../../../../cars/models/purchase';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-history',
   templateUrl: './client-history.component.html',
@@ -16,6 +18,7 @@ export class ClientHistoryComponent implements OnInit {
   purchases: any[] = [];
   errorMessage: string | null = null;
   today: string;
+  selectedReservationId: number | null = null;
   
 
   constructor(
@@ -100,5 +103,34 @@ export class ClientHistoryComponent implements OnInit {
       }
     });
   }
+
+
+
+
+openConfirmationModal(reservationId: number) {
+    this.selectedReservationId = reservationId;
+    const modalElement = document.getElementById('confirmCancelModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+  }
+
+  confirmCancel() {
+    if (this.selectedReservationId !== null) {
+      this.cancelReservation(this.selectedReservationId);
+      this.selectedReservationId = null;
+      const modalElement = document.getElementById('confirmCancelModal');
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal.hide();
+    }
+  }
+
+
+
+
+
+
+
+
+
 }  
 

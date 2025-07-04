@@ -24,7 +24,7 @@
               <p class="mb-1"><strong>Origen:</strong> {{ rental.originBranch }}</p>
               <p><strong>Destino:</strong> {{ rental.destinationBranch }}</p>
               <div *ngIf="rental.rentalStartDate > today">
-                <button class="btn btn-danger" (click)="cancelReservation(rental.id)">
+                <button class="btn btn-danger" (click)="openConfirmationModal(rental.id)">
                   <i class="bi bi-trash"></i> Cancelar Reserva
                 </button>
               </div>
@@ -35,6 +35,25 @@
         </ng-template>
       </div>
     </div>
+
+    <div class="modal fade" id="confirmCancelModal" tabindex="-1" aria-labelledby="confirmCancelLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="confirmCancelLabel">Confirmar Cancelación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que querés cancelar esta reserva?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="confirmCancel()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
    
     <div class="card shadow">
