@@ -28,7 +28,7 @@
 
         <div class="calendar-months">
           <div class="month" *ngFor="let month of calendarMonths">
-            <h3>{{ month.label }}</h3>
+            <h3>{{ month.label | lowercase }}</h3>
             <div class="calendar">
               <button
                 *ngFor="let date of month.dates"

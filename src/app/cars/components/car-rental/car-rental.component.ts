@@ -48,7 +48,7 @@ export class CarRentalComponent implements OnInit {
   branchID: number=0;
   originBranchName: string = '';
   startDateConfirmed: boolean = false;
-
+  
 
 
   constructor(
@@ -150,25 +150,30 @@ export class CarRentalComponent implements OnInit {
   }
   
   generateSixMonths(): void {
-    const today = new Date();
-    this.calendarMonths = [];
+  const today = new Date();
+  this.calendarMonths = [];
 
-    for (let i = 0; i < 6; i++) {
-      const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth() + i, 1);
-      const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + i + 1, 0);
-      const monthDates = this.generateDatesInRange(firstDayOfMonth, lastDayOfMonth);
+  for (let i = 0; i < 6; i++) {
+    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth() + i, 1);
+    const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + i + 1, 0);
+    const monthDates = this.generateDatesInRange(firstDayOfMonth, lastDayOfMonth);
 
-      this.calendarMonths.push({
-        label: firstDayOfMonth.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' }),
-        dates: monthDates,
-      });
-    }
-    this.loadBranches();
-    this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
-      this.minEndDate = startDate;
-      this.carForm.get('rentalEndDate')?.updateValueAndValidity();
+    // Generar el label personalizado con "de" en minúscula
+    const monthName = firstDayOfMonth.toLocaleDateString('es-ES', { month: 'long' });
+    const year = firstDayOfMonth.getFullYear();
+    const customLabel = `${monthName} de ${year}`;
+
+    this.calendarMonths.push({
+      label: customLabel,
+      dates: monthDates,
     });
   }
+  this.loadBranches();
+  this.carForm.get('rentalStartDate')?.valueChanges.subscribe((startDate) => {
+    this.minEndDate = startDate;
+    this.carForm.get('rentalEndDate')?.updateValueAndValidity();
+  });
+}
 
   loadBranches(): void {
     this.branchService.getBranches().subscribe({

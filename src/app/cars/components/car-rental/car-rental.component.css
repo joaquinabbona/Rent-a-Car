@@ -151,3 +151,10 @@ button:disabled {
   
 }
 
+.month h3 {
+  text-transform: lowercase !important;
+}
+
+.month h3::first-letter {
+  text-transform: uppercase !important;
+}
