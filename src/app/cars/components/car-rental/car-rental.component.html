@@ -11,14 +11,13 @@
         <div class="selection-buttons">
   <button type="button"
           (click)="setSelectionMode(true)"
-          [disabled]="!isSelectingStartDate && selectedStartDate"
           [ngClass]="{ 'active-button': isSelectingStartDate }">
     Seleccionar Fecha de Retiro
   </button>
 
   <button type="button"
           (click)="setSelectionMode(false)"
-          [disabled]="isSelectingStartDate || !selectedStartDate"
+          [disabled]="!selectedStartDate"
           [ngClass]="{ 'active-button': !isSelectingStartDate }">
     Seleccionar Fecha de Devolución
   </button>
@@ -36,8 +35,10 @@
                 [disabled]="isDateDisabled(date)"
                 (click)="toggleDateSelection(date)"
                 [ngClass]="{
-                  'selected-date': date.toISOString().split('T')[0] === selectedStartDate || date.toISOString().split('T')[0] === selectedEndDate
-                }"
+  'selected-date': date.toISOString().split('T')[0] === selectedStartDate || date.toISOString().split('T')[0] === selectedEndDate,
+  'in-range': isInRange(date)
+}"
+
               >
                 {{ date | date: 'dd' }}
               </button>

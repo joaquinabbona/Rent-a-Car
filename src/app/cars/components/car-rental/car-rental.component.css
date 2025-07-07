@@ -137,3 +137,17 @@ button:disabled {
   font-size: 0.9rem;
   margin-top: 5px;
 }
+
+.selected-date {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  
+  
+}
+
+.in-range {
+  background-color: #4CAF50 !important;
+  color: rgb(255, 255, 255) !important;
+  
+}
+

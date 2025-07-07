@@ -384,6 +384,13 @@ setSelectionMode(selectingStart: boolean): void {
   this.isSelectingStartDate = selectingStart;
 }
 
+isInRange(date: Date): boolean {
+  if (!this.selectedStartDate || !this.selectedEndDate) return false;
+
+  const current = date.toISOString().split('T')[0];
+  return current > this.selectedStartDate && current < this.selectedEndDate;
+}
+
 
   
 }
