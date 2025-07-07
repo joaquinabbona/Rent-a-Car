@@ -36,7 +36,7 @@
   
   button.disabled-date {
     background-color: #ddd;
-    color: #aaa;
+    color: #5b5b5b;
     cursor: not-allowed;
   }
   
@@ -50,7 +50,7 @@
   }
   button.disabled-date {
     background-color: #ddd;
-    color: #aaa;
+    color: #ffffff;
     cursor: not-allowed;
   }
   
@@ -103,7 +103,7 @@
 }
 
 .calendar button:disabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #999;
   cursor: not-allowed;
 }

@@ -6,6 +6,27 @@
       <div class="calendar-container">
         <label for="rentalStartDate">Fechas de alquiler:</label>
         <p>Por favor primero seleccionar día de retiro del vehículo, y luego seleccionar fecha de devolución. </p>
+        
+        
+        <div class="selection-buttons">
+  <button type="button"
+          (click)="setSelectionMode(true)"
+          [disabled]="!isSelectingStartDate && selectedStartDate"
+          [ngClass]="{ 'active-button': isSelectingStartDate }">
+    Seleccionar Fecha de Retiro
+  </button>
+
+  <button type="button"
+          (click)="setSelectionMode(false)"
+          [disabled]="isSelectingStartDate || !selectedStartDate"
+          [ngClass]="{ 'active-button': !isSelectingStartDate }">
+    Seleccionar Fecha de Devolución
+  </button>
+</div>
+
+
+
+
         <div class="calendar-months">
           <div class="month" *ngFor="let month of calendarMonths">
             <h3>{{ month.label }}</h3>
@@ -25,14 +46,7 @@
         </div>
       </div>
       <br>
-      <div>
-        <button (click)="switchSelectionMode()" [disabled]="!isSelectingStartDate">
-          Seleccionar Fecha de Retiro
-        </button>
-        <button (click)="switchSelectionMode()" [disabled]="isSelectingStartDate">
-          Seleccionar Fecha de Devolución
-        </button>
-      </div>
+      
       <br>
       <div>
         <p>Días seleccionados:</p>

@@ -47,6 +47,7 @@ export class CarRentalComponent implements OnInit {
   } | null = null;
   branchID: number=0;
   originBranchName: string = '';
+  startDateConfirmed: boolean = false;
 
 
 
@@ -199,29 +200,55 @@ export class CarRentalComponent implements OnInit {
   }
 
   isDateDisabled(date: Date): boolean {
-    const formattedDate = date.toISOString().split('T')[0];
+  const formattedDate = date.toISOString().split('T')[0]; // yyyy-MM-dd
 
-    
-    return this.disabledDates.includes(formattedDate) || date < this.today;
+  const todayStr = new Date().toISOString().split('T')[0];
+
+  // Deshabilitar fechas pasadas
+  if (formattedDate < todayStr) {
+    return true;
   }
+
+  // Deshabilitar fechas reservadas
+  if (this.disabledDates.includes(formattedDate)) {
+    return true;
+  }
+
+  // Si estás seleccionando fecha de devolución
+  if (!this.isSelectingStartDate && this.selectedStartDate) {
+    const startStr = this.selectedStartDate;
+
+    if (formattedDate < startStr) {
+      return true; // ✅ No dejar seleccionar una devolución antes del retiro
+    }
+  }
+
+  return false;
+}
+
+
 
   toggleDateSelection(date: Date): void {
-    const formattedDate = date.toISOString().split('T')[0];
+  const formattedDate = date.toISOString().split('T')[0];
 
-    if (this.isDateDisabled(date)) {
-      return;
-    }
-
-    if (this.isSelectingStartDate) {
-      this.selectedStartDate = formattedDate;
-      this.carForm.patchValue({ rentalStartDate: formattedDate });
-      this.onStartDateChange(date);
-    } else {
-      this.selectedEndDate = formattedDate;
-      this.carForm.patchValue({ rentalEndDate: formattedDate });
-      this.onEndDateChange(date); 
-    }
+  if (this.isDateDisabled(date)) {
+    return;
   }
+
+  if (this.isSelectingStartDate) {
+    this.selectedStartDate = formattedDate;
+    this.carForm.patchValue({ rentalStartDate: formattedDate });
+    this.onStartDateChange(date);
+
+    // Cambiar automáticamente a modo devolución
+    this.isSelectingStartDate = false;
+  } else {
+    this.selectedEndDate = formattedDate;
+    this.carForm.patchValue({ rentalEndDate: formattedDate });
+    this.onEndDateChange(date);
+  }
+}
+
 
   switchSelectionMode(): void {
     this.isSelectingStartDate = !this.isSelectingStartDate;
@@ -351,6 +378,10 @@ onCalculatePrice(): void {
       console.log('Resumen del alquiler:', this.rentalSummary);
     }
   });
+}
+
+setSelectionMode(selectingStart: boolean): void {
+  this.isSelectingStartDate = selectingStart;
 }
 
 

@@ -137,7 +137,7 @@
       "isForSale": false,
       "rental": true,
       "imageUrl": "assets/images/Partner2023.jpg",
-      "branchId": 3,
+      "branchId": 5,
       "isActive": true
     }
   ],
@@ -185,6 +185,17 @@
       "dateOfBirth": "2025-07-07",
       "isActive": true,
       "password": "aks123"
+    },
+    {
+      "id": 8,
+      "firstName": "Juan",
+      "lastName": "Unanue",
+      "email": "juanunanue@gmail.com",
+      "password": "pepito",
+      "phone": "02236015427",
+      "address": "Alvarado 1487",
+      "dateOfBirth": "1999-12-28",
+      "isActive": true
     }
   ],
   "admin": [
